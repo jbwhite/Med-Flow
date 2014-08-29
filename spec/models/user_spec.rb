@@ -8,4 +8,10 @@ describe User do
 			expect(user.username).to eq("Justin")
 		end
 	end
+
+	context "email" do
+		it "should return the email" do  
+			expect(user.email).to eq("jwag89@gmail.com")
+		end
+	end
 end
