@@ -21,9 +21,9 @@ describe User do
 		end
 	end
 
-	describe " valid params" do 
-		it "should accept 3 valid parameters" do 
-			expect { User.create(:username, :email, :password) }.to raise_error(ArgumentError)
+	describe "Invalid params" do 
+		it "is invalid without a username" do 
+			expect { User.new(:user, username: nil) }.to raise_error(ArgumentError)
 		end
 	end
 end
