@@ -31,4 +31,8 @@ describe Comment do
 			it { should have_many(:tags) }
 		end
 	end
+
+	describe "validates presence of body" do 
+		it { should validate_presence_of(:body) }
+	end
 end
