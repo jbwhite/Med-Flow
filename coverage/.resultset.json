@@ -180,15 +180,6 @@
         1,
         null
       ],
-      "/Users/stephenestrada/Projects/DBCWBC/phase-3/Med-Flow/app/models/tag.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null
-      ],
       "/Users/stephenestrada/Projects/DBCWBC/phase-3/Med-Flow/app/models/user.rb": [
         1,
         null,
@@ -210,6 +201,15 @@
         null,
         null
       ],
+      "/Users/stephenestrada/Projects/DBCWBC/phase-3/Med-Flow/app/models/tag.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/stephenestrada/Projects/DBCWBC/phase-3/Med-Flow/app/models/tagation.rb": [
         1,
         1,
@@ -219,6 +219,6 @@
         null
       ]
     },
-    "timestamp": 1409331746
+    "timestamp": 1409332102
   }
 }
