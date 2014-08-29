@@ -599,3 +599,82 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-29 11:15:45
 Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-29 11:15:45 -0400
   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" DESC LIMIT 1[0m
   [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "users"
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-29 14:22:02 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TopicsController#index as HTML
+  [1m[35mTopic Load (1.4ms)[0m  SELECT "topics".* FROM "topics"
+  Rendered topics/index.html.erb within layouts/application (472.2ms)
+Completed 200 OK in 1541ms (Views: 1490.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-29 14:22:04 -0400
+Processing by TopicsController#index as HTML
+  [1m[36mTopic Load (0.3ms)[0m  [1mSELECT "topics".* FROM "topics"[0m
+  Rendered topics/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-29 14:22:05 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-29 14:22:05 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-29 14:22:05 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-29 14:22:05 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-29 14:22:05 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-29 14:22:05 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-29 14:22:05 -0400
+
+
+Started POST "/topics" for 127.0.0.1 at 2014-08-29 14:22:26 -0400
+Processing by TopicsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KZrSLwZnmPuyCt3DnsKidxQoTGKXAaomVi66etd4tzk=", "topic"=>{"title"=>"Does this work?", "body"=>"Maybe"}, "commit"=>"Create Topic"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (30.9ms)[0m  [1mINSERT INTO "topics" ("body", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Maybe"], ["created_at", "2014-08-29 18:22:26.622564"], ["title", "Does this work?"], ["updated_at", "2014-08-29 18:22:26.622564"]]
+  [1m[35m (28.8ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/topics/11
+Completed 302 Found in 101ms (ActiveRecord: 59.9ms)
+
+
+Started GET "/topics/11" for 127.0.0.1 at 2014-08-29 14:22:26 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mTopic Load (0.2ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mComment Load (1.4ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 11]]
+  Rendered collection (0.0ms)
+  Rendered comments/_form.html.erb (51.6ms)
+  [1m[36mTag Load (9.7ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 11], ["tagable_type", "Topic"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (173.2ms)
+Completed 200 OK in 194ms (Views: 179.7ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-29 14:22:26 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-29 14:22:26 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-29 14:22:26 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-29 14:22:26 -0400
+
+
+Started GET "/topics" for 127.0.0.1 at 2014-08-29 14:22:30 -0400
+Processing by TopicsController#index as HTML
+  [1m[35mTopic Load (0.2ms)[0m  SELECT "topics".* FROM "topics"
+  Rendered topics/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.2ms)
