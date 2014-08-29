@@ -2,11 +2,22 @@
 <html>
 <head>
   <title>PreventiveMeasures</title>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300|Inconsolata' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav>
+    <h2>Med-Flow</h2>
+    <ul>
+      <li><%= link_to 'Home', topics_path %></li>
+      <li>Profile</li>
+      <li><%= link_to 'Tags', tags_path %></li>
+    </ul>
+  </nav>
+
+
 
 <%= yield %>
 

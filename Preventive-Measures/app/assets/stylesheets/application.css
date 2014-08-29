@@ -13,3 +13,151 @@
  *= require_tree .
  *= require_self
  */
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+body {
+	background: #F6F9FF;
+	font-size: 16px;
+	font-family: 'Open Sans', sans-serif;
+	color: #060E21;
+}
+
+td {
+	padding: 5px;
+}
+
+nav {
+	padding: 20px;
+	background: #0537A1;
+	font-family: 'Open Sans', sans-serif;
+	color: white;
+
+}
+nav h2{
+	font-size: 2em;
+	display: inline;
+	float: left;
+	font-family: 'Inconsolata', sans-serif;
+}
+
+
+nav ul li{
+	font-size: 0.9em;
+	position: relative;
+	top: 12px;
+	display: inline;
+	margin-left: 20px;
+}
+h1 {
+	font-size: 2em;
+	font-family: 'Inconsolata', sans-serif;
+}
+
+h4{
+	font-size: 1em;
+	font-family: 'Inconsolata', sans-serif;
+	display: inline;
+	margin-right: 10px;
+}
+
+.container {
+	width: 1000px;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.left {
+	width: 650px;
+	float: left;
+}
+.right {
+	width: 300px;
+	float: right;
+
+}
+
+.right textarea{
+	resize: none;
+	width: 250px;
+	height: 150px;
+}
+
+.right input[type=text] {
+	font-size: 1.25em;
+	width: 250px;
+	height: 30px;
+}
+.topic {
+	background: #C4E8FF;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-radius: 0px;
+	padding:20px;
+	border: 1px solid #FF2CEF;
+
+}
+
+.topic a {
+	text-decoration: none;
+	color: #00009C;
+}
+
+.topic a:hover{
+	color: #060E21;
+}
+.topic p{
+	font-size: 0.75em;
+}
+
+input[type=submit] {
+	font-size: 1em;
+	font-family: 'Open Sans', sans-serif;
+	color: white;
+	padding: 10px;
+	border-radius: 6px;
+	background: rgb(151,187,211); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(151,187,211,1) 0%, rgba(105,135,205,1) 50%, rgba(85,116,203,1) 51%, rgba(78,116,204,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(151,187,211,1)), color-stop(50%,rgba(105,135,205,1)), color-stop(51%,rgba(85,116,203,1)), color-stop(100%,rgba(78,116,204,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(151,187,211,1) 0%,rgba(105,135,205,1) 50%,rgba(85,116,203,1) 51%,rgba(78,116,204,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(151,187,211,1) 0%,rgba(105,135,205,1) 50%,rgba(85,116,203,1) 51%,rgba(78,116,204,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(151,187,211,1) 0%,rgba(105,135,205,1) 50%,rgba(85,116,203,1) 51%,rgba(78,116,204,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(151,187,211,1) 0%,rgba(105,135,205,1) 50%,rgba(85,116,203,1) 51%,rgba(78,116,204,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#97bbd3', endColorstr='#4e74cc',GradientType=0 ); /* IE6-9 */
+
+	
+}
+
+input[type=submit]:focus, input[type=text], textarea {outline:0;}
+
+.heart {
+	font-size: 1.5em;
+	width: 26px;
+}
+
+.heart:hover{
+	color: tomato;
+	cursor: pointer;
+}
+
+input[type=text], textarea {
+	border-radius: 5px;
+	border:2px inset;
+}
+
+.logo {
+	font-size: 0.75em;
+	padding-top: 50px;
+	clear: both;
+	text-align: center;
+}
+
+.logo a, .logo a:visited{
+	color: ;
+}
+
+.logo img {
+	height: 200px;
+	width: 200px;
+}
