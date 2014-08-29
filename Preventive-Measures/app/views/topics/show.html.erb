@@ -1,0 +1,6 @@
+<h1><%= @topic.title %></h1>
+
+<p><%= @topic.body %></p>
+
+<%= link_to "Delete", topic_path(@topic), method: :delete %><br>
+<%= link_to "Back", topics_path %>
