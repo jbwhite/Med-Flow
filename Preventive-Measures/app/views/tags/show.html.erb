@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h2><%= @tag.subject %></h2>
+<br><br>
+<p>Tagged Topics</p>
+<br><br>
+<ul>
+  <% @tag.topics.each do |topic| %>
+  <li><%= link_to topic.title, topics_path(topic) %></li>
+  <% end %>
+</ul>
+
+<br><br><hr><br>
+
+<p>Tagged Comments</p>
+<br><br>
+<ul>
+  <% @tag.comments.each do |comment| %>
+  <li><%= link_to comment.body, topic_comment_path(comment.topic, comment) %></li>
+  <% end %>
+</ul>
+
+
+
+<br><br><hr><br>
+<%= link_to 'Edit', edit_tag_path(@tag) %> |
+<%= link_to 'Back', tags_path %>
