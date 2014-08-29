@@ -26,10 +26,10 @@ end
 
 30.times do
   t = Topic.all.sample
-  Tagation.create(tagable_id: t.id, tagable_type: "Topic", user_id: t.user.id, tag_id: Tag.all.sample)
+  Tagation.create(tagable_id: t.id, tagable_type: "Topic", user_id: t.user.id, tag_id: Tag.all.sample.id)
 end
 
 30.times do
   c = Comment.all.sample
-  Tagation.create(tagable_id: c.id, tagable_type: "Comment", user_id: c.user.id, tag_id: Tag.all.sample)
+  Tagation.create(tagable_id: c.id, tagable_type: "Comment", user_id: c.user.id, tag_id: Tag.all.sample.id)
 end
