@@ -45,7 +45,11 @@ describe User do
 		context "validates presence of email" do 
 			it { should validate_presence_of(:email) }
 		end
-
+		
+		context "validates username uniqueness" do 
+			it { should validate_uniqueness_of(:username) }
+		end
+		
 		context "validates uniqueness of email" do 
 			it { should validate_uniqueness_of(:email) }
 		end
@@ -62,6 +66,10 @@ describe User do
 
 		context "user has many comments" do 
 			it { should have_many(:comments) }
+		end
+
+		context "user has many tags" do 
+			it { should have_many(:tags) }
 		end
 	end
 end
