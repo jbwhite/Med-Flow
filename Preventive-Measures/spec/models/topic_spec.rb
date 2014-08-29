@@ -1,1 +1,12 @@
 require 'rails_helper'
+describe Topic do
+	let!(:user) { User.create(username: "Justin W", email: "jwag89@gmail.com", password:"jwag") }
+	let!(:topic) { Topic.create(title:"Forget DBC", body:"I am leaving in 2 weeks", user_id: 1) }
+	let!(:comment) { Comment.create(body: "Hello how was your day", user_id: 1, topic_id: 1) }
+	
+	context "title" do
+		it "should return the title" do  
+			expect(topic.title).to eq("Forget DBC")
+		end
+	end
+end
