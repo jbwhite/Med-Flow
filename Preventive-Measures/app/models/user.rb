@@ -4,4 +4,6 @@ class User < ActiveRecord::Base
 
   has_many :topics
   has_many :comments
+  validates :topics, presence: true
+  validates :comments, presence: true
 end
