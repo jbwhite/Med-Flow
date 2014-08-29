@@ -36,4 +36,16 @@ describe TopicsController do
       expect(response).to redirect_to topic_path(assigns[:topic])
     end
   end
+  describe "DELETE #destroy" do 
+  	it "destroys the topic" do 
+  		expect {
+  			delete :destroy, id: topic.id 
+  		}.to change(Topic.all, :count).by(-1)
+  	end
+
+  	it "redirects to topic#index" do 
+  		delete :destroy, id: topic.id
+  		expect(response).to redirect_to(topics_path)
+  	end
+  end
 end
