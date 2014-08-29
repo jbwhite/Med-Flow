@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :topic do
-    title ""
+    title "MyTitle"
     body "MyText"
   end
 end
