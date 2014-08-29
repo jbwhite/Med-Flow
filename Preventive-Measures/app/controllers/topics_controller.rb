@@ -10,7 +10,6 @@ class TopicsController < ApplicationController
   end
 
   def create
-    @topics = Topic.all
     @topic = Topic.new(topic_params)
 
     if @topic.save
@@ -18,9 +17,6 @@ class TopicsController < ApplicationController
     else
       render 'index'
     end
-  end
-
-  def new
   end
 
   def edit
