@@ -21,4 +21,10 @@ describe Topic do
 			expect { Topic.create(:title, :body) }.to raise_error(ArgumentError)
 		end
 	end
+
+	describe "#associations" do 
+		context "topic should belong to user" do 
+			it { should belong_to(:user) }
+		end
+	end
 end
