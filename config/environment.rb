@@ -5,3 +5,4 @@ require 'bcrypt'
 
 # Initialize the Rails application.
 Rails.application.initialize!
+
