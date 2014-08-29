@@ -26,7 +26,7 @@ describe UsersController do
 
     it "redirects to the root/home page" do
       post :create, user: FactoryGirl.attributes_for(:user)
-      response.status.should be(200)
+      expect(response.status).to eq(200)
     end
   end
 end
