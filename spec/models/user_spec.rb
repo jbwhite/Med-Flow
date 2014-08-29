@@ -68,6 +68,10 @@ describe User do
 			it { should have_many(:comments) }
 		end
 
+		# context "user has many tags through tagations" do 
+		# 	it { should have_many(:tags).dependent(:tagations) }
+		# end
+		
 		context "user has many tags" do 
 			it { should have_many(:tags) }
 		end

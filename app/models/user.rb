@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   
 
   has_many :tagations
-  has_many :tags, :through => :tagations
+  has_many :tags, through: :tagations
   # validates :topics, presence: true
   # validates :comments, presence: true
 
