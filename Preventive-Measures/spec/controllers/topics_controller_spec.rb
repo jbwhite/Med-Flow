@@ -24,13 +24,16 @@ describe TopicsController do
 		end
 	end	
 
-	describe "POST #create" do 
-		context "when valid params are passed" do 
-			it "create a new topic" do 
-				expect {
-					post :create, { topic: { title: "Acne", body: "How I was able to get rid of acne was a miracle." } }
-				}.to change(Topic, :count).by(1)
-			end
-		end
-	end
+	describe "POST #create" do
+    context "when valid params are passed" do
+      it "create new topic" do
+        post :create, topic: FactoryGirl.attributes_for(:topic)
+      end
+    end
+
+    it "redirects to the created topic" do
+      post :create, topic: FactoryGirl.attributes_for(:topic)
+      expect(response).to redirect_to topic_path(assigns[:topic])
+    end
+  end
 end

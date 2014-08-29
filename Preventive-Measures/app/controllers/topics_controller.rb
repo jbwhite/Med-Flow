@@ -17,7 +17,7 @@ class TopicsController < ApplicationController
 	end
 
 	def create
-		@topic = Topic.new(topic_params)
+		@topic = Topic.new
 		if @topic.save
 			redirect_to @topic, notice: 'Topic successfully created'
 		else
@@ -25,7 +25,26 @@ class TopicsController < ApplicationController
 		end
 	end
 
+	def update
+		@topic = Topic.find(params[:id])
+		if @topic.update(topic_params)
+			redirect_to @topic, notice: "Topic Updated"
+		else
+			render action :edit
+		end
+	end
+
+	def destroy
+		@topic = Topic.find(params[:id])
+		@topic.destroy
+		redirect_to topics_url
+	end
+
 	private 
+		def set_topic
+			@topic = Topic.find(params[:id])
+		end
+
 		def topic_params
 			params.require(:topic).permit(:title, :body)
 		end
