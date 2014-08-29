@@ -23,4 +23,14 @@ describe TopicsController do
 			expect(assigns(:topic)).to be_a Topic
 		end
 	end	
+
+	describe "POST #create" do 
+		context "when valid params are passed" do 
+			it "create a new topic" do 
+				expect {
+					post :create, { topic: { title: "Acne", body: "How I was able to get rid of acne was a miracle." } }
+				}.to change(Topic, :count).by(1)
+			end
+		end
+	end
 end
