@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  resources :topics do
+  resources(:topics, {only: [:index, :create, :show, :edit, :update, :destroy]})  do
     resources :comments
   end
 
