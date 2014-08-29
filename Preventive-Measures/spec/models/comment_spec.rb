@@ -17,4 +17,8 @@ describe Comment do
 			expect { Comment.create(:body) }.to raise_error(ArgumentError)
 		end
 	end
+
+	describe "#associations" do 
+		it { should belong_to(:user) }
+	end
 end
