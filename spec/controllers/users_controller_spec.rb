@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe UsersController do
-	# let!(:user) { create(:user)}
   let!(:user) { User.create!(username: "John Doe", email: "iamsexy@gmail.com", password: "1234q") }
 
 	describe "GET new" do
@@ -27,7 +26,7 @@ describe UsersController do
 
     it "redirects to the root/home page" do
       post :create, user: FactoryGirl.attributes_for(:user)
-      response.status.should be(200)
+      expect(response.status).to eq(200)
     end
   end
- end
+end
