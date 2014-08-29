@@ -11,3 +11,17 @@
 <%= render @topic.comments %>
 <h2>Add a comment:</h2>
 <%= render "comments/form" %>
+
+<br><br><hr><br>
+
+<h2>Tags</h2>
+<% @topic.comments.each do |comment| %>
+  <% @topic.tags += comment.tags %>
+<% end %>
+<p>
+  <ul class="taglist">
+<% @topic.tags.uniq.each do |tag| %>
+  <li class ="tag"> <%= link_to tag.subject, tag %></li>
+<% end %>
+  </ul>
+</p>
