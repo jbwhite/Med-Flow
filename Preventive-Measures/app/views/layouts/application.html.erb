@@ -8,6 +8,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav>
+    <h2>Med-Flow</h2>
+    <ul>
+      <li><%= link_to 'Home', topics_path %></li>
+      <li>Profile</li>
+      <li><%= link_to 'Tags', tags_path %></li>
+    </ul>
+  </nav>
+
+
 
 <%= yield %>
 
