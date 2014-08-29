@@ -9,4 +9,10 @@ describe Topic do
 			expect(topic.title).to eq("Forget DBC")
 		end
 	end
+
+	context "body" do
+		it "should return the body" do  
+			expect(topic.body).to eq("I am leaving in 2 weeks")
+		end
+	end
 end
