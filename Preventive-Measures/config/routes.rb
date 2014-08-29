@@ -1,14 +1,25 @@
 Rails.application.routes.draw do
 
+
   resources :topics do
     resources :comments
   end
 
   resources :tags
 
-  resources :users
+  resources :users, only: [:show, :edit, :update, :destroy]
 
+
+  get 'signup' => 'users#new', :as => :signup
+  post 'signup' => 'users#create'
+
+  ## SESSIONS
+  get 'login' => 'sessions#new', :as => :login
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
+  
   root to: "topics#index"
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
