@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 #User login, authentication, =
-gem 'devise'
+
 #Tagging
 gem 'acts-as-taggable-on'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
