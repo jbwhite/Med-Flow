@@ -41,5 +41,9 @@ describe User do
 
 	describe "validates username" do 
 		it { should validate_presence_of(:username)}
+	
+		context "validates presence of email" do 
+			it { should validate_presence_of(:email)}
+		end
 	end
 end

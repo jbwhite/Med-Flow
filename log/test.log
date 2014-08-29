@@ -11841,3 +11841,393 @@ Binary data inserted for `string` type on column `password_digest`
   [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1
   [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" IS NULL LIMIT 1[0m
   [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "tags" ("created_at", "subject", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-08-29 17:32:45.322705"], ["subject", "I'm a tag!"], ["updated_at", "2014-08-29 17:32:45.322705"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TagsController#index as HTML
+  Rendered tags/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (1.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("created_at", "subject", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-08-29 17:32:45.338537"], ["subject", "I'm a tag!"], ["updated_at", "2014-08-29 17:32:45.338537"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TagsController#new as HTML
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("created_at", "subject", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-08-29 17:32:45.344702"], ["subject", "I'm a tag!"], ["updated_at", "2014-08-29 17:32:45.344702"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TagsController#create as HTML
+  Parameters: {"tag"=>{"subject"=>"This Is A Subject!"}}
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "tags" ("created_at", "subject", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-08-29 17:32:45.348374"], ["subject", "This Is A Subject!"], ["updated_at", "2014-08-29 17:32:45.348374"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/tags/2
+Completed 302 Found in 3ms (ActiveRecord: 0.8ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "topics" ("body", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["body", "How I was able to get rid of acne was a miracle."], ["created_at", "2014-08-29 17:32:45.356544"], ["title", "Acne"], ["updated_at", "2014-08-29 17:32:45.356544"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TopicsController#index as HTML
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "topics" ("body", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "How I was able to get rid of acne was a miracle."], ["created_at", "2014-08-29 17:32:45.362884"], ["title", "Acne"], ["updated_at", "2014-08-29 17:32:45.362884"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "topics" ("body", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "How I was able to get rid of acne was a miracle."], ["created_at", "2014-08-29 17:32:45.368637"], ["title", "Acne"], ["updated_at", "2014-08-29 17:32:45.368637"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TopicsController#index as HTML
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "topics" ("body", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["body", "How I was able to get rid of acne was a miracle."], ["created_at", "2014-08-29 17:32:45.372561"], ["title", "Acne"], ["updated_at", "2014-08-29 17:32:45.372561"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TopicsController#create as HTML
+  Parameters: {"topic"=>{"title"=>"MyTitle", "body"=>"MyText"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "topics" ("body", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "MyText"], ["created_at", "2014-08-29 17:32:45.376094"], ["title", "MyTitle"], ["updated_at", "2014-08-29 17:32:45.376094"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/topics/2
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "topics" ("body", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["body", "How I was able to get rid of acne was a miracle."], ["created_at", "2014-08-29 17:32:45.380174"], ["title", "Acne"], ["updated_at", "2014-08-29 17:32:45.380174"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by TopicsController#create as HTML
+  Parameters: {"topic"=>{"title"=>"MyTitle", "body"=>"MyText"}}
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "topics" ("body", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "MyText"], ["created_at", "2014-08-29 17:32:45.382805"], ["title", "MyTitle"], ["updated_at", "2014-08-29 17:32:45.382805"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/topics/2
+Completed 302 Found in 1ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "topics" ("body", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)  [["body", "How I was able to get rid of acne was a miracle."], ["created_at", "2014-08-29 17:32:45.385836"], ["title", "Acne"], ["updated_at", "2014-08-29 17:32:45.385836"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "topics"
+Processing by TopicsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.0ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "topics" WHERE "topics"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/topics
+Completed 302 Found in 1ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "topics"[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "topics" ("body", "created_at", "title", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "How I was able to get rid of acne was a miracle."], ["created_at", "2014-08-29 17:32:45.393917"], ["title", "Acne"], ["updated_at", "2014-08-29 17:32:45.393917"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by TopicsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.0ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "topics" WHERE "topics"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/topics
+Completed 302 Found in 1ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'iamsexy@gmail.com' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" = 'John Doe' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-29 17:32:45.409396"], ["email", "iamsexy@gmail.com"], ["password_digest", "$2a$04$hc9EksuvZXFk9u4rWDPHzenoFgA5iPpQ.HiIY3PvaAlssGSBlguzG"], ["updated_at", "2014-08-29 17:32:45.409396"], ["username", "John Doe"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsersController#new as HTML
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'iamsexy@gmail.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'John Doe' LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-29 17:32:45.418048"], ["email", "iamsexy@gmail.com"], ["password_digest", "$2a$04$M9FHa5klmN9z0U8sigKyxO2ERfCb6qrETv9QAMbWrzUwcth0xOeWO"], ["updated_at", "2014-08-29 17:32:45.418048"], ["username", "John Doe"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"John Doe", "email"=>"iamsexy@gmail.com", "password"=>"[FILTERED]"}}
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'iamsexy@gmail.com' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" = 'John Doe' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Completed 200 OK in 271ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'iamsexy@gmail.com' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" = 'John Doe' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-29 17:32:45.696822"], ["email", "iamsexy@gmail.com"], ["password_digest", "$2a$04$Ym7cOTc78NHNgHZXK/XNN.oS4AihplAVXZoiftEycwD9KOkawhvFy"], ["updated_at", "2014-08-29 17:32:45.696822"], ["username", "John Doe"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users"
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"username"=>"John Doe1", "email"=>"iamsexy@gmail1.com", "password"=>"[FILTERED]"}}
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'iamsexy@gmail1.com' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" = 'John Doe1' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-29 17:32:45.701591"], ["email", "iamsexy@gmail1.com"], ["password_digest", "$2a$04$tYRBIGSPsnuF.ttGz/xDMerGxFxRdKi4Tbtd2OAOkGjiSyBFOx2yS"], ["updated_at", "2014-08-29 17:32:45.701591"], ["username", "John Doe1"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'jwag89@gmail.com' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" = 'Justin W' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-29 17:32:45.707736"], ["email", "jwag89@gmail.com"], ["password_digest", "$2a$04$td7y/Ya9mkhyFOueHVfP4uTHbgXmwXFeFeLovHph7Q/LOpDDhurTC"], ["updated_at", "2014-08-29 17:32:45.707736"], ["username", "Justin W"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "topics" ("body", "created_at", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["body", "I am leaving in 2 weeks"], ["created_at", "2014-08-29 17:32:45.709014"], ["title", "Forget DBC"], ["updated_at", "2014-08-29 17:32:45.709014"], ["user_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "comments" ("body", "created_at", "topic_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["body", "Hello how was your day"], ["created_at", "2014-08-29 17:32:45.714292"], ["topic_id", 1], ["updated_at", "2014-08-29 17:32:45.714292"], ["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'jwag89@gmail.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'Justin W' LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-29 17:32:45.721300"], ["email", "jwag89@gmail.com"], ["password_digest", "$2a$04$jswoPyvQh7E8YNTHtQ3ymODG5y4S34.jFMAGhgw5Dyvx78RuYcnJW"], ["updated_at", "2014-08-29 17:32:45.721300"], ["username", "Justin W"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "topics" ("body", "created_at", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["body", "I am leaving in 2 weeks"], ["created_at", "2014-08-29 17:32:45.723286"], ["title", "Forget DBC"], ["updated_at", "2014-08-29 17:32:45.723286"], ["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "comments" ("body", "created_at", "topic_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Hello how was your day"], ["created_at", "2014-08-29 17:32:45.725407"], ["topic_id", 1], ["updated_at", "2014-08-29 17:32:45.725407"], ["user_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'jwag89@gmail.com' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" = 'Justin W' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-29 17:32:45.731837"], ["email", "jwag89@gmail.com"], ["password_digest", "$2a$04$hYtaIc3WWVTKNDYv9fII5Ov13rXjD6wc4s62GnJGuEdmN56WpuTk6"], ["updated_at", "2014-08-29 17:32:45.731837"], ["username", "Justin W"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "topics" ("body", "created_at", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["body", "I am leaving in 2 weeks"], ["created_at", "2014-08-29 17:32:45.733377"], ["title", "Forget DBC"], ["updated_at", "2014-08-29 17:32:45.733377"], ["user_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "comments" ("body", "created_at", "topic_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["body", "Hello how was your day"], ["created_at", "2014-08-29 17:32:45.734676"], ["topic_id", 1], ["updated_at", "2014-08-29 17:32:45.734676"], ["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'jwag89@gmail.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'Justin W' LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-29 17:32:45.739772"], ["email", "jwag89@gmail.com"], ["password_digest", "$2a$04$P8ItYP/FJgp/AUUZ/0Gx.eJ4qlqpe/ipJp9mLgPrksKRZ7f5Fq5vG"], ["updated_at", "2014-08-29 17:32:45.739772"], ["username", "Justin W"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "topics" ("body", "created_at", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["body", "I am leaving in 2 weeks"], ["created_at", "2014-08-29 17:32:45.741011"], ["title", "Forget DBC"], ["updated_at", "2014-08-29 17:32:45.741011"], ["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "comments" ("body", "created_at", "topic_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Hello how was your day"], ["created_at", "2014-08-29 17:32:45.742267"], ["topic_id", 1], ["updated_at", "2014-08-29 17:32:45.742267"], ["user_id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'jwag89@gmail.com' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" = 'Justin W' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-29 17:32:45.748091"], ["email", "jwag89@gmail.com"], ["password_digest", "$2a$04$L.PEyQvo0y/1MWDRSCTUyejQTN2.IloJmyaNtFIrCbxjFeta/E7.G"], ["updated_at", "2014-08-29 17:32:45.748091"], ["username", "Justin W"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "topics" ("body", "created_at", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["body", "I am leaving in 2 weeks"], ["created_at", "2014-08-29 17:32:45.749473"], ["title", "Forget DBC"], ["updated_at", "2014-08-29 17:32:45.749473"], ["user_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "comments" ("body", "created_at", "topic_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["body", "Hello how was your day"], ["created_at", "2014-08-29 17:32:45.750689"], ["topic_id", 1], ["updated_at", "2014-08-29 17:32:45.750689"], ["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'jwag89@gmail.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'Justin W' LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-29 17:32:45.758932"], ["email", "jwag89@gmail.com"], ["password_digest", "$2a$04$ceUN1PdysKhkxsvPjczwceumxp2BchtIjmttrc1OLTdV.Z5pdZJ.O"], ["updated_at", "2014-08-29 17:32:45.758932"], ["username", "Justin W"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "topics" ("body", "created_at", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["body", "I am leaving in 2 weeks"], ["created_at", "2014-08-29 17:32:45.760760"], ["title", "Forget DBC"], ["updated_at", "2014-08-29 17:32:45.760760"], ["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "comments" ("body", "created_at", "topic_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Hello how was your day"], ["created_at", "2014-08-29 17:32:45.762294"], ["topic_id", 1], ["updated_at", "2014-08-29 17:32:45.762294"], ["user_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'jwag89@gmail.com' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" = 'Justin W' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-29 17:32:45.772702"], ["email", "jwag89@gmail.com"], ["password_digest", "$2a$04$4ZaelQntdlc2HErq0nh6GODXWXQ81lJmLN0Z90z.nswXjG8w7zTHG"], ["updated_at", "2014-08-29 17:32:45.772702"], ["username", "Justin W"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "topics" ("body", "created_at", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["body", "I am leaving in 2 weeks"], ["created_at", "2014-08-29 17:32:45.774204"], ["title", "Forget DBC"], ["updated_at", "2014-08-29 17:32:45.774204"], ["user_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "comments" ("body", "created_at", "topic_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["body", "Hello how was your day"], ["created_at", "2014-08-29 17:32:45.775421"], ["topic_id", 1], ["updated_at", "2014-08-29 17:32:45.775421"], ["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'jwag89@gmail.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'Justin W' LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-29 17:32:45.779467"], ["email", "jwag89@gmail.com"], ["password_digest", "$2a$04$e4.xOwW.8PT.Ip4zF2nonusz.k0jrO3VTFNro4vRJTzNTYmOjApXy"], ["updated_at", "2014-08-29 17:32:45.779467"], ["username", "Justin W"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "topics" ("body", "created_at", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["body", "I am leaving in 2 weeks"], ["created_at", "2014-08-29 17:32:45.780516"], ["title", "Forget DBC"], ["updated_at", "2014-08-29 17:32:45.780516"], ["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "comments" ("body", "created_at", "topic_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Hello how was your day"], ["created_at", "2014-08-29 17:32:45.781570"], ["topic_id", 1], ["updated_at", "2014-08-29 17:32:45.781570"], ["user_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'jwag89@gmail.com' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" = 'Justin W' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-29 17:32:45.786557"], ["email", "jwag89@gmail.com"], ["password_digest", "$2a$04$9BDZCaTDIFy0SavMPvWwdOF1PRaBJcvHiXmsNYGrcBe2iZ.Z0ZxXW"], ["updated_at", "2014-08-29 17:32:45.786557"], ["username", "Justin W"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "topics" ("body", "created_at", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["body", "I am leaving in 2 weeks"], ["created_at", "2014-08-29 17:32:45.788206"], ["title", "Forget DBC"], ["updated_at", "2014-08-29 17:32:45.788206"], ["user_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "comments" ("body", "created_at", "topic_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["body", "Hello how was your day"], ["created_at", "2014-08-29 17:32:45.789809"], ["topic_id", 1], ["updated_at", "2014-08-29 17:32:45.789809"], ["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'jwag89@gmail.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'Justin W' LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-29 17:32:45.794548"], ["email", "jwag89@gmail.com"], ["password_digest", "$2a$04$csuNdCnhhKFgIm7c3PpL9u2EQ61NbN6eSGrOSKO4zJVOOWY3zkSGG"], ["updated_at", "2014-08-29 17:32:45.794548"], ["username", "Justin W"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "topics" ("body", "created_at", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["body", "I am leaving in 2 weeks"], ["created_at", "2014-08-29 17:32:45.795669"], ["title", "Forget DBC"], ["updated_at", "2014-08-29 17:32:45.795669"], ["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "comments" ("body", "created_at", "topic_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Hello how was your day"], ["created_at", "2014-08-29 17:32:45.796794"], ["topic_id", 1], ["updated_at", "2014-08-29 17:32:45.796794"], ["user_id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'jwag89@gmail.com' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" = 'Justin W' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-29 17:32:45.801383"], ["email", "jwag89@gmail.com"], ["password_digest", "$2a$04$JTkJSF23lt6Tx03l5pVBxOgw7tgTWtNPt06/6nc53tVunhBXrH7Vy"], ["updated_at", "2014-08-29 17:32:45.801383"], ["username", "Justin W"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "topics" ("body", "created_at", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["body", "I am leaving in 2 weeks"], ["created_at", "2014-08-29 17:32:45.802586"], ["title", "Forget DBC"], ["updated_at", "2014-08-29 17:32:45.802586"], ["user_id", 1]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "comments" ("body", "created_at", "topic_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["body", "Hello how was your day"], ["created_at", "2014-08-29 17:32:45.804625"], ["topic_id", 1], ["updated_at", "2014-08-29 17:32:45.804625"], ["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'jwag89@gmail.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'Justin W' LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-29 17:32:45.810068"], ["email", "jwag89@gmail.com"], ["password_digest", "$2a$04$k4NQKXmUruuVvQtUQNZKr.66SiQvhuwmexHDtUe4aOaPTSwWVfnOu"], ["updated_at", "2014-08-29 17:32:45.810068"], ["username", "Justin W"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "topics" ("body", "created_at", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["body", "I am leaving in 2 weeks"], ["created_at", "2014-08-29 17:32:45.811210"], ["title", "Forget DBC"], ["updated_at", "2014-08-29 17:32:45.811210"], ["user_id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "comments" ("body", "created_at", "topic_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Hello how was your day"], ["created_at", "2014-08-29 17:32:45.812355"], ["topic_id", 1], ["updated_at", "2014-08-29 17:32:45.812355"], ["user_id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'jwag89@gmail.com' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" = 'Justin' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-29 17:32:45.817335"], ["email", "jwag89@gmail.com"], ["password_digest", "$2a$04$IM0j8qpAZp3F1lr2JP..Gu.y0HrIRVbHllO2xKzd96NBv2/KJuxxW"], ["updated_at", "2014-08-29 17:32:45.817335"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'jwag89@gmail.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'Justin' LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-29 17:32:45.821265"], ["email", "jwag89@gmail.com"], ["password_digest", "$2a$04$HoAgFaGjqlYUi2OGw3/YceBcdNA0NcAr1MyWt2vtiJwLD6x7bHDhK"], ["updated_at", "2014-08-29 17:32:45.821265"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'jwag89@gmail.com' LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" = 'Justin' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-29 17:32:45.825333"], ["email", "jwag89@gmail.com"], ["password_digest", "$2a$04$s/eYN49NrY8rr0.nIJaguuAhAKxE4OZ2jWpiidFjV3zyXLi.6PiTi"], ["updated_at", "2014-08-29 17:32:45.825333"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'jwag89@gmail.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'Justin' LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-29 17:32:45.829397"], ["email", "jwag89@gmail.com"], ["password_digest", "$2a$04$bEVU5Okim65IQelT/0pauOzKHDIHgVL//L2mzlluMQs2gZg2CYZ.6"], ["updated_at", "2014-08-29 17:32:45.829397"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'jwag89@gmail.com' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" = 'Justin' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-29 17:32:45.833330"], ["email", "jwag89@gmail.com"], ["password_digest", "$2a$04$ZGRufuSHxcfPcUOvDyR3B.EkF1U.qaDfMZ7nSnovKLkOUFEKfj0ma"], ["updated_at", "2014-08-29 17:32:45.833330"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'jwag89@gmail.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'Justin' LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-29 17:32:45.837343"], ["email", "jwag89@gmail.com"], ["password_digest", "$2a$04$MoitfLTqbC8MSKKqbT7oQ.Vn1vfSqVRx.NL0zIwb2A/JcTwoffn0m"], ["updated_at", "2014-08-29 17:32:45.837343"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'jwag89@gmail.com' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" = 'Justin' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-29 17:32:45.841577"], ["email", "jwag89@gmail.com"], ["password_digest", "$2a$04$H5o/8BOc.QwrtqOd/88GS.50l8tVQEkPcb.tTXYmfktAIxjKn7s/G"], ["updated_at", "2014-08-29 17:32:45.841577"], ["username", "Justin"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" IS NULL LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" IS NULL LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'jwag89@gmail.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'Justin' LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-29 17:32:45.852198"], ["email", "jwag89@gmail.com"], ["password_digest", "$2a$04$JWYSZpm/StqYl6K2z9P2h.i9ZVXiLz3Gc5cGViIQADzL3q35vbIEm"], ["updated_at", "2014-08-29 17:32:45.852198"], ["username", "Justin"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" IS NULL LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
