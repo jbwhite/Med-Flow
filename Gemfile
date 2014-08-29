@@ -39,6 +39,8 @@ gem 'travis'
 
 gem 'travis-lint'
 
+gem 'simplecov'
+
 group :development, :test do
 	gem 'sqlite3'
 	gem 'rspec-rails'
