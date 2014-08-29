@@ -26,6 +26,3 @@ describe TagsController do
   end
 
 end
-
-
-

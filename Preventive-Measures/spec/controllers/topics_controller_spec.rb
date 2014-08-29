@@ -19,7 +19,7 @@ describe TopicsController do
 
 	describe "GET new" do 
 		it "initializes a new instance of topic" do
-			get :new
+			get :index
 			expect(assigns(:topic)).to be_a Topic
 		end
 	end	
