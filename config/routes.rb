@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources(:topics, {only: [:index, :create, :show, :edit, :update, :destroy]})  do
     resources :comments
+    resources :scores, {only: :create}
   end
 
   resources :tags
@@ -17,7 +18,7 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new', :as => :login
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
-  
+
   root to: "topics#index"
 
 
