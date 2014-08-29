@@ -20,4 +20,10 @@ describe User do
 			expect(user.password).to eq("jwag")
 		end
 	end
+
+	describe " valid params" do 
+		it "should accept 3 valid parameters" do 
+			expect { User.create(:username, :email, :password) }.to raise_error(ArgumentError)
+		end
+	end
 end
