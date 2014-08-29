@@ -2,5 +2,8 @@
 
 FactoryGirl.define do
   factory :tagation do
+    user factory: :user
+    tag factory: :tag
+    tagable factory: :comment
   end
 end
