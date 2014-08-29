@@ -2,6 +2,6 @@
 
 FactoryGirl.define do
   factory :tag do
-    subject "MyString"
+    subject "This Is A Subject!"
   end
 end
