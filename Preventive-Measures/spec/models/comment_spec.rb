@@ -11,4 +11,10 @@ describe Comment do
 			expect(comment.body).to eq("Hello how was your day")
 		end
 	end
+
+	describe "valids params" do 
+		it "accepts only one parameter" do 
+			expect { Comment.create(:body) }.to raise_error(ArgumentError)
+		end
+	end
 end
