@@ -56,7 +56,13 @@ describe User do
 	end
 
 	describe "associations" do 
-		it { should have_many(:topics)}
+		context "user has many topics" do 
+			it { should have_many(:topics)}
+		end
+
+		context "user has many comments" do 
+			it { should have_many(:comments) }
+		end
 	end
 end
 
