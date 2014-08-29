@@ -54,6 +54,10 @@ describe User do
 			it { should ensure_length_of(:password).is_at_least(4) }
 		end
 	end
+
+	describe "associations" do 
+		it { should have_many(:topics)}
+	end
 end
 
 
