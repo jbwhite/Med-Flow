@@ -1,4 +1,5 @@
 require 'rails_helper'
+
 describe Topic do
 	let!(:user) { User.create(username: "Justin W", email: "jwag89@gmail.com", password:"jwag") }
 	let!(:topic) { Topic.create(title:"Forget DBC", body:"I am leaving in 2 weeks", user_id: 1) }
