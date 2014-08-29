@@ -15,4 +15,10 @@ describe Topic do
 			expect(topic.body).to eq("I am leaving in 2 weeks")
 		end
 	end
+
+	describe "valids params" do 
+		it "accepts two parameter" do 
+			expect { Topic.create(:title, :body) }.to raise_error(ArgumentError)
+		end
+	end
 end
