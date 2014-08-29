@@ -2,5 +2,12 @@
 
 <p><%= @topic.body %></p>
 
+<%= link_to 'Edit', edit_topic_path(@topic) %><br>
 <%= link_to "Delete", topic_path(@topic), method: :delete %><br>
 <%= link_to "Back", topics_path %>
+
+<h2>Comments</h2>
+<%= render @topic.comments %>
+<h2>Add a comment:</h2>
+<%= render "comments/form" %>
+
