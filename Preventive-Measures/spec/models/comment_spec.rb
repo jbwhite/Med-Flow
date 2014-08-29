@@ -19,6 +19,12 @@ describe Comment do
 	end
 
 	describe "#associations" do 
-		it { should belong_to(:user) }
+		context "should belong to user" do 
+			it { should belong_to(:user) }
+		end
+
+		context "should belong to topic" do 
+			it { should belong_to(:topic) }
+		end
 	end
 end
