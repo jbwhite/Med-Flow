@@ -14,4 +14,10 @@ describe User do
 			expect(user.email).to eq("jwag89@gmail.com")
 		end
 	end
+
+	context "password" do 
+		it "should return the password" do 
+			expect(user.password).to eq("jwag")
+		end
+	end
 end
