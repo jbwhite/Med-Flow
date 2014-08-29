@@ -49,5 +49,14 @@ describe User do
 		context "validates uniqueness of email" do 
 			it { should validate_uniqueness_of(:email) }
 		end
+
+		context "validate length of password to be no less than 4 characters" do 
+			it { should ensure_length_of(:password).is_at_least(4) }
+		end
 	end
 end
+
+
+
+
+
