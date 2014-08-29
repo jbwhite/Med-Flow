@@ -27,4 +27,12 @@ describe Topic do
 			it { should belong_to(:user) }
 		end
 	end
+
+	context "topic should have many comments" do 
+			it { should have_many(:comments) }
+		end
+
+	context "topic should have many tags" do 
+		it { should have_many(:tags) }
+	end
 end
