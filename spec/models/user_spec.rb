@@ -21,9 +21,15 @@ describe User do
 		end
 	end
 
-	describe "Invalid params" do 
+	describe "Invalid username" do 
 		it "is invalid without a username" do 
 			expect { User.new(:user, username: nil) }.to raise_error(ArgumentError)
+		end
+
+		context "invalid email" do 
+			it "is invalid without an email" do 
+				expect { User.new(:user, email: nil) }.to raise_error(ArgumentError)
+			end
 		end
 	end
 end
