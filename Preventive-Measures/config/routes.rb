@@ -7,9 +7,9 @@ Rails.application.routes.draw do
 
   resources :tags
 
-  resources :users
+  resources :users, only: [:show, :edit, :update, :destroy]
 
-<<<<<<< HEAD
+
   get 'signup' => 'users#new', :as => :signup
   post 'signup' => 'users#create'
 
@@ -17,10 +17,10 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new', :as => :login
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
-=======
+  
   root to: "topics#index"
 
->>>>>>> master
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,16 +1,17 @@
-<%= form_for :session do |f| %>
-  <% if flash[:error] %>
-    <p> <%= flash[:error] %></p>
-  <% end %>
-  <p>
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.submit value:"Login" %>
-  </p>
+<h1>SIGN-IN</h1>
+
+<%= form_tag login_path do |f| %>
+
+<p>
+  <%= label_tag :email, "Email" %></br>
+  <%= text_field_tag :email %></br>
+</p>
+
+<p>
+  <%= label_tag :password, "Password" %></br>
+  <%= password_field_tag :password %></br></br>
+</p>
+
+<%= submit_tag "Log In" %>
+
 <% end %>
