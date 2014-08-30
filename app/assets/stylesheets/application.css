@@ -89,6 +89,7 @@ h4{
 	width: 250px;
 	height: 30px;
 }
+
 .topic {
 	background: #C4E8FF;
 	margin-top: 10px;
@@ -178,3 +179,12 @@ input[type=text], input[type=password], textarea {
 	clear: both;
 	display: hidden;
 	}
+
+input[type=submit].tagButton {
+	font-size: 0.6em;
+	padding: 3px;
+
+}
+
+	
+}

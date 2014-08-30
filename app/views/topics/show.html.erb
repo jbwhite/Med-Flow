@@ -2,9 +2,9 @@
 
 <p><%= @topic.body %></p>
 
-<%= link_to 'Edit', edit_topic_path(@topic) %><br>
+<%= link_to 'Edit', edit_topic_path(@topic) %> 
 <%= link_to "Delete", topic_path(@topic), method: :delete,
-                                          data: { confirm: 'Are you sure?' }%><br>
+                                          data: { confirm: 'Are you sure?' }%> 
 <%= link_to "Back", topics_path %>
 
 <div class="addTag">
