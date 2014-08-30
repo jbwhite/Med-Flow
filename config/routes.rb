@@ -8,6 +8,10 @@ Rails.application.routes.draw do
     resources :scores, {only: :create}
   end
 
+  resources :comments do
+    resources :tags
+  end
+
   resources :tags do
     resources :tagations, {only: :create}
   end

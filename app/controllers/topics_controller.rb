@@ -8,8 +8,6 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
-    # @tags = Tag.all
-    @tag = Tag.new
   end
 
   def create

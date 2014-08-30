@@ -18,12 +18,21 @@ class TagsController < ApplicationController
 
   def create
     @tag = Tag.find_or_create_by(tag_params)
-    puts "hi" if params[:topic_id] == nil
-    puts "hello" unless params[:comment_id] == nil
-    puts "*********************************"
-    @topic = Topic.find(params[:topic_id])
+
+    if params[:topic_id]
+      tagable = Topic.find(params[:topic_id])
+      @topic = tagable
+      tagable_type = "Topic"
+    else
+      tagable = Comment.find(params[:comment_id])
+      @topic = Topic.find(tagable.topic.id)
+      tagable_type = "Comment"
+    end
+    
     user = User.find(session[:user_id])
-    Tagation.create(tagable_id: @topic.id, tagable_type: "Topic", user_id: user.id, tag_id: @tag.id)
+    
+    Tagation.create(tagable_id: tagable.id, tagable_type: tagable_type, user_id: user.id, tag_id: @tag.id)
+    
     redirect_to @topic
   end
 
