@@ -28,7 +28,9 @@
 <p>
   <ul class="taglist">
 <% @topic.tags.uniq.each do |tag| %>
-  <li class ="tag"> <%= link_to tag.subject, tag %></li>
+  <% unless tag.id == nil %>
+    <li class ="tag"> <%= link_to tag.subject, tag %></li>
+  <% end %>
 <% end %>
   </ul>
 </p>
