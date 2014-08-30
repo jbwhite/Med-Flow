@@ -16747,3 +16747,1367 @@ Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 16:50:49 
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 16:50:49 -0400
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:53:26 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (13.3ms)
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (4.0ms)
+  Rendered comments/_comment.html.erb (5.1ms)
+  Rendered tags/_comment_form.html.erb (1.8ms)
+  Rendered comments/_comment.html.erb (2.7ms)
+  Rendered comments/_form.html.erb (1.8ms)
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 5], ["tagable_type", "Comment"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:53:26.522658"], ["updated_at", "2014-08-30 20:53:26.522658"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:53:26.528372"], ["tag_id", 16], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:53:26.528372"]]
+  [1m[36m (8.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 7], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 20:53:26.543116"], ["updated_at", "2014-08-30 20:53:26.543116"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 20:53:26.547084"], ["tag_id", 17], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:53:26.547084"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  Rendered topics/show.html.erb within layouts/application (70.0ms)
+Completed 200 OK in 83ms (Views: 61.7ms | ActiveRecord: 13.2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 16:53:26 -0400
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 16:53:26 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 16:53:26 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 16:53:26 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 16:53:26 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 16:53:26 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 16:53:26 -0400
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:53:49 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (12.0ms)
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (5.1ms)
+  Rendered comments/_comment.html.erb (6.4ms)
+  Rendered tags/_comment_form.html.erb (3.0ms)
+  Rendered comments/_comment.html.erb (4.6ms)
+  Rendered comments/_form.html.erb (2.1ms)
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 5], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 20:53:49.856607"], ["updated_at", "2014-08-30 20:53:49.856607"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 20:53:49.861541"], ["tag_id", 18], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:53:49.861541"]]
+  [1m[35m (8.1ms)[0m  commit transaction
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 7], ["tagable_type", "Comment"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:53:49.872932"], ["updated_at", "2014-08-30 20:53:49.872932"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:53:49.874470"], ["tag_id", 19], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:53:49.874470"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (64.2ms)
+Completed 200 OK in 78ms (Views: 57.6ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 16:53:49 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 16:53:49 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 16:53:49 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 16:53:49 -0400
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 16:53:49 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 16:53:49 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 16:53:49 -0400
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:53:51 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (2.6ms)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (1.7ms)
+  Rendered comments/_comment.html.erb (2.5ms)
+  Rendered tags/_comment_form.html.erb (1.8ms)
+  Rendered comments/_comment.html.erb (2.6ms)
+  Rendered comments/_form.html.erb (1.6ms)
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 5], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:53:51.366536"], ["updated_at", "2014-08-30 20:53:51.366536"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:53:51.369075"], ["tag_id", 20], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:53:51.369075"]]
+  [1m[36m (9.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 7], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 20:53:51.384366"], ["updated_at", "2014-08-30 20:53:51.384366"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 20:53:51.386741"], ["tag_id", 21], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:53:51.386741"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  Rendered topics/show.html.erb within layouts/application (52.7ms)
+Completed 200 OK in 58ms (Views: 44.5ms | ActiveRecord: 12.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 16:53:51 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 16:53:51 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 16:53:51 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 16:53:51 -0400
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 16:53:51 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 16:53:51 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 16:53:51 -0400
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:54:52 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (12.1ms)
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (4.3ms)
+  Rendered comments/_comment.html.erb (5.2ms)
+  Rendered tags/_comment_form.html.erb (1.9ms)
+  Rendered comments/_comment.html.erb (2.6ms)
+  Rendered comments/_form.html.erb (1.6ms)
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 5], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 20:54:52.620827"], ["updated_at", "2014-08-30 20:54:52.620827"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 20:54:52.627011"], ["tag_id", 22], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:54:52.627011"]]
+  [1m[35m (9.1ms)[0m  commit transaction
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 7], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:54:52.640827"], ["updated_at", "2014-08-30 20:54:52.640827"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:54:52.642948"], ["tag_id", 23], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:54:52.642948"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (64.7ms)
+Completed 200 OK in 78ms (Views: 56.6ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 16:54:52 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 16:54:52 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 16:54:52 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 16:54:52 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 16:54:52 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 16:54:52 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 16:54:52 -0400
+
+
+Started POST "/topics/1/comments" for 127.0.0.1 at 2014-08-30 16:55:11 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MXlv5rmTwEk12V7RGR+9bZAY1a8OEm/EvVYtyINcMOI=", "comment"=>{"body"=>""}, "commit"=>"Create Comment", "topic_id"=>"1"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/topics/1
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:55:11 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.2ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (1.8ms)
+  Rendered comments/_comment.html.erb (2.7ms)
+  Rendered tags/_comment_form.html.erb (2.1ms)
+  Rendered comments/_comment.html.erb (3.0ms)
+  Rendered comments/_form.html.erb (1.7ms)
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 5], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 20:55:11.121293"], ["updated_at", "2014-08-30 20:55:11.121293"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 20:55:11.123303"], ["tag_id", 24], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:55:11.123303"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 7], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:55:11.127208"], ["updated_at", "2014-08-30 20:55:11.127208"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:55:11.129019"], ["tag_id", 25], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:55:11.129019"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (33.8ms)
+Completed 200 OK in 40ms (Views: 35.2ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 16:55:11 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:11 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:11 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:11 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 16:55:11 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:11 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:11 -0400
+
+
+Started POST "/topics/1/comments" for 127.0.0.1 at 2014-08-30 16:55:18 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MXlv5rmTwEk12V7RGR+9bZAY1a8OEm/EvVYtyINcMOI=", "comment"=>{"body"=>"comment #2\r\n"}, "commit"=>"Create Comment", "topic_id"=>"1"}
+  [1m[35mTopic Load (0.2ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "comments" ("body", "created_at", "topic_id", "updated_at") VALUES (?, ?, ?, ?)  [["body", "comment #2\r\n"], ["created_at", "2014-08-30 20:55:18.495855"], ["topic_id", 1], ["updated_at", "2014-08-30 20:55:18.495855"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/topics/1
+Completed 302 Found in 9ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:55:18 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (3.0ms)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (5.0ms)
+  Rendered comments/_comment.html.erb (6.3ms)
+  Rendered tags/_comment_form.html.erb (2.5ms)
+  Rendered comments/_comment.html.erb (3.6ms)
+  Rendered tags/_comment_form.html.erb (1.8ms)
+  Rendered comments/_comment.html.erb (2.7ms)
+  Rendered comments/_form.html.erb (1.6ms)
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 5], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:55:18.539275"], ["updated_at", "2014-08-30 20:55:18.539275"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:55:18.541097"], ["tag_id", 26], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:55:18.541097"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 7], ["tagable_type", "Comment"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 20:55:18.544658"], ["updated_at", "2014-08-30 20:55:18.544658"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 20:55:18.546508"], ["tag_id", 27], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:55:18.546508"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 11], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:55:18.550743"], ["updated_at", "2014-08-30 20:55:18.550743"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:55:18.552797"], ["tag_id", 28], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:55:18.552797"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (47.1ms)
+Completed 200 OK in 53ms (Views: 46.5ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 16:55:18 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:18 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:18 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 16:55:18 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:18 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:18 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:18 -0400
+
+
+Started DELETE "/topics/1/comments/11" for 127.0.0.1 at 2014-08-30 16:55:25 -0400
+Processing by CommentsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"MXlv5rmTwEk12V7RGR+9bZAY1a8OEm/EvVYtyINcMOI=", "topic_id"=>"1", "id"=>"11"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT  "comments".* FROM "comments"  WHERE "comments"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "comments" WHERE "comments"."id" = ?[0m  [["id", 11]]
+  [1m[35m (8.1ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/topics/1
+Completed 302 Found in 12ms (ActiveRecord: 8.8ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:55:25 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (3.7ms)
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (2.7ms)
+  Rendered comments/_comment.html.erb (4.0ms)
+  Rendered tags/_comment_form.html.erb (2.1ms)
+  Rendered comments/_comment.html.erb (3.0ms)
+  Rendered comments/_form.html.erb (1.7ms)
+  [1m[36mTag Load (0.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 5], ["tagable_type", "Comment"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 20:55:25.844950"], ["updated_at", "2014-08-30 20:55:25.844950"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 20:55:25.846994"], ["tag_id", 29], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:55:25.846994"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 7], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:55:25.851124"], ["updated_at", "2014-08-30 20:55:25.851124"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:55:25.852915"], ["tag_id", 30], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:55:25.852915"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (38.1ms)
+Completed 200 OK in 44ms (Views: 38.5ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 16:55:25 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:25 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:25 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 16:55:25 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:25 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:25 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:25 -0400
+
+
+Started POST "/topics/1/comments" for 127.0.0.1 at 2014-08-30 16:55:34 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MXlv5rmTwEk12V7RGR+9bZAY1a8OEm/EvVYtyINcMOI=", "comment"=>{"body"=>"comment comment comment"}, "commit"=>"Create Comment", "topic_id"=>"1"}
+  [1m[35mTopic Load (0.2ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "comments" ("body", "created_at", "topic_id", "updated_at") VALUES (?, ?, ?, ?)  [["body", "comment comment comment"], ["created_at", "2014-08-30 20:55:34.720989"], ["topic_id", 1], ["updated_at", "2014-08-30 20:55:34.720989"]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/topics/1
+Completed 302 Found in 16ms (ActiveRecord: 9.6ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:55:34 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (2.4ms)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (3.3ms)
+  Rendered comments/_comment.html.erb (4.4ms)
+  Rendered tags/_comment_form.html.erb (1.9ms)
+  Rendered comments/_comment.html.erb (2.8ms)
+  Rendered tags/_comment_form.html.erb (1.7ms)
+  Rendered comments/_comment.html.erb (2.5ms)
+  Rendered comments/_form.html.erb (1.6ms)
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 5], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:55:34.766594"], ["updated_at", "2014-08-30 20:55:34.766594"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:55:34.768930"], ["tag_id", 31], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:55:34.768930"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 7], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 20:55:34.773065"], ["updated_at", "2014-08-30 20:55:34.773065"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 20:55:34.774759"], ["tag_id", 32], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:55:34.774759"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 12], ["tagable_type", "Comment"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:55:34.778308"], ["updated_at", "2014-08-30 20:55:34.778308"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:55:34.780654"], ["tag_id", 33], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:55:34.780654"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (42.8ms)
+Completed 200 OK in 49ms (Views: 42.7ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:34 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 16:55:34 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:34 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:34 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:34 -0400
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 16:55:34 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:34 -0400
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:55:38 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (2.2ms)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (2.1ms)
+  Rendered comments/_comment.html.erb (3.0ms)
+  Rendered tags/_comment_form.html.erb (2.0ms)
+  Rendered comments/_comment.html.erb (2.8ms)
+  Rendered tags/_comment_form.html.erb (1.6ms)
+  Rendered comments/_comment.html.erb (2.4ms)
+  Rendered comments/_form.html.erb (2.2ms)
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 5], ["tagable_type", "Comment"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:55:38.699437"], ["updated_at", "2014-08-30 20:55:38.699437"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:55:38.701204"], ["tag_id", 34], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:55:38.701204"]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 7], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 20:55:38.714517"], ["updated_at", "2014-08-30 20:55:38.714517"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 20:55:38.716938"], ["tag_id", 35], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:55:38.716938"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 12], ["tagable_type", "Comment"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:55:38.720442"], ["updated_at", "2014-08-30 20:55:38.720442"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:55:38.722203"], ["tag_id", 36], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:55:38.722203"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (49.8ms)
+Completed 200 OK in 56ms (Views: 41.8ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 16:55:38 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 16:55:38 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:38 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:38 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:38 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:38 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:38 -0400
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:55:41 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (2.0ms)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (2.4ms)
+  Rendered comments/_comment.html.erb (3.3ms)
+  Rendered tags/_comment_form.html.erb (1.9ms)
+  Rendered comments/_comment.html.erb (2.8ms)
+  Rendered tags/_comment_form.html.erb (2.7ms)
+  Rendered comments/_comment.html.erb (3.9ms)
+  Rendered comments/_form.html.erb (1.6ms)
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 5], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:55:41.386167"], ["updated_at", "2014-08-30 20:55:41.386167"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:55:41.388240"], ["tag_id", 37], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:55:41.388240"]]
+  [1m[36m (8.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 7], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 20:55:41.402239"], ["updated_at", "2014-08-30 20:55:41.402239"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 20:55:41.405176"], ["tag_id", 38], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:55:41.405176"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 12], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:55:41.409129"], ["updated_at", "2014-08-30 20:55:41.409129"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:55:41.411170"], ["tag_id", 39], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:55:41.411170"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (54.4ms)
+Completed 200 OK in 60ms (Views: 46.3ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 16:55:41 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:41 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:41 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:41 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:41 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 16:55:41 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:41 -0400
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:55:43 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (2.5ms)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (2.0ms)
+  Rendered comments/_comment.html.erb (2.8ms)
+  Rendered tags/_comment_form.html.erb (2.0ms)
+  Rendered comments/_comment.html.erb (2.7ms)
+  Rendered tags/_comment_form.html.erb (1.8ms)
+  Rendered comments/_comment.html.erb (2.6ms)
+  Rendered comments/_form.html.erb (1.9ms)
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 5], ["tagable_type", "Comment"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:55:43.496351"], ["updated_at", "2014-08-30 20:55:43.496351"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:55:43.498134"], ["tag_id", 40], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:55:43.498134"]]
+  [1m[36m (8.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 7], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 20:55:43.510928"], ["updated_at", "2014-08-30 20:55:43.510928"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 20:55:43.513038"], ["tag_id", 41], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:55:43.513038"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 12], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:55:43.517339"], ["updated_at", "2014-08-30 20:55:43.517339"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:55:43.519394"], ["tag_id", 42], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:55:43.519394"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (52.4ms)
+Completed 200 OK in 58ms (Views: 44.1ms | ActiveRecord: 12.4ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 16:55:43 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:43 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:43 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 16:55:43 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:43 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:43 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 16:55:43 -0400
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:57:44 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (12.1ms)
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (14.5ms)
+  Rendered comments/_comment.html.erb (15.2ms)
+  Rendered topics/show.html.erb within layouts/application (37.9ms)
+Completed 500 Internal Server Error in 49ms
+
+ActionView::Template::Error (undefined method `subject' for #<Comment:0x00000102156d48>):
+    2: 
+    3:   <div class="actions">
+    4:     <%= f.label :subject %><br>
+    5:     <%= f.text_field :subject %>
+    6:     <%= f.submit %>
+    7:   </div>
+    8: <% end %>
+  app/views/tags/_comment_form.html.erb:5:in `block in _app_views_tags__comment_form_html_erb__3100111669482692854_2156941540'
+  app/views/tags/_comment_form.html.erb:1:in `_app_views_tags__comment_form_html_erb__3100111669482692854_2156941540'
+  app/views/comments/_comment.html.erb:7:in `_app_views_comments__comment_html_erb___3552013599340742711_2236427400'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb__4576131995156786520_2165834460'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb__4576131995156786520_2165834460'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.5ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:57:55 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (2.2ms)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (3.9ms)
+  Rendered comments/_comment.html.erb (4.9ms)
+  Rendered tags/_comment_form.html.erb (1.8ms)
+  Rendered comments/_comment.html.erb (2.7ms)
+  Rendered tags/_comment_form.html.erb (1.9ms)
+  Rendered comments/_comment.html.erb (2.7ms)
+  Rendered comments/_form.html.erb (1.7ms)
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 5], ["tagable_type", "Comment"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:57:55.183553"], ["updated_at", "2014-08-30 20:57:55.183553"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:57:55.189018"], ["tag_id", 43], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:57:55.189018"]]
+  [1m[36m (8.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 7], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 20:57:55.201664"], ["updated_at", "2014-08-30 20:57:55.201664"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 20:57:55.203773"], ["tag_id", 44], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:57:55.203773"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 12], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:57:55.207916"], ["updated_at", "2014-08-30 20:57:55.207916"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:57:55.209944"], ["tag_id", 45], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:57:55.209944"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (55.9ms)
+Completed 200 OK in 61ms (Views: 47.2ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 16:57:55 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 16:57:55 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 16:57:55 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 16:57:55 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 16:57:55 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 16:57:55 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 16:57:55 -0400
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:58:01 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.2ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (2.9ms)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (2.2ms)
+  Rendered comments/_comment.html.erb (3.1ms)
+  Rendered tags/_comment_form.html.erb (2.3ms)
+  Rendered comments/_comment.html.erb (3.3ms)
+  Rendered tags/_comment_form.html.erb (1.8ms)
+  Rendered comments/_comment.html.erb (2.6ms)
+  Rendered comments/_form.html.erb (1.6ms)
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 5], ["tagable_type", "Comment"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:58:01.617342"], ["updated_at", "2014-08-30 20:58:01.617342"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:58:01.619224"], ["tag_id", 46], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:58:01.619224"]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 7], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 20:58:01.631878"], ["updated_at", "2014-08-30 20:58:01.631878"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 20:58:01.633668"], ["tag_id", 47], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:58:01.633668"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 12], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:58:01.637155"], ["updated_at", "2014-08-30 20:58:01.637155"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:58:01.638735"], ["tag_id", 48], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:58:01.638735"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (51.2ms)
+Completed 200 OK in 58ms (Views: 43.2ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 16:58:01 -0400
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 16:58:01 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 16:58:01 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 16:58:01 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 16:58:01 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 16:58:01 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 16:58:01 -0400
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:58:04 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (2.4ms)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (2.3ms)
+  Rendered comments/_comment.html.erb (3.2ms)
+  Rendered tags/_comment_form.html.erb (2.1ms)
+  Rendered comments/_comment.html.erb (3.0ms)
+  Rendered tags/_comment_form.html.erb (2.7ms)
+  Rendered comments/_comment.html.erb (3.6ms)
+  Rendered comments/_form.html.erb (1.7ms)
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 5], ["tagable_type", "Comment"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:58:04.388940"], ["updated_at", "2014-08-30 20:58:04.388940"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:58:04.390760"], ["tag_id", 49], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:58:04.390760"]]
+  [1m[36m (8.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 7], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 20:58:04.403638"], ["updated_at", "2014-08-30 20:58:04.403638"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 20:58:04.406563"], ["tag_id", 50], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:58:04.406563"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 12], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:58:04.411145"], ["updated_at", "2014-08-30 20:58:04.411145"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:58:04.413318"], ["tag_id", 51], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:58:04.413318"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (55.2ms)
+Completed 200 OK in 61ms (Views: 46.9ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 16:58:04 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 16:58:04 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 16:58:04 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 16:58:04 -0400
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 16:58:04 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 16:58:04 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 16:58:04 -0400
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 17:00:24 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (13.1ms)
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (4.9ms)
+  Rendered comments/_comment.html.erb (5.9ms)
+  Rendered tags/_comment_form.html.erb (1.9ms)
+  Rendered comments/_comment.html.erb (2.7ms)
+  Rendered tags/_comment_form.html.erb (1.7ms)
+  Rendered comments/_comment.html.erb (2.5ms)
+  Rendered comments/_form.html.erb (1.9ms)
+  [1m[35mTag Load (0.6ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 5], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 21:00:24.517331"], ["updated_at", "2014-08-30 21:00:24.517331"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 21:00:24.525405"], ["tag_id", 52], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 21:00:24.525405"]]
+  [1m[36m (9.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 7], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 21:00:24.540532"], ["updated_at", "2014-08-30 21:00:24.540532"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 21:00:24.544004"], ["tag_id", 53], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 21:00:24.544004"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 12], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 21:00:24.548583"], ["updated_at", "2014-08-30 21:00:24.548583"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 21:00:24.550726"], ["tag_id", 54], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 21:00:24.550726"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (85.7ms)
+Completed 200 OK in 99ms (Views: 74.6ms | ActiveRecord: 15.7ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 17:00:24 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 17:00:24 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 17:00:24 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 17:00:24 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 17:00:24 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 17:00:24 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 17:00:24 -0400
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 17:00:26 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (1.9ms)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (1.8ms)
+  Rendered comments/_comment.html.erb (2.7ms)
+  Rendered tags/_comment_form.html.erb (2.2ms)
+  Rendered comments/_comment.html.erb (3.1ms)
+  Rendered tags/_comment_form.html.erb (1.8ms)
+  Rendered comments/_comment.html.erb (2.6ms)
+  Rendered comments/_form.html.erb (1.6ms)
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 5], ["tagable_type", "Comment"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 21:00:26.503654"], ["updated_at", "2014-08-30 21:00:26.503654"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 21:00:26.505599"], ["tag_id", 55], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 21:00:26.505599"]]
+  [1m[36m (8.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 7], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 21:00:26.517765"], ["updated_at", "2014-08-30 21:00:26.517765"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 21:00:26.519841"], ["tag_id", 56], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 21:00:26.519841"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 12], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 21:00:26.524341"], ["updated_at", "2014-08-30 21:00:26.524341"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 21:00:26.527309"], ["tag_id", 57], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 21:00:26.527309"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (53.2ms)
+Completed 200 OK in 58ms (Views: 44.8ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 17:00:26 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 17:00:26 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 17:00:26 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 17:00:26 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 17:00:26 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 17:00:26 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 17:00:26 -0400
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 17:00:28 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.3ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (2.1ms)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (1.8ms)
+  Rendered comments/_comment.html.erb (2.6ms)
+  Rendered tags/_comment_form.html.erb (1.9ms)
+  Rendered comments/_comment.html.erb (2.7ms)
+  Rendered tags/_comment_form.html.erb (2.6ms)
+  Rendered comments/_comment.html.erb (3.4ms)
+  Rendered comments/_form.html.erb (1.6ms)
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 5], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 21:00:28.804883"], ["updated_at", "2014-08-30 21:00:28.804883"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 21:00:28.806750"], ["tag_id", 58], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 21:00:28.806750"]]
+  [1m[36m (8.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 7], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 21:00:28.819230"], ["updated_at", "2014-08-30 21:00:28.819230"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 21:00:28.821215"], ["tag_id", 59], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 21:00:28.821215"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 12], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 21:00:28.825333"], ["updated_at", "2014-08-30 21:00:28.825333"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 21:00:28.827063"], ["tag_id", 60], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 21:00:28.827063"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (51.2ms)
+Completed 200 OK in 58ms (Views: 43.1ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 17:00:28 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 17:00:28 -0400
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 17:00:28 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 17:00:28 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 17:00:28 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 17:00:28 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 17:00:28 -0400
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 17:00:33 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (2.1ms)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (1.9ms)
+  Rendered comments/_comment.html.erb (2.8ms)
+  Rendered tags/_comment_form.html.erb (2.2ms)
+  Rendered comments/_comment.html.erb (3.1ms)
+  Rendered tags/_comment_form.html.erb (1.8ms)
+  Rendered comments/_comment.html.erb (2.7ms)
+  Rendered comments/_form.html.erb (1.7ms)
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 5], ["tagable_type", "Comment"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 21:00:33.308048"], ["updated_at", "2014-08-30 21:00:33.308048"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 21:00:33.309886"], ["tag_id", 61], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 21:00:33.309886"]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 7], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 21:00:33.323515"], ["updated_at", "2014-08-30 21:00:33.323515"]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 21:00:33.326254"], ["tag_id", 62], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 21:00:33.326254"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 12], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 21:00:33.331436"], ["updated_at", "2014-08-30 21:00:33.331436"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 21:00:33.333494"], ["tag_id", 63], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 21:00:33.333494"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (55.5ms)
+Completed 200 OK in 61ms (Views: 46.1ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 17:00:33 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 17:00:33 -0400
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 17:00:33 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 17:00:33 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 17:00:33 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 17:00:33 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 17:00:33 -0400
+
+
+Started GET "/tags/63" for 127.0.0.1 at 2014-08-30 17:00:35 -0400
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"63"}
+  [1m[35mTag Load (0.2ms)[0m  SELECT  "tags".* FROM "tags"  WHERE "tags"."id" = ? LIMIT 1  [["id", 63]]
+  [1m[36mTopic Load (0.2ms)[0m  [1mSELECT "topics".* FROM "topics" INNER JOIN "tagations" ON "topics"."id" = "tagations"."tagable_id" WHERE "tagations"."tag_id" = ? AND "tagations"."tagable_type" = 'Topic'[0m  [["tag_id", 63]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" INNER JOIN "tagations" ON "comments"."id" = "tagations"."tagable_id" WHERE "tagations"."tag_id" = ? AND "tagations"."tagable_type" = 'Comment'  [["tag_id", 63]]
+  Rendered tags/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.6ms)
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT  "tags".* FROM "tags"   ORDER BY "tags"."id" DESC LIMIT 1[0m
+  [1m[35mTagation Load (0.1ms)[0m  SELECT  "tagations".* FROM "tagations"   ORDER BY "tagations"."id" DESC LIMIT 1
+
+
+Started GET "/signup" for 127.0.0.1 at 2014-08-30 17:01:23 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 22ms (Views: 13.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2014-08-30 17:01:31 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MXlv5rmTwEk12V7RGR+9bZAY1a8OEm/EvVYtyINcMOI=", "user"=>{"username"=>"joe", "email"=>"joe@joe.com", "password"=>"[FILTERED]"}, "commit"=>"Sign Up!"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'joe@joe.com' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" = 'joe' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 21:01:31.304674"], ["email", "joe@joe.com"], ["password_digest", "$2a$10$S.lYwulDOCUUX1gHKBL0DOjPyXCsijMyYw5RLegBzzim/20C3hSOO"], ["updated_at", "2014-08-30 21:01:31.304674"], ["username", "joe"]]
+  [1m[36m (8.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 103ms (ActiveRecord: 8.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-30 17:01:31 -0400
+Processing by TopicsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE (11) LIMIT 1
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT "topics".* FROM "topics"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "scores"  WHERE "scores"."topic_id" = ?  [["topic_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "scores"  WHERE "scores"."topic_id" = ?[0m  [["topic_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "scores"  WHERE "scores"."topic_id" = ?  [["topic_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "scores"  WHERE "scores"."topic_id" = ?[0m  [["topic_id", 4]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "scores"  WHERE "scores"."topic_id" = ?  [["topic_id", 5]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "scores"  WHERE "scores"."topic_id" = ?[0m  [["topic_id", 6]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "scores"  WHERE "scores"."topic_id" = ?  [["topic_id", 7]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "scores"  WHERE "scores"."topic_id" = ?[0m  [["topic_id", 8]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "scores"  WHERE "scores"."topic_id" = ?  [["topic_id", 9]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "scores"  WHERE "scores"."topic_id" = ?[0m  [["topic_id", 10]]
+  Rendered topics/index.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 25ms (Views: 21.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 17:01:31 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 17:01:31 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 17:01:31 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 17:01:31 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 17:01:31 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 17:01:31 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 17:01:31 -0400
+
+
+Started GET "/topics/2" for 127.0.0.1 at 2014-08-30 17:01:34 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered tags/_form.html.erb (2.2ms)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 2]]
+  Rendered tags/_comment_form.html.erb (2.4ms)
+  Rendered comments/_comment.html.erb (3.5ms)
+  Rendered comments/_form.html.erb (1.6ms)
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 2], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 2], ["tagable_type", "Comment"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 21:01:34.149508"], ["tag_id", 2], ["tagable_id", 2], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 21:01:34.149508"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 21:01:34.150706"], ["updated_at", "2014-08-30 21:01:34.150706"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 21:01:34.152090"], ["tag_id", 64], ["tagable_id", 2], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 21:01:34.152090"]]
+  [1m[35m (9.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  Rendered topics/show.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 37ms (Views: 25.3ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/topics/2" for 127.0.0.1 at 2014-08-30 17:01:36 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered tags/_form.html.erb (3.3ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 2]]
+  Rendered tags/_comment_form.html.erb (2.3ms)
+  Rendered comments/_comment.html.erb (3.4ms)
+  Rendered comments/_form.html.erb (1.8ms)
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 2], ["tagable_type", "Topic"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 2], ["tagable_type", "Comment"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 21:01:36.873941"], ["updated_at", "2014-08-30 21:01:36.873941"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 21:01:36.875963"], ["tag_id", 65], ["tagable_id", 2], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 21:01:36.875963"]]
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  Rendered topics/show.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 34ms (Views: 23.0ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 17:01:36 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 17:01:36 -0400
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 17:01:36 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 17:01:36 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 17:01:36 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 17:01:36 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 17:01:36 -0400
+  [1m[36mTagation Load (0.3ms)[0m  [1mSELECT  "tagations".* FROM "tagations"   ORDER BY "tagations"."id" DESC LIMIT 1[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT  "tags".* FROM "tags"   ORDER BY "tags"."id" DESC LIMIT 1
+
+
+Started GET "/topics/2" for 127.0.0.1 at 2014-08-30 17:03:19 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTopic Load (0.2ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered tags/_form.html.erb (12.9ms)
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 2]]
+  Rendered tags/_comment_form.html.erb (3.9ms)
+  Rendered comments/_comment.html.erb (4.9ms)
+  Rendered comments/_form.html.erb (1.8ms)
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 2], ["tagable_type", "Topic"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 2], ["tagable_type", "Comment"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 21:03:19.632363"], ["updated_at", "2014-08-30 21:03:19.632363"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 21:03:19.637600"], ["tag_id", 66], ["tagable_id", 2], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 21:03:19.637600"]]
+  [1m[35m (8.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  Rendered topics/show.html.erb within layouts/application (53.5ms)
+Completed 200 OK in 70ms (Views: 49.5ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 17:03:19 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 17:03:19 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 17:03:19 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 17:03:19 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 17:03:19 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 17:03:19 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 17:03:19 -0400
+
+
+Started GET "/topics/2" for 127.0.0.1 at 2014-08-30 17:03:21 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered tags/_form.html.erb (2.1ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 2]]
+  Rendered tags/_comment_form.html.erb (2.2ms)
+  Rendered comments/_comment.html.erb (3.2ms)
+  Rendered comments/_form.html.erb (3.2ms)
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 2], ["tagable_type", "Topic"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 2], ["tagable_type", "Comment"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 21:03:21.184785"], ["updated_at", "2014-08-30 21:03:21.184785"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 21:03:21.186609"], ["tag_id", 67], ["tagable_id", 2], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 21:03:21.186609"]]
+  [1m[35m (8.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  Rendered topics/show.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 35ms (Views: 24.7ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 17:03:21 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 17:03:21 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 17:03:21 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 17:03:21 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 17:03:21 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 17:03:21 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 17:03:21 -0400
+
+
+Started GET "/topics/2" for 127.0.0.1 at 2014-08-30 17:03:22 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered tags/_form.html.erb (4.6ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 2]]
+  Rendered tags/_comment_form.html.erb (2.0ms)
+  Rendered comments/_comment.html.erb (2.9ms)
+  Rendered comments/_form.html.erb (1.5ms)
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 2], ["tagable_type", "Topic"]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 2], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 21:03:22.297798"], ["updated_at", "2014-08-30 21:03:22.297798"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 21:03:22.300522"], ["tag_id", 68], ["tagable_id", 2], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 21:03:22.300522"]]
+  [1m[35m (8.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  Rendered topics/show.html.erb within layouts/application (33.4ms)
+Completed 200 OK in 41ms (Views: 28.7ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 17:03:22 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 17:03:22 -0400
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 17:03:22 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 17:03:22 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 17:03:22 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 17:03:22 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 17:03:22 -0400
+
+
+Started POST "/comments/2/tags" for 127.0.0.1 at 2014-08-30 17:04:25 -0400
+Processing by TagsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MXlv5rmTwEk12V7RGR+9bZAY1a8OEm/EvVYtyINcMOI=", "tag"=>{"subject"=>"hello there"}, "commit"=>"Create Tag", "comment_id"=>"2"}
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT  "tags".* FROM "tags"  WHERE "tags"."subject" = 'hello there' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("created_at", "subject", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-08-30 21:04:25.710058"], ["subject", "hello there"], ["updated_at", "2014-08-30 21:04:25.710058"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT  "comments".* FROM "comments"  WHERE "comments"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-08-30 21:04:25.751976"], ["tag_id", 69], ["tagable_id", 2], ["tagable_type", "Comment"], ["updated_at", "2014-08-30 21:04:25.751976"], ["user_id", 11]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/topics/2
+Completed 302 Found in 55ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/topics/2" for 127.0.0.1 at 2014-08-30 17:04:25 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered tags/_form.html.erb (16.3ms)
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 2]]
+  Rendered tags/_comment_form.html.erb (3.8ms)
+  Rendered comments/_comment.html.erb (4.8ms)
+  Rendered comments/_form.html.erb (2.0ms)
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 2], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 2], ["tagable_type", "Comment"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 21:04:25.803338"], ["tag_id", 69], ["tagable_id", 2], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 21:04:25.803338"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 21:04:25.804617"], ["updated_at", "2014-08-30 21:04:25.804617"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 21:04:25.806030"], ["tag_id", 70], ["tagable_id", 2], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 21:04:25.806030"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  Rendered topics/show.html.erb within layouts/application (38.2ms)
+Completed 200 OK in 44ms (Views: 40.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 17:04:25 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 17:04:25 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 17:04:25 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 17:04:25 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 17:04:25 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 17:04:25 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 17:04:25 -0400

@@ -30,7 +30,7 @@ class TagsController < ApplicationController
     end
     
     user = User.find(session[:user_id])
-    
+
     Tagation.create(tagable_id: tagable.id, tagable_type: tagable_type, user_id: user.id, tag_id: @tag.id)
     
     redirect_to @topic
