@@ -17,17 +17,14 @@ class TagsController < ApplicationController
   end
 
   def create
-    @tag = Tag.new(tag_params)
+    @tag = Tag.find_or_create_by(tag_params)
+    puts "hi" if params[:topic_id] == nil
+    puts "hello" unless params[:comment_id] == nil
+    puts "*********************************"
     @topic = Topic.find(params[:topic_id])
     user = User.find(session[:user_id])
-    @tag.save
     Tagation.create(tagable_id: @topic.id, tagable_type: "Topic", user_id: user.id, tag_id: @tag.id)
-
-    if @tag.save
-      redirect_to @topic, notice: 'Tag was successfully created.'
-    else
-      render :new
-    end
+    redirect_to @topic
   end
 
   def update

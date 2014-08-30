@@ -1,4 +1,4 @@
-<%= form_for([@topic, @topic.tags.build]) do |f| %>
+<%= form_for([@topic, @topic.comments.first.tags.build]) do |f| %>
 
   <div class="actions">
     <%= f.label :subject %><br>

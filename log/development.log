@@ -12650,3 +12650,2754 @@ Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 15:49:04 -0400
 
 
 Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 15:49:04 -0400
+
+
+Started POST "/topics/1/tags" for 127.0.0.1 at 2014-08-30 15:50:40 -0400
+Processing by TagsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"szvRutxVRbWNCHeM02dKMuOHOc85ycq4Ze9VfxOsaME=", "tag"=>{"subject"=>"blah"}, "commit"=>"Create Tag", "topic_id"=>"1"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("created_at", "subject", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-08-30 19:50:41.026845"], ["subject", "blah"], ["updated_at", "2014-08-30 19:50:41.026845"]]
+  [1m[35m (7.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-08-30 19:50:41.043860"], ["tag_id", 7], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 19:50:41.043860"], ["user_id", 11]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/topics/1
+Completed 302 Found in 45ms (ActiveRecord: 10.9ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 15:50:41 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.2ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (4.3ms)
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered comments/_form.html.erb (5.5ms)
+  Rendered tags/_form.html.erb (1.9ms)
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  Rendered topics/show.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 31ms (Views: 28.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 15:50:41 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 15:50:41 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 15:50:41 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 15:50:41 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 15:50:41 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 15:50:41 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 15:50:41 -0400
+
+
+Started POST "/topics/1/tags" for 127.0.0.1 at 2014-08-30 15:52:03 -0400
+Processing by TagsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"szvRutxVRbWNCHeM02dKMuOHOc85ycq4Ze9VfxOsaME=", "tag"=>{"subject"=>"booooo"}, "commit"=>"Create Tag", "topic_id"=>"1"}
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT  "tags".* FROM "tags"  WHERE "tags"."subject" = 'booooo' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("created_at", "subject", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-08-30 19:52:04.029236"], ["subject", "booooo"], ["updated_at", "2014-08-30 19:52:04.029236"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mTopic Load (0.2ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-08-30 19:52:04.063261"], ["tag_id", 8], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 19:52:04.063261"], ["user_id", 11]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/topics/1
+Completed 302 Found in 54ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 15:52:04 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.2ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (4.8ms)
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered comments/_form.html.erb (5.7ms)
+  Rendered tags/_form.html.erb (1.8ms)
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  Rendered topics/show.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 33ms (Views: 30.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 15:52:04 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 15:52:04 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 15:52:04 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 15:52:04 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 15:52:04 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 15:52:04 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 15:52:04 -0400
+
+
+Started POST "/topics/1/tags" for 127.0.0.1 at 2014-08-30 15:52:22 -0400
+Processing by TagsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"szvRutxVRbWNCHeM02dKMuOHOc85ycq4Ze9VfxOsaME=", "tag"=>{"subject"=>"booooo"}, "commit"=>"Create Tag", "topic_id"=>"1"}
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT  "tags".* FROM "tags"  WHERE "tags"."subject" = 'booooo' LIMIT 1[0m
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 19:52:22.810481"], ["tag_id", 8], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 19:52:22.810481"], ["user_id", 11]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/topics/1
+Completed 302 Found in 9ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 15:52:22 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (5.1ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered comments/_form.html.erb (1.8ms)
+  Rendered tags/_form.html.erb (1.8ms)
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 22ms (Views: 19.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 15:52:22 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 15:52:22 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 15:52:22 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 15:52:22 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 15:52:22 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 15:52:22 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 15:52:22 -0400
+
+
+Started POST "/topics/1/tags" for 127.0.0.1 at 2014-08-30 15:53:26 -0400
+Processing by TagsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"szvRutxVRbWNCHeM02dKMuOHOc85ycq4Ze9VfxOsaME=", "tag"=>{"subject"=>"fred"}, "commit"=>"Create Tag", "topic_id"=>"1"}
+  [1m[35mTag Load (0.1ms)[0m  SELECT  "tags".* FROM "tags"  WHERE "tags"."subject" = 'fred' LIMIT 1
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-08-30 19:53:27.035266"], ["tag_id", 6], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 19:53:27.035266"], ["user_id", 11]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/topics/1
+Completed 302 Found in 42ms (ActiveRecord: 10.8ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 15:53:27 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (4.3ms)
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered comments/_form.html.erb (5.5ms)
+  Rendered tags/_form.html.erb (2.1ms)
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  Rendered topics/show.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 30ms (Views: 27.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 15:53:27 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 15:53:27 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 15:53:27 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 15:53:27 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 15:53:27 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 15:53:27 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 15:53:27 -0400
+
+
+Started POST "/topics/1/tags" for 127.0.0.1 at 2014-08-30 15:53:32 -0400
+Processing by TagsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"szvRutxVRbWNCHeM02dKMuOHOc85ycq4Ze9VfxOsaME=", "tag"=>{"subject"=>"barney"}, "commit"=>"Create Tag", "topic_id"=>"1"}
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT  "tags".* FROM "tags"  WHERE "tags"."subject" = 'barney' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "tags" ("created_at", "subject", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-08-30 19:53:32.845224"], ["subject", "barney"], ["updated_at", "2014-08-30 19:53:32.845224"]]
+  [1m[35m (8.9ms)[0m  commit transaction
+  [1m[36mTopic Load (0.2ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-08-30 19:53:32.860056"], ["tag_id", 9], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 19:53:32.860056"], ["user_id", 11]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/topics/1
+Completed 302 Found in 21ms (ActiveRecord: 11.6ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 15:53:32 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (2.2ms)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered comments/_form.html.erb (2.3ms)
+  Rendered tags/_form.html.erb (1.7ms)
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  Rendered topics/show.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 15:53:32 -0400
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 15:53:32 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 15:53:32 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 15:53:32 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 15:53:32 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 15:53:32 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 15:53:32 -0400
+
+
+Started POST "/topics/1/tags" for 127.0.0.1 at 2014-08-30 15:54:27 -0400
+Processing by TagsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"szvRutxVRbWNCHeM02dKMuOHOc85ycq4Ze9VfxOsaME=", "tag"=>{"subject"=>"ab"}, "commit"=>"Create Tag", "topic_id"=>"1"}
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT  "tags".* FROM "tags"  WHERE "tags"."subject" = 'ab' LIMIT 1[0m
+  [1m[35mTopic Load (0.2ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 19:54:27.972665"], ["tag_id", 1], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 19:54:27.972665"], ["user_id", 11]]
+  [1m[35m (8.9ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/topics/1
+Completed 302 Found in 42ms (ActiveRecord: 10.9ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 15:54:27 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (3.8ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered comments/_form.html.erb (5.0ms)
+  Rendered tags/_form.html.erb (1.5ms)
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 28ms (Views: 25.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 15:54:28 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 15:54:28 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 15:54:28 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 15:54:28 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 15:54:28 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 15:54:28 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 15:54:28 -0400
+
+
+Started POST "/topics/1/tags" for 127.0.0.1 at 2014-08-30 15:55:28 -0400
+Processing by TagsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"szvRutxVRbWNCHeM02dKMuOHOc85ycq4Ze9VfxOsaME=", "tag"=>{"subject"=>"wait what?"}, "commit"=>"Create Tag", "topic_id"=>"1"}
+  [1m[35mTag Load (0.4ms)[0m  SELECT  "tags".* FROM "tags"  WHERE "tags"."subject" = 'wait what?' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "tags" ("created_at", "subject", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-08-30 19:55:28.411822"], ["subject", "wait what?"], ["updated_at", "2014-08-30 19:55:28.411822"]]
+  [1m[36m (8.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mTopic Load (0.2ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 19:55:28.425698"], ["tag_id", 10], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 19:55:28.425698"], ["user_id", 11]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/topics/1
+Completed 302 Found in 20ms (ActiveRecord: 10.9ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 15:55:28 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.4ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered collection (0.0ms)
+  Rendered comments/_form.html.erb (1.6ms)
+  Rendered tags/_form.html.erb (1.9ms)
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 15:55:28 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 15:55:28 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 15:55:28 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 15:55:28 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 15:55:28 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 15:55:28 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 15:55:28 -0400
+
+
+Started POST "/topics/1/comments" for 127.0.0.1 at 2014-08-30 15:56:18 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"szvRutxVRbWNCHeM02dKMuOHOc85ycq4Ze9VfxOsaME=", "comment"=>{"body"=>"This is a comment "}, "commit"=>"Create Comment", "topic_id"=>"1"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "comments" ("body", "created_at", "topic_id", "updated_at") VALUES (?, ?, ?, ?)  [["body", "This is a comment "], ["created_at", "2014-08-30 19:56:18.709693"], ["topic_id", 1], ["updated_at", "2014-08-30 19:56:18.709693"]]
+  [1m[36m (10.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/topics/1
+Completed 302 Found in 18ms (ActiveRecord: 11.2ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 15:56:18 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (2.1ms)
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (1.0ms)
+  Rendered comments/_form.html.erb (2.0ms)
+  Rendered tags/_form.html.erb (1.7ms)
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 11], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 15:56:18 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 15:56:18 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 15:56:18 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 15:56:18 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 15:56:18 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 15:56:18 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 15:56:18 -0400
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 15:57:26 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (3.4ms)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered tags/_form.html.erb (2.7ms)
+  Rendered comments/_comment.html.erb (4.9ms)
+  Rendered comments/_form.html.erb (1.9ms)
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 11], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 26ms (Views: 23.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 15:57:26 -0400
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 15:57:26 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 15:57:26 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 15:57:26 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 15:57:26 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 15:57:26 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 15:57:26 -0400
+
+
+Started POST "/topics/1/tags" for 127.0.0.1 at 2014-08-30 15:57:31 -0400
+Processing by TagsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"szvRutxVRbWNCHeM02dKMuOHOc85ycq4Ze9VfxOsaME=", "tag"=>{"subject"=>"comment tag"}, "commit"=>"Create Tag", "topic_id"=>"1"}
+  [1m[35mTag Load (0.2ms)[0m  SELECT  "tags".* FROM "tags"  WHERE "tags"."subject" = 'comment tag' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "tags" ("created_at", "subject", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-08-30 19:57:31.638003"], ["subject", "comment tag"], ["updated_at", "2014-08-30 19:57:31.638003"]]
+  [1m[36m (9.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mTopic Load (0.2ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 19:57:31.654009"], ["tag_id", 11], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 19:57:31.654009"], ["user_id", 11]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/topics/1
+Completed 302 Found in 24ms (ActiveRecord: 11.9ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 15:57:31 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.2ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.6ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered tags/_form.html.erb (2.1ms)
+  Rendered comments/_comment.html.erb (3.2ms)
+  Rendered comments/_form.html.erb (1.7ms)
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 11], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  Rendered topics/show.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 15:57:31 -0400
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 15:57:31 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 15:57:31 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 15:57:31 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 15:57:31 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 15:57:31 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 15:57:31 -0400
+
+
+Started POST "/topics/1/comments" for 127.0.0.1 at 2014-08-30 15:58:16 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"szvRutxVRbWNCHeM02dKMuOHOc85ycq4Ze9VfxOsaME=", "comment"=>{"body"=>"this is comment #2\r\n"}, "commit"=>"Create Comment", "topic_id"=>"1"}
+  [1m[36mTopic Load (0.2ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "comments" ("body", "created_at", "topic_id", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "this is comment #2\r\n"], ["created_at", "2014-08-30 19:58:16.014953"], ["topic_id", 1], ["updated_at", "2014-08-30 19:58:16.014953"]]
+  [1m[35m (8.7ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/topics/1
+Completed 302 Found in 17ms (ActiveRecord: 9.5ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 15:58:16 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.8ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered tags/_form.html.erb (1.9ms)
+  Rendered tags/_form.html.erb (1.8ms)
+  Rendered comments/_comment.html.erb (6.0ms)
+  Rendered comments/_form.html.erb (1.6ms)
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 11], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 12], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 26ms (Views: 23.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 15:58:16 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 15:58:16 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 15:58:16 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 15:58:16 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 15:58:16 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 15:58:16 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 15:58:16 -0400
+
+
+Started POST "/topics/1/tags" for 127.0.0.1 at 2014-08-30 15:58:21 -0400
+Processing by TagsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"szvRutxVRbWNCHeM02dKMuOHOc85ycq4Ze9VfxOsaME=", "tag"=>{"subject"=>"comment2"}, "commit"=>"Create Tag", "topic_id"=>"1"}
+  [1m[35mTag Load (0.2ms)[0m  SELECT  "tags".* FROM "tags"  WHERE "tags"."subject" = 'comment2' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "tags" ("created_at", "subject", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-08-30 19:58:21.229212"], ["subject", "comment2"], ["updated_at", "2014-08-30 19:58:21.229212"]]
+  [1m[36m (7.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 19:58:21.241513"], ["tag_id", 12], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 19:58:21.241513"], ["user_id", 11]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/topics/1
+Completed 302 Found in 19ms (ActiveRecord: 10.0ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 15:58:21 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.1ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered tags/_form.html.erb (1.6ms)
+  Rendered tags/_form.html.erb (1.5ms)
+  Rendered comments/_comment.html.erb (5.1ms)
+  Rendered comments/_form.html.erb (1.5ms)
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 11], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 12], ["tagable_type", "Comment"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 23ms (Views: 20.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 15:58:21 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 15:58:21 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 15:58:21 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 15:58:21 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 15:58:21 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 15:58:21 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 15:58:21 -0400
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 15:59:34 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (2.2ms)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (2.2ms)
+  Rendered tags/_comment_form.html.erb (1.7ms)
+  Rendered comments/_comment.html.erb (6.4ms)
+  Rendered comments/_form.html.erb (2.0ms)
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 11], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 12], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  Rendered topics/show.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 15:59:34 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 15:59:34 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 15:59:34 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 15:59:34 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 15:59:34 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 15:59:34 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 15:59:34 -0400
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 15:59:55 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (14.2ms)
+  Rendered topics/show.html.erb within layouts/application (15.3ms)
+Completed 500 Internal Server Error in 18ms
+
+ActionView::Template::Error (undefined method `field' for #<ActionView::Helpers::FormBuilder:0x00000105b1d158>):
+    2: 
+    3:   <div class="actions">
+    4:     <%= f.label :subject %><br>
+    5:     <%= f.field :subject %>
+    6:     <%= f.submit %>
+    7:   </div>
+    8: <% end %>
+  app/views/tags/_form.html.erb:5:in `block in _app_views_tags__form_html_erb___2392272154389904505_2195340740'
+  app/views/tags/_form.html.erb:1:in `_app_views_tags__form_html_erb___2392272154389904505_2195340740'
+  app/views/topics/show.html.erb:10:in `_app_views_topics_show_html_erb___1293609879278337922_2187416020'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.7ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:00:15 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (2.5ms)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (2.1ms)
+  Rendered tags/_comment_form.html.erb (1.7ms)
+  Rendered comments/_comment.html.erb (5.7ms)
+  Rendered comments/_form.html.erb (1.7ms)
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 11], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 12], ["tagable_type", "Comment"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  Rendered topics/show.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 25ms (Views: 22.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 16:00:15 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 16:00:15 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 16:00:15 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 16:00:15 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 16:00:15 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 16:00:15 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 16:00:15 -0400
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:01:58 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.5ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (12.2ms)
+  Rendered comments/_comment.html.erb (12.9ms)
+  Rendered topics/show.html.erb within layouts/application (18.4ms)
+Completed 500 Internal Server Error in 22ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x00000101cff038>):
+    1: <%= form_for([comment, comment.tags.build]) do |f| %>
+    2: 
+    3:   <div class="actions">
+    4:     <%= f.label :subject %><br>
+  app/views/tags/_comment_form.html.erb:1:in `_app_views_tags__comment_form_html_erb___1821381122891074828_2160120660'
+  app/views/comments/_comment.html.erb:7:in `_app_views_comments__comment_html_erb__412063191357663993_2186003500'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2187416020'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.4ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:03:39 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.8ms)
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (1.5ms)
+  Rendered comments/_comment.html.erb (2.2ms)
+  Rendered topics/show.html.erb within layouts/application (8.4ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (undefined method `tags' for nil:NilClass):
+    1: <%= form_for([@comment, @comment.tags.build]) do |f| %>
+    2: 
+    3:   <div class="actions">
+    4:     <%= f.label :subject %><br>
+  app/views/tags/_comment_form.html.erb:1:in `_app_views_tags__comment_form_html_erb___1821381122891074828_2187189420'
+  app/views/comments/_comment.html.erb:7:in `_app_views_comments__comment_html_erb__412063191357663993_2186003500'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2187416020'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.3ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:04:44 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.1ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (1.5ms)
+  Rendered comments/_comment.html.erb (2.1ms)
+  Rendered topics/show.html.erb within layouts/application (6.8ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error (undefined method `comment' for #<Topic:0x00000104430008>):
+    1: <%= form_for([@topic, @topic.comment.tags.build]) do |f| %>
+    2: 
+    3:   <div class="actions">
+    4:     <%= f.label :subject %><br>
+  app/views/tags/_comment_form.html.erb:1:in `_app_views_tags__comment_form_html_erb___1821381122891074828_2157241080'
+  app/views/comments/_comment.html.erb:7:in `_app_views_comments__comment_html_erb__412063191357663993_2186003500'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2187416020'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.8ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:04:51 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.2ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (3.2ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (3.1ms)
+  Rendered comments/_comment.html.erb (3.8ms)
+  Rendered topics/show.html.erb within layouts/application (10.1ms)
+Completed 500 Internal Server Error in 13ms
+
+ActionView::Template::Error (undefined method `tags' for #<Comment::ActiveRecord_Associations_CollectionProxy:0x000001043f8f90>):
+    1: <%= form_for([@topic, @topic.comments.tags.build]) do |f| %>
+    2: 
+    3:   <div class="actions">
+    4:     <%= f.label :subject %><br>
+  app/views/tags/_comment_form.html.erb:1:in `_app_views_tags__comment_form_html_erb___1821381122891074828_2156899760'
+  app/views/comments/_comment.html.erb:7:in `_app_views_comments__comment_html_erb__412063191357663993_2186003500'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2187416020'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.2ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:05:02 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.0ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (2.9ms)
+  Rendered tags/_comment_form.html.erb (1.7ms)
+  Rendered comments/_comment.html.erb (6.6ms)
+  Rendered comments/_form.html.erb (1.7ms)
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 11], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 20:05:02.815737"], ["updated_at", "2014-08-30 20:05:02.815737"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 20:05:02.817726"], ["tag_id", 13], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:05:02.817726"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 20:05:02.818710"], ["updated_at", "2014-08-30 20:05:02.818710"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 20:05:02.819936"], ["tag_id", 14], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:05:02.819936"]]
+  [1m[35m (8.1ms)[0m  commit transaction
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 12], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (34.6ms)
+Completed 200 OK in 41ms (Views: 29.8ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 16:05:02 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 16:05:02 -0400
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 16:05:02 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 16:05:02 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 16:05:02 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 16:05:02 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 16:05:02 -0400
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:14:25 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.2ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (2.5ms)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered topics/show.html.erb within layouts/application (8.2ms)
+Completed 500 Internal Server Error in 13ms
+
+ActionView::Template::Error (Missing partial topics/_comment, application/_comment with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+  * "/Users/josephwhite/group/Med-Flow/app/views"
+):
+    14: 
+    15: <h2>Comments</h2>
+    16: <% @topic.comments.each do |comment| %>
+    17:   <%= render partial: "comment", object: @comment %>
+    18: <% end %>
+    19: <h2>Add a comment:</h2>
+    20: <%= render "comments/form" %>
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2157837060'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2157837060'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.1ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:15:07 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered topics/show.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 4ms
+
+SyntaxError (/Users/josephwhite/group/Med-Flow/app/views/topics/show.html.erb:17: syntax error, unexpected tLABEL
+...@output_buffer.append=( render: "comments/_comment", object:...
+...                               ^
+/Users/josephwhite/group/Med-Flow/app/views/topics/show.html.erb:17: syntax error, unexpected ',', expecting ')'
+...=( render: "comments/_comment", object: @comment );@output_b...
+...                               ^):
+  app/views/topics/show.html.erb:17: syntax error, unexpected tLABEL
+  app/views/topics/show.html.erb:17: syntax error, unexpected ',', expecting ')'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.3ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:16:00 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.2ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.3ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (13.1ms)
+  Rendered topics/show.html.erb within layouts/application (18.9ms)
+Completed 500 Internal Server Error in 22ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x00000104aab540>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2157223980'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2186629280'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2186629280'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.5ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:16:22 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.1ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (1.2ms)
+  Rendered topics/show.html.erb within layouts/application (5.9ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (undefined method `body' for nil:NilClass):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= @comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2186220620'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2186629280'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2186629280'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.2ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:16:58 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.1ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (12.9ms)
+  Rendered topics/show.html.erb within layouts/application (18.4ms)
+Completed 500 Internal Server Error in 21ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x00000105d7fb58>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2196192200'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2196500940'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2196500940'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.2ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:17:03 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.2ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (11.9ms)
+  Rendered topics/show.html.erb within layouts/application (16.7ms)
+Completed 500 Internal Server Error in 20ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x000001058b0438>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2196192200'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2196500940'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2196500940'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.7ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:11 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.0ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (13.2ms)
+  Rendered topics/show.html.erb within layouts/application (18.7ms)
+Completed 500 Internal Server Error in 21ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x0000010313b2b8>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.2ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:12 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.2ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (12.0ms)
+  Rendered topics/show.html.erb within layouts/application (16.9ms)
+Completed 500 Internal Server Error in 20ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x0000010a858a80>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.3ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:12 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.0ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (14.8ms)
+  Rendered topics/show.html.erb within layouts/application (19.1ms)
+Completed 500 Internal Server Error in 22ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x00000109bd3c10>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.2ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:13 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.4ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (13.2ms)
+  Rendered topics/show.html.erb within layouts/application (18.3ms)
+Completed 500 Internal Server Error in 22ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x00000105f9c648>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.1ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:13 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.3ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.4ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (13.1ms)
+  Rendered topics/show.html.erb within layouts/application (18.3ms)
+Completed 500 Internal Server Error in 22ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x00000109ed27b8>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.3ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:13 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.6ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (11.9ms)
+  Rendered topics/show.html.erb within layouts/application (17.7ms)
+Completed 500 Internal Server Error in 21ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x00000104579d10>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.8ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:13 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.2ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (3.7ms)
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (14.7ms)
+  Rendered topics/show.html.erb within layouts/application (23.0ms)
+Completed 500 Internal Server Error in 27ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x000001012d48b0>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.6ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:13 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.2ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (19.4ms)
+  Rendered topics/show.html.erb within layouts/application (24.4ms)
+Completed 500 Internal Server Error in 28ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x00000109be22b0>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.2ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:13 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.5ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (12.8ms)
+  Rendered topics/show.html.erb within layouts/application (18.1ms)
+Completed 500 Internal Server Error in 24ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x00000109910f50>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.0ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:13 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.0ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (15.3ms)
+  Rendered topics/show.html.erb within layouts/application (20.0ms)
+Completed 500 Internal Server Error in 23ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x00000105dd5378>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.9ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:14 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.2ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.7ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (12.7ms)
+  Rendered topics/show.html.erb within layouts/application (19.0ms)
+Completed 500 Internal Server Error in 23ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x0000010485ea08>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.6ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:14 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (4.6ms)
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (18.5ms)
+  Rendered topics/show.html.erb within layouts/application (30.7ms)
+Completed 500 Internal Server Error in 34ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x0000010321ffa8>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.7ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:14 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (3.9ms)
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (16.7ms)
+  Rendered topics/show.html.erb within layouts/application (25.3ms)
+Completed 500 Internal Server Error in 31ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x0000010a870e78>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.8ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:14 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.2ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.2ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (14.5ms)
+  Rendered topics/show.html.erb within layouts/application (19.6ms)
+Completed 500 Internal Server Error in 24ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x00000109bd3328>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.2ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:14 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.2ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (4.0ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (17.2ms)
+  Rendered topics/show.html.erb within layouts/application (25.8ms)
+Completed 500 Internal Server Error in 31ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x00000105f95c08>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.8ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:14 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.7ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (20.1ms)
+  Rendered topics/show.html.erb within layouts/application (26.3ms)
+Completed 500 Internal Server Error in 29ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x00000109ebbf68>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.4ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:14 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.2ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (3.7ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (12.4ms)
+  Rendered topics/show.html.erb within layouts/application (20.4ms)
+Completed 500 Internal Server Error in 25ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x000001045582c8>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.5ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:14 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (3.9ms)
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (17.2ms)
+  Rendered topics/show.html.erb within layouts/application (26.2ms)
+Completed 500 Internal Server Error in 31ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x0000010446f758>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.1ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:14 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.2ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (3.3ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (12.6ms)
+  Rendered topics/show.html.erb within layouts/application (21.7ms)
+Completed 500 Internal Server Error in 26ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x00000104b0d8a8>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.7ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:14 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.4ms)
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (16.1ms)
+  Rendered topics/show.html.erb within layouts/application (23.6ms)
+Completed 500 Internal Server Error in 27ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x000001098af2f0>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.9ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:14 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.2ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.5ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (12.3ms)
+  Rendered topics/show.html.erb within layouts/application (18.6ms)
+Completed 500 Internal Server Error in 23ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x00000105d744d8>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.0ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:14 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (4.1ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (13.8ms)
+  Rendered topics/show.html.erb within layouts/application (22.5ms)
+Completed 500 Internal Server Error in 30ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x000001058a0f38>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.9ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:14 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.2ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.3ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (20.1ms)
+  Rendered topics/show.html.erb within layouts/application (25.9ms)
+Completed 500 Internal Server Error in 29ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x000001030f1910>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (19.2ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:14 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (3.0ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (14.4ms)
+  Rendered topics/show.html.erb within layouts/application (20.5ms)
+Completed 500 Internal Server Error in 23ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x00000109e5b4b0>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.5ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:14 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.5ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (11.3ms)
+  Rendered topics/show.html.erb within layouts/application (16.8ms)
+Completed 500 Internal Server Error in 20ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x00000104a5c968>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.7ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:15 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.1ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (11.3ms)
+  Rendered topics/show.html.erb within layouts/application (16.3ms)
+Completed 500 Internal Server Error in 19ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x0000010985f7c8>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.1ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:15 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.3ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (11.7ms)
+  Rendered topics/show.html.erb within layouts/application (17.7ms)
+Completed 500 Internal Server Error in 21ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x0000010a860d48>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.2ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:15 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (3.9ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (11.6ms)
+  Rendered topics/show.html.erb within layouts/application (19.4ms)
+Completed 500 Internal Server Error in 22ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x000001012eeb70>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.0ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:15 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.3ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (14.0ms)
+  Rendered topics/show.html.erb within layouts/application (19.0ms)
+Completed 500 Internal Server Error in 22ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x00000109dd88f8>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.3ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:15 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.5ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (12.7ms)
+  Rendered topics/show.html.erb within layouts/application (18.4ms)
+Completed 500 Internal Server Error in 22ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x00000104ae8300>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.4ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:15 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.0ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (15.6ms)
+  Rendered topics/show.html.erb within layouts/application (20.6ms)
+Completed 500 Internal Server Error in 24ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x00000109893118>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.2ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:15 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.2ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.8ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (13.2ms)
+  Rendered topics/show.html.erb within layouts/application (19.3ms)
+Completed 500 Internal Server Error in 24ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x00000105d7f748>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.8ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:15 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.2ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (12.1ms)
+  Rendered topics/show.html.erb within layouts/application (17.2ms)
+Completed 500 Internal Server Error in 20ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x000001058e90d0>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:17:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173288660'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173288660'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.0ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:18:54 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.5ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (12.4ms)
+  Rendered topics/show.html.erb within layouts/application (18.3ms)
+Completed 500 Internal Server Error in 21ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x0000010312bf48>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:18:in `block in _app_views_topics_show_html_erb___1293609879278337922_2173244640'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2173244640'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.3ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:19:53 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.2ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.2ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (11.5ms)
+  Rendered topics/show.html.erb within layouts/application (18.2ms)
+Completed 500 Internal Server Error in 22ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x00000101327e70>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:18:in `block in _app_views_topics_show_html_erb___1293609879278337922_2157524140'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2157524140'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.7ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:20:31 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.0ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered comments/_comment.html.erb (11.6ms)
+  Rendered topics/show.html.erb within layouts/application (17.1ms)
+Completed 500 Internal Server Error in 20ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x00000109af8d90>):
+    2: 
+    3: <p>
+    4:   <strong>Comment:</strong>
+    5:   <%= comment.body %>
+    6: <h2>Add a tag:</h2>
+    7: <%= render "tags/comment_form" %>
+    8: </p>
+  app/views/comments/_comment.html.erb:5:in `_app_views_comments__comment_html_erb__412063191357663993_2172821860'
+  app/views/topics/show.html.erb:18:in `block in _app_views_topics_show_html_erb___1293609879278337922_2228616160'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2228616160'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.9ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:20:47 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (3.7ms)
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (4.6ms)
+  Rendered comments/_comment.html.erb (23.1ms)
+  Rendered topics/show.html.erb within layouts/application (31.6ms)
+Completed 500 Internal Server Error in 35ms
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x0000010451b3f0>:0x000001013f3ed0>):
+     8: </p>
+     9: 
+    10: <p>
+    11:   <%= link_to 'Destroy Comment', [comment.topic, comment],
+    12:                 method: :delete,
+    13:                 data: { confirm: 'Are you sure?' } %>
+    14: </p>
+  app/views/comments/_comment.html.erb:11:in `_app_views_comments__comment_html_erb__412063191357663993_2235881420'
+  app/views/topics/show.html.erb:18:in `block in _app_views_topics_show_html_erb___1293609879278337922_2228616160'
+  app/views/topics/show.html.erb:16:in `_app_views_topics_show_html_erb___1293609879278337922_2228616160'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.4ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:22:23 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.2ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.4ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (2.3ms)
+  Rendered comments/_comment.html.erb (3.6ms)
+  Rendered tags/_comment_form.html.erb (1.6ms)
+  Rendered comments/_comment.html.erb (2.5ms)
+  Rendered comments/_form.html.erb (2.8ms)
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 11], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 20:22:23.861562"], ["updated_at", "2014-08-30 20:22:23.861562"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 20:22:23.863399"], ["tag_id", 15], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:22:23.863399"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 20:22:23.864345"], ["updated_at", "2014-08-30 20:22:23.864345"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 20:22:23.865908"], ["tag_id", 16], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:22:23.865908"]]
+  [1m[35m (8.8ms)[0m  commit transaction
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 12], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (37.9ms)
+Completed 200 OK in 45ms (Views: 32.9ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 16:22:23 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 16:22:23 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 16:22:23 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 16:22:23 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 16:22:23 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 16:22:23 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 16:22:23 -0400
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:22:36 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.2ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (2.1ms)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (1.9ms)
+  Rendered comments/_comment.html.erb (2.7ms)
+  Rendered tags/_comment_form.html.erb (1.6ms)
+  Rendered comments/_comment.html.erb (2.4ms)
+  Rendered comments/_form.html.erb (1.5ms)
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 11], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:22:36.627163"], ["updated_at", "2014-08-30 20:22:36.627163"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:22:36.629258"], ["tag_id", 17], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:22:36.629258"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:22:36.630160"], ["updated_at", "2014-08-30 20:22:36.630160"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:22:36.631397"], ["tag_id", 18], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:22:36.631397"]]
+  [1m[36m (8.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 12], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  Rendered topics/show.html.erb within layouts/application (38.5ms)
+Completed 200 OK in 46ms (Views: 34.9ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 16:22:36 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 16:22:36 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 16:22:36 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 16:22:36 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 16:22:36 -0400
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 16:22:36 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 16:22:36 -0400
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:24:12 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.2ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (3.8ms)
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (2.1ms)
+  Rendered comments/_comment.html.erb (3.5ms)
+  Rendered tags/_comment_form.html.erb (1.7ms)
+  Rendered comments/_comment.html.erb (2.6ms)
+  Rendered comments/_form.html.erb (1.8ms)
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 11], ["tagable_type", "Comment"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 20:24:12.392353"], ["updated_at", "2014-08-30 20:24:12.392353"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 20:24:12.394204"], ["tag_id", 19], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:24:12.394204"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 20:24:12.395091"], ["updated_at", "2014-08-30 20:24:12.395091"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 20:24:12.396475"], ["tag_id", 20], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:24:12.396475"]]
+  [1m[35m (8.1ms)[0m  commit transaction
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 12], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (38.4ms)
+Completed 200 OK in 46ms (Views: 34.0ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 16:24:12 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 16:24:12 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 16:24:12 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 16:24:12 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 16:24:12 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 16:24:12 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 16:24:12 -0400
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:24:26 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (2.2ms)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (2.6ms)
+  Rendered comments/_comment.html.erb (3.8ms)
+  Rendered tags/_comment_form.html.erb (1.6ms)
+  Rendered comments/_comment.html.erb (2.5ms)
+  Rendered comments/_form.html.erb (1.7ms)
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 11], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:24:26.789903"], ["updated_at", "2014-08-30 20:24:26.789903"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:24:26.791698"], ["tag_id", 21], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:24:26.791698"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:24:26.792550"], ["updated_at", "2014-08-30 20:24:26.792550"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:24:26.793840"], ["tag_id", 22], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:24:26.793840"]]
+  [1m[36m (8.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 12], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  Rendered topics/show.html.erb within layouts/application (41.1ms)
+Completed 200 OK in 48ms (Views: 36.3ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 16:24:26 -0400
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 16:24:26 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 16:24:26 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 16:24:26 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 16:24:26 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 16:24:26 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 16:24:26 -0400
+
+
+Started POST "/topics/1/tags" for 127.0.0.1 at 2014-08-30 16:24:42 -0400
+Processing by TagsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"szvRutxVRbWNCHeM02dKMuOHOc85ycq4Ze9VfxOsaME=", "tag"=>{"subject"=>"adding tag"}, "commit"=>"Create Tag", "topic_id"=>"1"}
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT  "tags".* FROM "tags"  WHERE "tags"."subject" = 'adding tag' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "tags" ("created_at", "subject", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-08-30 20:24:42.061808"], ["subject", "adding tag"], ["updated_at", "2014-08-30 20:24:42.061808"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:24:42.068796"], ["tag_id", 23], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:24:42.068796"], ["user_id", 11]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/topics/1
+Completed 302 Found in 14ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:24:42 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (3.4ms)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (2.4ms)
+  Rendered comments/_comment.html.erb (3.4ms)
+  Rendered tags/_comment_form.html.erb (1.6ms)
+  Rendered comments/_comment.html.erb (2.5ms)
+  Rendered comments/_form.html.erb (1.8ms)
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 11], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:24:42.104906"], ["updated_at", "2014-08-30 20:24:42.104906"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:24:42.107529"], ["tag_id", 24], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:24:42.107529"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:24:42.108587"], ["updated_at", "2014-08-30 20:24:42.108587"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:24:42.110038"], ["tag_id", 25], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:24:42.110038"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 12], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  Rendered topics/show.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 37ms (Views: 32.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 16:24:42 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 16:24:42 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 16:24:42 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 16:24:42 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 16:24:42 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 16:24:42 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 16:24:42 -0400
+  [1m[35mTagation Load (0.1ms)[0m  SELECT  "tagations".* FROM "tagations"   ORDER BY "tagations"."id" DESC LIMIT 1
+  [1m[36mTagation Load (0.2ms)[0m  [1mSELECT  "tagations".* FROM "tagations"   ORDER BY "tagations"."id" DESC LIMIT 1[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT  "tags".* FROM "tags"  WHERE "tags"."id" = ? LIMIT 1  [["id", 25]]
+
+
+Started POST "/topics/1/tags" for 127.0.0.1 at 2014-08-30 16:26:38 -0400
+Processing by TagsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"szvRutxVRbWNCHeM02dKMuOHOc85ycq4Ze9VfxOsaME=", "tag"=>{"subject"=>"curly"}, "commit"=>"Create Tag", "topic_id"=>"1"}
+  [1m[36mTag Load (0.6ms)[0m  [1mSELECT  "tags".* FROM "tags"  WHERE "tags"."subject" = 'curly' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("created_at", "subject", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-08-30 20:26:38.113840"], ["subject", "curly"], ["updated_at", "2014-08-30 20:26:38.113840"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:26:38.117867"], ["tag_id", 26], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:26:38.117867"], ["user_id", 11]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/topics/1
+Completed 302 Found in 11ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:26:38 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (1.8ms)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (1.7ms)
+  Rendered comments/_comment.html.erb (2.6ms)
+  Rendered tags/_comment_form.html.erb (1.6ms)
+  Rendered comments/_comment.html.erb (2.4ms)
+  Rendered comments/_form.html.erb (1.8ms)
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 11], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:26:38.145851"], ["updated_at", "2014-08-30 20:26:38.145851"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:26:38.147632"], ["tag_id", 27], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:26:38.147632"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:26:38.148553"], ["updated_at", "2014-08-30 20:26:38.148553"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:26:38.149811"], ["tag_id", 28], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:26:38.149811"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 12], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  Rendered topics/show.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 32ms (Views: 28.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 16:26:38 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 16:26:38 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 16:26:38 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 16:26:38 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 16:26:38 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 16:26:38 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 16:26:38 -0400
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:26:41 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.5ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (1.8ms)
+  Rendered comments/_comment.html.erb (2.7ms)
+  Rendered tags/_comment_form.html.erb (1.4ms)
+  Rendered comments/_comment.html.erb (2.2ms)
+  Rendered comments/_form.html.erb (2.1ms)
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 11], ["tagable_type", "Comment"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 20:26:41.753779"], ["updated_at", "2014-08-30 20:26:41.753779"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 20:26:41.755591"], ["tag_id", 29], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:26:41.755591"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 20:26:41.756515"], ["updated_at", "2014-08-30 20:26:41.756515"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 20:26:41.758475"], ["tag_id", 30], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:26:41.758475"]]
+  [1m[35m (8.0ms)[0m  commit transaction
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 12], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (37.3ms)
+Completed 200 OK in 45ms (Views: 34.1ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 16:26:41 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 16:26:41 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 16:26:41 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 16:26:41 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 16:26:41 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 16:26:41 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 16:26:41 -0400
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:28:17 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.2ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (2.3ms)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (2.0ms)
+  Rendered comments/_comment.html.erb (3.0ms)
+  Rendered tags/_comment_form.html.erb (1.6ms)
+  Rendered comments/_comment.html.erb (2.6ms)
+  Rendered comments/_form.html.erb (1.6ms)
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 11], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:28:17.702367"], ["updated_at", "2014-08-30 20:28:17.702367"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:28:17.704115"], ["tag_id", 31], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:28:17.704115"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:28:17.704932"], ["updated_at", "2014-08-30 20:28:17.704932"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:28:17.706142"], ["tag_id", 32], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:28:17.706142"]]
+  [1m[36m (8.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 12], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  Rendered topics/show.html.erb within layouts/application (38.4ms)
+Completed 200 OK in 46ms (Views: 33.9ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 16:28:17 -0400
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 16:28:17 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 16:28:17 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 16:28:17 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 16:28:17 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 16:28:17 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 16:28:17 -0400
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:28:20 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.3ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (1.9ms)
+  Rendered comments/_comment.html.erb (2.7ms)
+  Rendered tags/_comment_form.html.erb (1.5ms)
+  Rendered comments/_comment.html.erb (2.4ms)
+  Rendered comments/_form.html.erb (1.6ms)
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 11], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 20:28:20.183851"], ["updated_at", "2014-08-30 20:28:20.183851"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 20:28:20.186014"], ["tag_id", 33], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:28:20.186014"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 20:28:20.187113"], ["updated_at", "2014-08-30 20:28:20.187113"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 20:28:20.188348"], ["tag_id", 34], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:28:20.188348"]]
+  [1m[35m (8.8ms)[0m  commit transaction
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 12], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (38.5ms)
+Completed 200 OK in 45ms (Views: 33.3ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 16:28:20 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 16:28:20 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 16:28:20 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 16:28:20 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 16:28:20 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 16:28:20 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 16:28:20 -0400
+
+
+Started POST "/topics/1/comments" for 127.0.0.1 at 2014-08-30 16:28:30 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"szvRutxVRbWNCHeM02dKMuOHOc85ycq4Ze9VfxOsaME=", "comment"=>{"body"=>""}, "commit"=>"Create Comment", "topic_id"=>"1"}
+  [1m[35mTopic Load (0.2ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://0.0.0.0:3000/topics/1
+Completed 302 Found in 8ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:28:30 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTopic Load (0.2ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered tags/_form.html.erb (2.3ms)
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (2.0ms)
+  Rendered comments/_comment.html.erb (2.9ms)
+  Rendered tags/_comment_form.html.erb (3.5ms)
+  Rendered comments/_comment.html.erb (4.8ms)
+  Rendered comments/_form.html.erb (1.8ms)
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 11], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 20:28:30.957838"], ["updated_at", "2014-08-30 20:28:30.957838"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 20:28:30.959659"], ["tag_id", 35], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:28:30.959659"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2014-08-30 20:28:30.960672"], ["updated_at", "2014-08-30 20:28:30.960672"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-30 20:28:30.961908"], ["tag_id", 36], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:28:30.961908"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 12], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (32.6ms)
+Completed 200 OK in 40ms (Views: 35.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 16:28:30 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 16:28:31 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 16:28:31 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 16:28:31 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 16:28:31 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 16:28:31 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 16:28:31 -0400
+
+
+Started POST "/topics/1/comments" for 127.0.0.1 at 2014-08-30 16:28:38 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"szvRutxVRbWNCHeM02dKMuOHOc85ycq4Ze9VfxOsaME=", "comment"=>{"body"=>"comment3"}, "commit"=>"Create Comment", "topic_id"=>"1"}
+  [1m[35mTopic Load (0.2ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "comments" ("body", "created_at", "topic_id", "updated_at") VALUES (?, ?, ?, ?)  [["body", "comment3"], ["created_at", "2014-08-30 20:28:38.989365"], ["topic_id", 1], ["updated_at", "2014-08-30 20:28:38.989365"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/topics/1
+Completed 302 Found in 9ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:28:39 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (2.5ms)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (2.4ms)
+  Rendered comments/_comment.html.erb (3.4ms)
+  Rendered tags/_comment_form.html.erb (2.0ms)
+  Rendered comments/_comment.html.erb (3.2ms)
+  Rendered tags/_comment_form.html.erb (2.0ms)
+  Rendered comments/_comment.html.erb (3.4ms)
+  Rendered comments/_form.html.erb (1.9ms)
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 11], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:28:39.032555"], ["updated_at", "2014-08-30 20:28:39.032555"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:28:39.034619"], ["tag_id", 37], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:28:39.034619"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:28:39.035612"], ["updated_at", "2014-08-30 20:28:39.035612"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:28:39.037088"], ["tag_id", 38], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:28:39.037088"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:28:39.038111"], ["updated_at", "2014-08-30 20:28:39.038111"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:28:39.039383"], ["tag_id", 39], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:28:39.039383"]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 12], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 13], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (42.4ms)
+Completed 200 OK in 49ms (Views: 44.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 16:28:39 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 16:28:39 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 16:28:39 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 16:28:39 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 16:28:39 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 16:28:39 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 16:28:39 -0400
+
+
+Started GET "/topics/1" for 127.0.0.1 at 2014-08-30 16:28:46 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tags/_form.html.erb (2.1ms)
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  Rendered tags/_comment_form.html.erb (2.6ms)
+  Rendered comments/_comment.html.erb (3.5ms)
+  Rendered tags/_comment_form.html.erb (1.6ms)
+  Rendered comments/_comment.html.erb (2.4ms)
+  Rendered tags/_comment_form.html.erb (1.8ms)
+  Rendered comments/_comment.html.erb (2.7ms)
+  Rendered comments/_form.html.erb (1.7ms)
+  [1m[35mTag Load (0.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 11], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:28:46.062194"], ["updated_at", "2014-08-30 20:28:46.062194"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:28:46.064202"], ["tag_id", 40], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:28:46.064202"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:28:46.065188"], ["updated_at", "2014-08-30 20:28:46.065188"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:28:46.066524"], ["tag_id", 41], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:28:46.066524"]]
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tags" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2014-08-30 20:28:46.067344"], ["updated_at", "2014-08-30 20:28:46.067344"]]
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-30 20:28:46.068577"], ["tag_id", 42], ["tagable_id", 1], ["tagable_type", "Topic"], ["updated_at", "2014-08-30 20:28:46.068577"]]
+  [1m[36m (8.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 12], ["tagable_type", "Comment"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 13], ["tagable_type", "Comment"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  Rendered topics/show.html.erb within layouts/application (47.5ms)
+Completed 200 OK in 54ms (Views: 42.1ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 16:28:46 -0400
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 16:28:46 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 16:28:46 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 16:28:46 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 16:28:46 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 16:28:46 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 16:28:46 -0400
