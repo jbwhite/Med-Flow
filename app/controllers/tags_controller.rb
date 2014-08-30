@@ -18,6 +18,21 @@ class TagsController < ApplicationController
 
   def create
     @tag = Tag.new(tag_params)
+    topic = Topic.find(params[:topic_id])
+    user = User.find(session[:user_id])
+    p params
+    p topic
+    p user
+
+# {"utf8"=>"✓", "authenticity_token"=>"kbfRwweVmhb9CipiH08vDhkle3DApC7C3iaPAKZVrGU=", "tag"=>{"subject"=>"blah balh"}, "commit"=>"Create Tag", 
+# "action"=>"create", "controller"=>"tags", "topic_id"=>"1"}
+
+    puts "***************************************"
+    
+    # if Tag.exists?(subject: @tag.subject)
+      # Tagation.create()
+
+    puts "***************************************"
 
     if @tag.save
       redirect_to @tag, notice: 'Tag was successfully created.'

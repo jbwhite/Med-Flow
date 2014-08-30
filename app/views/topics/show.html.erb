@@ -6,11 +6,18 @@
 <%= link_to "Delete", topic_path(@topic), method: :delete,
                                           data: { confirm: 'Are you sure?' }%><br>
 <%= link_to "Back", topics_path %>
+<h2>Add a tag:</h2>
+<%= render "tags/form" %>
+
+<br><br><hr><br>
+
 
 <h2>Comments</h2>
 <%= render @topic.comments %>
 <h2>Add a comment:</h2>
 <%= render "comments/form" %>
+<h2>Add a tag:</h2>
+<%= render "tags/form" %>
 
 <br><br><hr><br>
 
