@@ -7,10 +7,30 @@
    				 <div class="topic"><li><%= link_to "#{topic.title}", topic %></li><p>post by</p>
    				 	<%=link_to image_tag("http://icons.iconarchive.com/icons/rokey/the-blacy/128/black-heart-icon.png", width: 30), {controller: "scores", action: "create", topic_id: topic.id, score: {topic_id: topic.id, user_id: @user.id}}, method: 'post'%> </br>
    				 	 <%=topic.scores.count%> &#x2764;'s
+ 
+ 			<div class="tags">
+				<% taglist = topic.tags.dup %>
+				<% topic.comments.each do |comment| %>
+				  <% taglist += comment.tags %>
+				<% end %>
+				<br><hr><br>
+				<ul class="taglist">
+				  <li class="tag">Tags: </li>
+				  <% taglist.uniq.each do |tag| %>
+				  <% unless tag.id == nil %>
+				   <li class ="tag"> <%= link_to tag.subject, tag %> </li>
+				  <% end %>
+		  	 <% end %>
+        </ul>
+ 			</div>
+   				 
+
+
    				 </div>
  			</ul>
 		<% end %>
 	</div>
+
 
 	<div class="right">
 		<br>
