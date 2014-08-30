@@ -169,3 +169,12 @@ input[type=text], input[type=password], textarea {
 .tag {
 	display: inline-block;
 }
+
+.addTag {
+	float: right;
+}
+
+.clear {
+	clear: both;
+	display: hidden;
+	}

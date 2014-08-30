@@ -1,8 +1,7 @@
 <%= form_for([comment, comment.tags.build]) do |f| %>
 
   <div class="actions">
-    <%= f.label :subject %><br>
-    <%= f.text_field :subject %>
+    <%= f.text_field :subject %><br>
     <%= f.submit %>
   </div>
 <% end %>

@@ -6,11 +6,11 @@
 <%= link_to "Delete", topic_path(@topic), method: :delete,
                                           data: { confirm: 'Are you sure?' }%><br>
 <%= link_to "Back", topics_path %>
-<h2>Add a tag:</h2>
-<%= render "tags/form" %>
 
-<br><br><hr><br>
-
+<div class="addTag">
+  <p><%= render "tags/form" %></p>
+</div>
+<div class="clear"></div>
 
 <h2>Comments</h2>
 
@@ -21,16 +21,14 @@
 <h2>Add a comment:</h2>
 <%= render "comments/form" %>
 
-<br><br><hr><br>
-
-<h2>Tags</h2>
-<% temp_arr = @topic.tags.dup %>
+<br><hr><br>
+<% taglist = @topic.tags.dup %>
 <% @topic.comments.each do |comment| %>
-  <% temp_arr += comment.tags %>
+  <% taglist += comment.tags %>
 <% end %>
-<p>
   <ul class="taglist">
-<% temp_arr.uniq.each do |tag| %>
+    <li class="tag">Tags: </li>
+<% taglist.uniq.each do |tag| %>
   <% unless tag.id == nil %>
     <li class ="tag"> <%= link_to tag.subject, tag %> </li>
   <% end %>
