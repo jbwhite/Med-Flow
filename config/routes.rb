@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :comments do
-    resources :tags
+    resources :tags, {only: [:new, :create]}
   end
 
   resources :tags do

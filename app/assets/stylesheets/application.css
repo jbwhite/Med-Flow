@@ -161,3 +161,11 @@ input[type=text], input[type=password], textarea {
 	height: 200px;
 	width: 200px;
 }
+
+.taglist {
+	display: inline-block;
+}
+
+.tag {
+	display: inline-block;
+}

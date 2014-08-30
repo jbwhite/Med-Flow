@@ -13,23 +13,26 @@
 
 
 <h2>Comments</h2>
+
 <% @topic.comments.each do |comment| %>
   <%= render partial: "comments/comment", locals: { comment: comment } %>
 <% end %>
+
 <h2>Add a comment:</h2>
 <%= render "comments/form" %>
 
 <br><br><hr><br>
 
 <h2>Tags</h2>
+<% temp_arr = @topic.tags.dup %>
 <% @topic.comments.each do |comment| %>
-  <% @topic.tags += comment.tags %>
+  <% temp_arr += comment.tags %>
 <% end %>
 <p>
   <ul class="taglist">
-<% @topic.tags.uniq.each do |tag| %>
+<% temp_arr.uniq.each do |tag| %>
   <% unless tag.id == nil %>
-    <li class ="tag"> <%= link_to tag.subject, tag %></li>
+    <li class ="tag"> <%= link_to tag.subject, tag %> </li>
   <% end %>
 <% end %>
   </ul>
