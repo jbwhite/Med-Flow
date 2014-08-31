@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :comments do
     resources :tags, {only: [:new, :create]}
+    resources :tagations, {only: [:new, :create]}
   end
 
   resources :tags do
