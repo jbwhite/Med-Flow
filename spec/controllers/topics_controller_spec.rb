@@ -6,7 +6,7 @@ describe TopicsController do
 	describe "GET #index" do
 		it "assigns all topics as @topics" do
 			get :index
-			expect(assigns(:topics)).to eq(Topic.all)
+			expect(assigns(:topics)).to eq(Topic.order(created_at: :desc))
 		end
 	end
 
