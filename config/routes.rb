@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit, :update, :destroy]
 
-
+  get "profile" => 'users#show'
   get 'signup' => 'users#new', :as => :signup
   post 'signup' => 'users#create'
 

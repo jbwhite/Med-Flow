@@ -1,26 +1,57 @@
 
 body
-  background: #F6F9FF
+  // background: #F6F9FF
   font-size: 16px
   font-family: 'Open Sans', sans-serif
   color: #060E21
 
 nav
   padding: 20px
-  background: #0537A1
+  background: white
   font-family: 'Open Sans', sans-serif
   color: white
-  h2
+  height: 40px
+  background: #DFDFDD
+  h1
     font-size: 2em
     display: inline
     float: left
     font-family: 'Inconsolata', sans-serif
+    // background-color: #043E83
+    // border-radius: 5px
+    border-radius: 6px
+    background: rgb(151, 187, 211)
+    background: -moz-linear-gradient(top, rgba(151, 187, 211, 1) 0%, rgba(105, 135, 205, 1) 50%, rgba(85, 116, 203, 1) 51%, rgba(78, 116, 204, 1) 100%)
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(151, 187, 211, 1)), color-stop(50%, rgba(105, 135, 205, 1)), color-stop(51%, rgba(85, 116, 203, 1)), color-stop(100%, rgba(78, 116, 204, 1)))
+    background: -webkit-linear-gradient(top, rgba(151, 187, 211, 1) 0%, rgba(105, 135, 205, 1) 50%, rgba(85, 116, 203, 1) 51%, rgba(78, 116, 204, 1) 100%)
+    background: -o-linear-gradient(top, rgba(151, 187, 211, 1) 0%, rgba(105, 135, 205, 1) 50%, rgba(85, 116, 203, 1) 51%, rgba(78, 116, 204, 1) 100%)
+    background: -ms-linear-gradient(top, rgba(151, 187, 211, 1) 0%, rgba(105, 135, 205, 1) 50%, rgba(85, 116, 203, 1) 51%, rgba(78, 116, 204, 1) 100%)
+    background: linear-gradient(to bottom, rgba(151, 187, 211, 1) 0%, rgba(105, 135, 205, 1) 50%, rgba(85, 116, 203, 1) 51%, rgba(78, 116, 204, 1) 100%)
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#97bbd3', endColorstr='#4e74cc',GradientType=0 )
   ul li
-    font-size: 0.9em
+    font-size: 1.1em
+    color: #043E83
     position: relative
     top: 12px
     display: inline
-    margin-left: 20px
+    margin-left: 3%
+    &:nth-last-child(1)
+      float: right
+      margin-top: -1%
+      margin-right: 5%
+    &:nth-child(1)
+      margin-left: 10%
+
+    a
+      text-decoration: none
+      color: #043E83
+
+.navlogo
+  height: 60px
+  width: 60px
+  float: left
+  margin-top: -10px
+  margin-right: 5px
 
 h1
   font-size: 2em
