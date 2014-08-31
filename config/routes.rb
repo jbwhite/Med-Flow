@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources(:topics, {only: [:index, :create, :show, :edit, :update, :destroy]})  do
     resources :comments
     resources :tags
-    resources :tagations, {only: :create}
+    resources :tagations
     resources :scores, {only: :create}
   end
 

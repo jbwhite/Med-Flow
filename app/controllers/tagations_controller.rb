@@ -1,7 +1,12 @@
 class TagationsController < ApplicationController
 
   def create
-    Tagation.create(tagation_params)
+    tagation = Tagation.new(tagation_params)
+    tagation.user_id = User.find(session[:user_id]).id
+    tagation.save
+    p tagation
+    puts "***************************************************"
+    @topic = Topic.find(tagation.tagable_id)
     redirect_to @topic
   end
 
