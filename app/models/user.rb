@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   has_many :tagations
   has_many :tags, :through => :tagations
   has_many :scores
+  has_many :comment_scores
   # validates :topics, presence: true
   # validates :comments, presence: true
 

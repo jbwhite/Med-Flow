@@ -5,6 +5,7 @@ class Comment < ActiveRecord::Base
 	
   has_many :tagations, :as => :tagable
   has_many :tags, :through => :tagations
+  has_many :comment_scores
   belongs_to :user
   belongs_to :topic
 end
