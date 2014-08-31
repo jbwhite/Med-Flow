@@ -2,22 +2,42 @@ class TopicsController < ApplicationController
 
   def index
     @topics = Topic.order(created_at: :desc)
+    @topics = Topic.search(params[:search])
     @topic = Topic.new
     @user = User.find(session[:user_id]) if session[:user_id]
   end
 
   def show
-    @topic = Topic.find(params[:id])
-    @user = User.find(session[:user_id])
+    if session[:user_id]
+      @topic = Topic.find(params[:id])
+      @user = User.find(session[:user_id])
+    else
+      @topics = Topic.order(created_at: :desc)
+      @topic = Topic.new
+      output = "You need to be logged in!"
+      output.strip!
+      output[-1]="."
+      flash[:notice] = output
+      render 'index'
+    end
   end
 
   def create
-    @topic = Topic.new(topic_params)
-    @topic.user_id = User.find(session[:user_id]).id
-
-    if @topic.save
-      redirect_to @topic
+    if session[:user_id]
+      @topic = Topic.new(topic_params)
+      @topic.user_id = User.find(session[:user_id]).id
+      if @topic.save
+          redirect_to @topic
+        else
+          render 'index'
+      end
     else
+      @topics = Topic.order(created_at: :desc)
+      @topic = Topic.new
+      output = "You need to be logged in!"
+      output.strip!
+      output[-1]="."
+      flash[:notice] = output
       render 'index'
     end
   end
