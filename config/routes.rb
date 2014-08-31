@@ -3,9 +3,21 @@ Rails.application.routes.draw do
 
   resources(:topics, {only: [:index, :create, :show, :edit, :update, :destroy]})  do
     resources :comments
+    resources :tags
+    resources :tagations
+    resources :scores, {only: :create}
   end
 
-  resources :tags
+  resources :comments do
+    resources :tags, {only: [:new, :create]}
+    resources :tagations, {only: [:new, :create]}
+    resources :comment_scores, {only: :create}
+  end
+
+  resources :tags do
+    resources :tagations, {only: :create}
+  end
+
 
   resources :users, only: [:show, :edit, :update, :destroy]
 
@@ -17,7 +29,7 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new', :as => :login
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
-  
+
   root to: "topics#index"
 
 

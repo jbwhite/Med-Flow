@@ -1,0 +1,10 @@
+<%= form_for([comment, comment.tagations.build]) do |f| %>
+
+  <div class="actions">
+    <%=  %>
+    <%= collection_select :tagation, :tag_id, Tag.all, :id, :subject %>
+    <%= f.hidden_field(:tagable_id, value: comment.tagations.build.tagable_id) %>
+    <%= f.hidden_field(:tagable_type, value: comment.tagations.build.tagable_type) %>
+    <%= f.submit 'pick tag', class: "tagButton" %>
+  </div>
+  <% end %>
