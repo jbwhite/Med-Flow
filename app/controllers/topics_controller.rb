@@ -1,7 +1,7 @@
 class TopicsController < ApplicationController
 
   def index
-    @topics = Topic.all
+    @topics = Topic.order(created_at: :desc)
     @topic = Topic.new
     @user = User.find_by(session[:user_id])
   end
