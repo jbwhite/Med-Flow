@@ -2257,3 +2257,189 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 22:53:19
 
 
 Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 22:53:19 -0400
+
+
+Started GET "/topics/12" for 127.0.0.1 at 2014-08-30 22:56:23 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered tags/_form.html.erb (12.7ms)
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags"
+  Rendered tagations/_form.html.erb (6.7ms)
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered tags/_comment_form.html.erb (2.8ms)
+  Rendered comments/_comment.html.erb (5.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered tags/_comment_form.html.erb (1.4ms)
+  Rendered comments/_comment.html.erb (2.9ms)
+  Rendered comments/_form.html.erb (1.6ms)
+  [1m[35mTag Load (0.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 12], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 13], ["tagable_type", "Comment"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 14], ["tagable_type", "Comment"]]
+  Rendered topics/show.html.erb within layouts/application (45.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+Completed 200 OK in 73ms (Views: 49.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 22:56:23 -0400
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 22:56:23 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 22:56:23 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 22:56:23 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 22:56:23 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 22:56:23 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 22:56:23 -0400
+
+
+Started POST "/topics/12/tagations" for 127.0.0.1 at 2014-08-30 22:56:29 -0400
+Processing by TagationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LW/VBvQIoMTDo7WS52Mff3LEyPHF8pB72KhWWGtVz7Y=", "tagation"=>{"tag_id"=>"8", "tagable_id"=>"12", "tagable_type"=>"Topic"}, "commit"=>"pick tag", "topic_id"=>"12"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-08-31 02:56:29.116482"], ["tag_id", 8], ["tagable_id", 12], ["tagable_type", "Topic"], ["updated_at", "2014-08-31 02:56:29.116482"], ["user_id", 11]]
+  [1m[36m (8.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 12]]
+Redirected to http://0.0.0.0:3000/topics/12
+Completed 302 Found in 16ms (ActiveRecord: 9.4ms)
+
+
+Started GET "/topics/12" for 127.0.0.1 at 2014-08-30 22:56:29 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered tags/_form.html.erb (2.1ms)
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags"
+  Rendered tagations/_form.html.erb (3.0ms)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered tags/_comment_form.html.erb (1.3ms)
+  Rendered comments/_comment.html.erb (2.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered tags/_comment_form.html.erb (1.2ms)
+  Rendered comments/_comment.html.erb (2.8ms)
+  Rendered comments/_form.html.erb (1.3ms)
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 12], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 13], ["tagable_type", "Comment"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 14], ["tagable_type", "Comment"]]
+  Rendered topics/show.html.erb within layouts/application (20.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 22:56:29 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 22:56:29 -0400
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 22:56:29 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 22:56:29 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 22:56:29 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 22:56:29 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 22:56:29 -0400
+
+
+Started GET "/tags/8" for 127.0.0.1 at 2014-08-30 22:56:33 -0400
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mTag Load (0.3ms)[0m  SELECT  "tags".* FROM "tags"  WHERE "tags"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mTopic Load (0.4ms)[0m  [1mSELECT "topics".* FROM "topics" INNER JOIN "tagations" ON "topics"."id" = "tagations"."tagable_id" WHERE "tagations"."tag_id" = ? AND "tagations"."tagable_type" = 'Topic'[0m  [["tag_id", 8]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" INNER JOIN "tagations" ON "comments"."id" = "tagations"."tagable_id" WHERE "tagations"."tag_id" = ? AND "tagations"."tagable_type" = 'Comment'  [["tag_id", 8]]
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered tags/show.html.erb within layouts/application (8.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+Completed 200 OK in 25ms (Views: 21.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/topics/12" for 127.0.0.1 at 2014-08-30 22:59:01 -0400
+Processing by TopicsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mTopic Load (0.1ms)[0m  [1mSELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered tags/_form.html.erb (1.5ms)
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags"
+  Rendered tagations/_form.html.erb (4.4ms)
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 12]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered tags/_comment_form.html.erb (1.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered tagations/_comment_form.html.erb (16.3ms)
+  Rendered comments/_comment.html.erb (21.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered tags/_comment_form.html.erb (1.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "tags".* FROM "tags"[0m
+  Rendered tagations/_comment_form.html.erb (2.9ms)
+  Rendered comments/_comment.html.erb (6.4ms)
+  Rendered comments/_form.html.erb (1.5ms)
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 12], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 13], ["tagable_type", "Comment"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 14], ["tagable_type", "Comment"]]
+  Rendered topics/show.html.erb within layouts/application (44.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+Completed 200 OK in 52ms (Views: 48.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-30 22:59:01 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-30 22:59:01 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-30 22:59:01 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-30 22:59:01 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-30 22:59:01 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-30 22:59:01 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-30 22:59:01 -0400
+
+
+Started POST "/comments/13/tagations" for 127.0.0.1 at 2014-08-30 22:59:15 -0400
+Processing by TagationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LW/VBvQIoMTDo7WS52Mff3LEyPHF8pB72KhWWGtVz7Y=", "tagation"=>{"tag_id"=>"6", "tagable_id"=>"13", "tagable_type"=>"Comment"}, "commit"=>"pick tag", "comment_id"=>"13"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "tagations" ("created_at", "tag_id", "tagable_id", "tagable_type", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2014-08-31 02:59:15.577824"], ["tag_id", 6], ["tagable_id", 13], ["tagable_type", "Comment"], ["updated_at", "2014-08-31 02:59:15.577824"], ["user_id", 11]]
+  [1m[36m (8.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mTopic Load (0.1ms)[0m  SELECT  "topics".* FROM "topics"  WHERE "topics"."id" = ? LIMIT 1  [["id", 13]]
+Completed 404 Not Found in 15ms
+
+ActiveRecord::RecordNotFound (Couldn't find Topic with 'id'=13):
+  app/controllers/tagations_controller.rb:7:in `create'
+
+
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/josephwhite/.rvm/gems/ruby-2.1.1/gems/actionpack-4.1.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.3ms)

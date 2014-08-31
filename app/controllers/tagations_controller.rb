@@ -4,9 +4,9 @@ class TagationsController < ApplicationController
     tagation = Tagation.new(tagation_params)
     tagation.user_id = User.find(session[:user_id]).id
     tagation.save
-    p tagation
-    puts "***************************************************"
-    @topic = Topic.find(tagation.tagable_id)
+    @topic = Topic.find(tagation.tagable_id) if tagation.tagable_type == "Topic"
+    @topic = Comment.find(tagation.tagable_id).topic if tagation.tagable_type == "Topic"
+
     redirect_to @topic
   end
 
