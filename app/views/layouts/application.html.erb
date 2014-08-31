@@ -24,6 +24,9 @@
   </nav>
   <% if session[:user_id] %>
 
+  <% @user = User.find(session[:user_id]) %>
+    <h3>Hello <%= @user.username %>!</h3>
+
    <% end %>
 
 
