@@ -728,3 +728,388 @@ Started GET "/assets/index" for 127.0.0.1 at 2014-08-31 16:38:47 -0400
 
 
 Started GET "/assets/reset" for 127.0.0.1 at 2014-08-31 16:38:47 -0400
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20140828230837)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "email" varchar(255), "password_digest" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140828230837"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Migrating to CreateTopics (20140828230928)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "topics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "user_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140828230928"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to CreateComments (20140828230945)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "user_id" integer, "topic_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140828230945"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreateTags (20140829021109)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "subject" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140829021109"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to CreateTagations (20140829021346)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "tagations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tagable_id" integer, "tagable_type" varchar(255), "user_id" integer, "tag_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140829021346"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to CreateScores (20140829195125)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "score" integer, "topic_id" integer, "user_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140829195125"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to CreateCommentScores (20140831175709)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "comment_scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "score" integer, "comment_id" integer, "user_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140831175709"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'eldridge@example.com' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'era' LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-31 21:05:52.381447"], ["email", "eldridge@example.com"], ["password_digest", "$2a$10$2SkQtudnoUtY.DN2dYnK4eIoAw0Cw7Jj2neXKszruO3Cnof7Jj9Km"], ["updated_at", "2014-08-31 21:05:52.381447"], ["username", "era"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'alexander@example.org' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" = 'althea' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-31 21:05:52.480767"], ["email", "alexander@example.org"], ["password_digest", "$2a$10$OaOQUE/VwLkWETncvCJ2QOVY4BbVvIhGTs8IvxXEFZ/kMZAcXiDUO"], ["updated_at", "2014-08-31 21:05:52.480767"], ["username", "althea"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'sammy.yost@example.org' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'velva' LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-31 21:05:52.567912"], ["email", "sammy.yost@example.org"], ["password_digest", "$2a$10$jTlDM6r4rqJY9NPB4eUKKuLo.AaoD.ZylDV..tL87iFTvh2fQ6G0S"], ["updated_at", "2014-08-31 21:05:52.567912"], ["username", "velva"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'alyon@example.com' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" = 'piper_ruecker' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-31 21:05:52.659144"], ["email", "alyon@example.com"], ["password_digest", "$2a$10$JcUUW.NLsrwyVkrnMWoSI.r8gwXuqTkzMVqoU11/Ucptgq9WluZIm"], ["updated_at", "2014-08-31 21:05:52.659144"], ["username", "piper_ruecker"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'santa@example.org' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'jody.pouros' LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-31 21:05:52.754785"], ["email", "santa@example.org"], ["password_digest", "$2a$10$q0F1W9ErIGf1So1.KSbuCe1EzZ7wAsmG7PXDoqKdczqNgelMOe0ei"], ["updated_at", "2014-08-31 21:05:52.754785"], ["username", "jody.pouros"]]
+  [1m[35m (9.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'jerrod_marquardt@example.com' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" = 'maverick_schamberger' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-31 21:05:52.861510"], ["email", "jerrod_marquardt@example.com"], ["password_digest", "$2a$10$G7EUQranTDTCgPAevwC2SeS/pEUD3SIk6FeygdVH4vJkE6KF2MN/6"], ["updated_at", "2014-08-31 21:05:52.861510"], ["username", "maverick_schamberger"]]
+  [1m[36m (8.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'orlo@example.org' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'idella' LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-31 21:05:52.963077"], ["email", "orlo@example.org"], ["password_digest", "$2a$10$Q4yVTsC2hu4TimPaRxaWoONLk5s9WUXTweLOV92WFAFaakrrw2kJC"], ["updated_at", "2014-08-31 21:05:52.963077"], ["username", "idella"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'theron_satterfield@example.org' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" = 'jadon' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-31 21:05:53.055094"], ["email", "theron_satterfield@example.org"], ["password_digest", "$2a$10$EPCqz217NCsFOER9FnY0BeaA2An0v2ia6EFlS0qHK4A1.gKlFEPRq"], ["updated_at", "2014-08-31 21:05:53.055094"], ["username", "jadon"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'dangelo@example.net' LIMIT 1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."username" = 'chadd.shanahan' LIMIT 1
+Binary data inserted for `string` type on column `password_digest`
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)[0m  [["created_at", "2014-08-31 21:05:53.148093"], ["email", "dangelo@example.net"], ["password_digest", "$2a$10$PWo.muSz3/IbcdlaOU3XFuuZW9OKSO9jzcCY7zsO8FE/7sZeArs2u"], ["updated_at", "2014-08-31 21:05:53.148093"], ["username", "chadd.shanahan"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'devan_barton@example.net' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" = 'darrick.schimmel' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-31 21:05:53.235902"], ["email", "devan_barton@example.net"], ["password_digest", "$2a$10$MHglXAZi72E4NX28sBeZ7.xDv7JHK5kSbbkqeUt.lo4FXpBJ9BWC6"], ["updated_at", "2014-08-31 21:05:53.235902"], ["username", "darrick.schimmel"]]
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "topics" ("body", "created_at", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Porro repellat animi aliquam eos ipsam voluptatem. Cum non saepe eaque. Totam ut dolores id voluptas voluptatem."], ["created_at", "2014-08-31 21:05:53.256924"], ["title", "Rerum tempore accusantium vero ut quam."], ["updated_at", "2014-08-31 21:05:53.256924"], ["user_id", 3]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "topics" ("body", "created_at", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["body", "Dolorum est dolor dolores omnis ut. Voluptatibus eligendi perferendis sit maiores ratione ut. Cum et dolore quidem exercitationem a."], ["created_at", "2014-08-31 21:05:53.260868"], ["title", "Aperiam ut est quae."], ["updated_at", "2014-08-31 21:05:53.260868"], ["user_id", 8]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "topics" ("body", "created_at", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Pariatur assumenda quia molestias. Aut ducimus voluptas et porro culpa voluptatem. Animi deserunt quis in quo. Rerum et velit ut nemo dolores quia."], ["created_at", "2014-08-31 21:05:53.264346"], ["title", "Nobis molestiae dolorem qui qui."], ["updated_at", "2014-08-31 21:05:53.264346"], ["user_id", 9]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "topics" ("body", "created_at", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["body", "Expedita ad dicta quidem omnis itaque corrupti necessitatibus. Enim in est dicta quia cum quo numquam. Adipisci maiores similique impedit libero nihil molestiae. Iste ad molestiae sed animi et."], ["created_at", "2014-08-31 21:05:53.266634"], ["title", "Perspiciatis aut ut quia."], ["updated_at", "2014-08-31 21:05:53.266634"], ["user_id", 5]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "topics" ("body", "created_at", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Et dicta accusantium quis quo voluptatibus. Sint cupiditate accusamus ducimus. Laboriosam vero non odit ad. Impedit est ut."], ["created_at", "2014-08-31 21:05:53.269526"], ["title", "Sequi in maxime quo inventore quis quisquam iste non."], ["updated_at", "2014-08-31 21:05:53.269526"], ["user_id", 4]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "topics" ("body", "created_at", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["body", "Accusamus commodi velit alias. Rerum exercitationem et suscipit. Ut voluptas dicta doloremque voluptatem id deleniti. Iure facere totam perferendis ratione similique."], ["created_at", "2014-08-31 21:05:53.273108"], ["title", "Assumenda odit qui veniam."], ["updated_at", "2014-08-31 21:05:53.273108"], ["user_id", 7]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "topics" ("body", "created_at", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Facere eos odio necessitatibus provident. Illo eveniet ipsa placeat cumque sequi. Cumque ullam eius."], ["created_at", "2014-08-31 21:05:53.276353"], ["title", "Iure est aut fugiat."], ["updated_at", "2014-08-31 21:05:53.276353"], ["user_id", 8]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "topics" ("body", "created_at", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["body", "Quas mollitia est sit non. Laborum ad et dolores voluptas quo velit qui. Omnis pariatur cum ad ex. Voluptatum quos distinctio et nemo culpa debitis molestiae. Id mollitia harum tenetur."], ["created_at", "2014-08-31 21:05:53.279152"], ["title", "Aut ut natus et hic harum et architecto totam."], ["updated_at", "2014-08-31 21:05:53.279152"], ["user_id", 4]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "topics" ("body", "created_at", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Dolores sunt consequuntur sit aut ab omnis. Dolores rerum nesciunt voluptatem facilis voluptatibus vel at. Et id dolorem ea mollitia rerum rerum. Officia provident aut mollitia. Qui excepturi et eos quos debitis minima."], ["created_at", "2014-08-31 21:05:53.282739"], ["title", "Est perspiciatis ex ipsa corporis similique est."], ["updated_at", "2014-08-31 21:05:53.282739"], ["user_id", 7]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "topics" ("body", "created_at", "title", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["body", "Repellendus mollitia enim nihil. Repellendus et dolorum. Qui saepe repudiandae quo. Error porro possimus incidunt dolores."], ["created_at", "2014-08-31 21:05:53.286310"], ["title", "Omnis recusandae iste doloremque consequatur sunt beatae vel excepturi."], ["updated_at", "2014-08-31 21:05:53.286310"], ["user_id", 5]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "comments" ("body", "created_at", "topic_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Ipsam eligendi enim tempore et eaque. Quam dolorum libero sit. Numquam distinctio ea repellat necessitatibus."], ["created_at", "2014-08-31 21:05:53.301863"], ["topic_id", 10], ["updated_at", "2014-08-31 21:05:53.301863"], ["user_id", 7]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "comments" ("body", "created_at", "topic_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["body", "Distinctio expedita repellat eveniet assumenda. Sequi similique cupiditate totam sit deserunt. Labore tempore sed quis repellat voluptatum. Tenetur corporis laboriosam magni aut est voluptate sit. Non neque dicta velit labore nisi optio."], ["created_at", "2014-08-31 21:05:53.305072"], ["topic_id", 6], ["updated_at", "2014-08-31 21:05:53.305072"], ["user_id", 3]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "comments" ("body", "created_at", "topic_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Ex qui numquam. Officia et occaecati incidunt eaque delectus. Eum non quo."], ["created_at", "2014-08-31 21:05:53.307794"], ["topic_id", 6], ["updated_at", "2014-08-31 21:05:53.307794"], ["user_id", 9]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "comments" ("body", "created_at", "topic_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["body", "Eaque harum quaerat. Et eligendi voluptatum autem laborum. Sint qui enim. Quia velit quo."], ["created_at", "2014-08-31 21:05:53.310544"], ["topic_id", 6], ["updated_at", "2014-08-31 21:05:53.310544"], ["user_id", 1]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "comments" ("body", "created_at", "topic_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Consequuntur possimus minima ipsum quaerat natus. Et vel labore qui repellendus sit qui. Molestiae distinctio quo explicabo. Ut fugiat sed neque esse. Fuga doloribus voluptatem occaecati molestias."], ["created_at", "2014-08-31 21:05:53.313581"], ["topic_id", 5], ["updated_at", "2014-08-31 21:05:53.313581"], ["user_id", 4]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "comments" ("body", "created_at", "topic_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["body", "Nesciunt ex reprehenderit a voluptates. Non nihil est. Qui ut laboriosam iure atque."], ["created_at", "2014-08-31 21:05:53.316914"], ["topic_id", 8], ["updated_at", "2014-08-31 21:05:53.316914"], ["user_id", 9]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "comments" ("body", "created_at", "topic_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Commodi architecto vero non ut numquam officia. Facere voluptate deleniti. Rem sint commodi laboriosam et et voluptatem illum."], ["created_at", "2014-08-31 21:05:53.320194"], ["topic_id", 3], ["updated_at", "2014-08-31 21:05:53.320194"], ["user_id", 8]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "comments" ("body", "created_at", "topic_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["body", "Ipsam eum tempore cumque officiis sint ab. Iusto earum soluta ullam quasi. Qui aut recusandae voluptate possimus enim totam minus. Et dolor deleniti eos."], ["created_at", "2014-08-31 21:05:53.323210"], ["topic_id", 2], ["updated_at", "2014-08-31 21:05:53.323210"], ["user_id", 5]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "comments" ("body", "created_at", "topic_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["body", "Est rerum blanditiis distinctio earum. Consequatur dolore modi impedit odio voluptatum ut. Voluptatum dolor quas. At eos nemo necessitatibus."], ["created_at", "2014-08-31 21:05:53.327000"], ["topic_id", 8], ["updated_at", "2014-08-31 21:05:53.327000"], ["user_id", 2]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "comments" ("body", "created_at", "topic_id", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)  [["body", "Qui iusto deserunt corrupti. Labore adipisci sed. Et aut repellendus ut."], ["created_at", "2014-08-31 21:05:53.330694"], ["topic_id", 6], ["updated_at", "2014-08-31 21:05:53.330694"], ["user_id", 9]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("created_at", "subject", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-08-31 21:05:53.345513"], ["subject", "incidunt"], ["updated_at", "2014-08-31 21:05:53.345513"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tags" ("created_at", "subject", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-08-31 21:05:53.348602"], ["subject", "beatae"], ["updated_at", "2014-08-31 21:05:53.348602"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "tags" ("created_at", "subject", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-08-31 21:05:53.351267"], ["subject", "veniam"], ["updated_at", "2014-08-31 21:05:53.351267"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tags" ("created_at", "subject", "updated_at") VALUES (?, ?, ?)  [["created_at", "2014-08-31 21:05:53.354298"], ["subject", "accusantium"], ["updated_at", "2014-08-31 21:05:53.354298"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("created_at", "subject", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2014-08-31 21:05:53.356723"], ["subject", "enim"], ["updated_at", "2014-08-31 21:05:53.356723"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2014-08-31 17:06:15 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ub41yNY/fziccYamQR5DkvPfFoqJM7qjgm9DK28DJK8="}
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 11ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-31 17:06:15 -0400
+Processing by TopicsController#index as HTML
+  [1m[35mTopic Load (0.3ms)[0m  SELECT "topics".* FROM "topics"   ORDER BY "topics"."created_at" DESC
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "scores"  WHERE "scores"."topic_id" = ?  [["topic_id", 10]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 10]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 10], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 1], ["tagable_type", "Comment"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "scores"  WHERE "scores"."topic_id" = ?[0m  [["topic_id", 9]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 9]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 9], ["tagable_type", "Topic"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "scores"  WHERE "scores"."topic_id" = ?[0m  [["topic_id", 8]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 8]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 8], ["tagable_type", "Topic"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 6], ["tagable_type", "Comment"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 9], ["tagable_type", "Comment"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "scores"  WHERE "scores"."topic_id" = ?[0m  [["topic_id", 7]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 7]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 7], ["tagable_type", "Topic"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "scores"  WHERE "scores"."topic_id" = ?[0m  [["topic_id", 6]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 6]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 6], ["tagable_type", "Topic"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 2], ["tagable_type", "Comment"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 3], ["tagable_type", "Comment"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 4], ["tagable_type", "Comment"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 10], ["tagable_type", "Comment"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "scores"  WHERE "scores"."topic_id" = ?[0m  [["topic_id", 5]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 5]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 5], ["tagable_type", "Topic"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 5], ["tagable_type", "Comment"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "scores"  WHERE "scores"."topic_id" = ?  [["topic_id", 4]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 4]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 4], ["tagable_type", "Topic"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 9]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "scores"  WHERE "scores"."topic_id" = ?  [["topic_id", 3]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 3]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 3], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 7], ["tagable_type", "Comment"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "scores"  WHERE "scores"."topic_id" = ?[0m  [["topic_id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 2]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 2], ["tagable_type", "Topic"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 8], ["tagable_type", "Comment"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "scores"  WHERE "scores"."topic_id" = ?  [["topic_id", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 1]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  Rendered topics/index.html.erb within layouts/application (433.7ms)
+Completed 200 OK in 480ms (Views: 464.2ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/assets/index.css?body=1" for 127.0.0.1 at 2014-08-31 17:06:16 -0400
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-31 17:06:16 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-31 17:06:16 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-31 17:06:16 -0400
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2014-08-31 17:06:16 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-31 17:06:16 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-31 17:06:16 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-31 17:06:16 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-31 17:06:16 -0400
+
+
+Started GET "/assets/reset" for 127.0.0.1 at 2014-08-31 17:06:16 -0400
+
+
+Started GET "/assets/index" for 127.0.0.1 at 2014-08-31 17:06:16 -0400
+
+
+Started GET "/signup" for 127.0.0.1 at 2014-08-31 17:06:19 -0400
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 56ms (Views: 55.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2014-08-31 17:06:32 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YWQ2pK2TbHf0uwTnWdVr6NByds/4iGlCPu9bczmMjLw=", "user"=>{"username"=>"Joseph", "email"=>"joe@joe.com", "password"=>"[FILTERED]"}, "commit"=>"Sign Up!"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."email" = 'joe@joe.com' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."username" = 'Joseph' LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at", "username") VALUES (?, ?, ?, ?, ?)  [["created_at", "2014-08-31 21:06:32.358954"], ["email", "joe@joe.com"], ["password_digest", "$2a$10$AttVmFCwVblapbraVe67Su9Axa8bjgIXgKZsPRpM0s0oA/vZ32Tne"], ["updated_at", "2014-08-31 21:06:32.358954"], ["username", "Joseph"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://0.0.0.0:3000/
+Completed 302 Found in 95ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-08-31 17:06:32 -0400
+Processing by TopicsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mTopic Load (0.2ms)[0m  [1mSELECT "topics".* FROM "topics"   ORDER BY "topics"."created_at" DESC[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "scores"  WHERE "scores"."topic_id" = ?[0m  [["topic_id", 10]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 10]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 10], ["tagable_type", "Topic"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 1], ["tagable_type", "Comment"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "scores"  WHERE "scores"."topic_id" = ?  [["topic_id", 9]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 9]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 9], ["tagable_type", "Topic"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "scores"  WHERE "scores"."topic_id" = ?  [["topic_id", 8]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 8]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 8], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 6], ["tagable_type", "Comment"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 9], ["tagable_type", "Comment"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "scores"  WHERE "scores"."topic_id" = ?  [["topic_id", 7]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 7]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 7], ["tagable_type", "Topic"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "scores"  WHERE "scores"."topic_id" = ?  [["topic_id", 6]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 6]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 6], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 2], ["tagable_type", "Comment"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 3], ["tagable_type", "Comment"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 4], ["tagable_type", "Comment"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 10], ["tagable_type", "Comment"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "scores"  WHERE "scores"."topic_id" = ?  [["topic_id", 5]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 5]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 5], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 5], ["tagable_type", "Comment"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "scores"  WHERE "scores"."topic_id" = ?[0m  [["topic_id", 4]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 4]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 4], ["tagable_type", "Topic"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "scores"  WHERE "scores"."topic_id" = ?[0m  [["topic_id", 3]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 3]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 3], ["tagable_type", "Topic"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 7], ["tagable_type", "Comment"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "scores"  WHERE "scores"."topic_id" = ?  [["topic_id", 2]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?[0m  [["topic_id", 2]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?  [["tagable_id", 2], ["tagable_type", "Topic"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 8], ["tagable_type", "Comment"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "scores"  WHERE "scores"."topic_id" = ?[0m  [["topic_id", 1]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments"  WHERE "comments"."topic_id" = ?  [["topic_id", 1]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "tagations" ON "tags"."id" = "tagations"."tag_id" WHERE "tagations"."tagable_id" = ? AND "tagations"."tagable_type" = ?[0m  [["tagable_id", 1], ["tagable_type", "Topic"]]
+  Rendered topics/index.html.erb within layouts/application (50.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+Completed 200 OK in 57ms (Views: 52.0ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/index.css?body=1" for 127.0.0.1 at 2014-08-31 17:06:32 -0400
+
+
+Started GET "/assets/topic.css?body=1" for 127.0.0.1 at 2014-08-31 17:06:32 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-08-31 17:06:32 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-08-31 17:06:32 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-08-31 17:06:32 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-08-31 17:06:32 -0400
+
+
+Started GET "/assets/reset.css?body=1" for 127.0.0.1 at 2014-08-31 17:06:32 -0400
+
+
+Started GET "/assets/topic.js?body=1" for 127.0.0.1 at 2014-08-31 17:06:32 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-08-31 17:06:32 -0400
+
+
+Started GET "/assets/reset" for 127.0.0.1 at 2014-08-31 17:06:32 -0400
+
+
+Started GET "/assets/index" for 127.0.0.1 at 2014-08-31 17:06:32 -0400
