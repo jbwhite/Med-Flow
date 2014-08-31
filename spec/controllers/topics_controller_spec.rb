@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe TopicsController do
-	let!(:topic) { Topic.create(title: "Acne", body:"How I was able to get rid of acne was a miracle." )}
+	let!(:topic) { Topic.create(title: "Acne", body:"How I was able to get rid of acne was a miracle.", user_id: 1 )}
 
 	describe "GET #index" do
 		it "assigns all topics as @topics" do
