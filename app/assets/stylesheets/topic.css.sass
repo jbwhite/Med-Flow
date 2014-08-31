@@ -1,0 +1,110 @@
+// Place all the styles related to the topic controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.container
+  width: 1000px
+  margin-top: 20px
+  margin-left: auto
+  margin-right: auto
+
+.left
+  width: 650px
+  float: left
+
+.right
+  width: 300px
+  float: right
+  textarea
+    resize: none
+    width: 250px
+    height: 150px
+  input[type=text]
+    font-size: 1.25em
+    width: 250px
+    height: 30px
+
+.login-signup input
+  &[type=text], &[type=password]
+    font-size: 1.25em
+    width: 250px
+    height: 30px
+
+.topic
+  background: #C4E8FF
+  margin-top: 10px
+  margin-bottom: 10px
+  border-radius: 0px
+  padding: 20px
+  border: 1px solid #FF2CEF
+  a
+    text-decoration: none
+    color: #00009C
+    &:hover
+      color: #060E21
+  p
+    font-size: 0.75em
+
+input
+  &[type=submit]
+    font-size: 1em
+    font-family: 'Open Sans', sans-serif
+    color: white
+    padding: 10px
+    border-radius: 6px
+    background: rgb(151, 187, 211)
+    background: -moz-linear-gradient(top, rgba(151, 187, 211, 1) 0%, rgba(105, 135, 205, 1) 50%, rgba(85, 116, 203, 1) 51%, rgba(78, 116, 204, 1) 100%)
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(151, 187, 211, 1)), color-stop(50%, rgba(105, 135, 205, 1)), color-stop(51%, rgba(85, 116, 203, 1)), color-stop(100%, rgba(78, 116, 204, 1)))
+    background: -webkit-linear-gradient(top, rgba(151, 187, 211, 1) 0%, rgba(105, 135, 205, 1) 50%, rgba(85, 116, 203, 1) 51%, rgba(78, 116, 204, 1) 100%)
+    background: -o-linear-gradient(top, rgba(151, 187, 211, 1) 0%, rgba(105, 135, 205, 1) 50%, rgba(85, 116, 203, 1) 51%, rgba(78, 116, 204, 1) 100%)
+    background: -ms-linear-gradient(top, rgba(151, 187, 211, 1) 0%, rgba(105, 135, 205, 1) 50%, rgba(85, 116, 203, 1) 51%, rgba(78, 116, 204, 1) 100%)
+    background: linear-gradient(to bottom, rgba(151, 187, 211, 1) 0%, rgba(105, 135, 205, 1) 50%, rgba(85, 116, 203, 1) 51%, rgba(78, 116, 204, 1) 100%)
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#97bbd3', endColorstr='#4e74cc',GradientType=0 )
+    &:focus
+      outline: 0
+  &[type=text]
+    outline: 0
+
+textarea
+  outline: 0
+
+.heart
+  font-size: 1.5em
+  width: 26px
+  &:hover
+    color: tomato
+    cursor: pointer
+
+input
+  &[type=text], &[type=password]
+    border-radius: 5px
+    border: 2px inset
+
+textarea
+  border-radius: 5px
+  border: 2px inset
+
+.logo
+  font-size: 0.75em
+  padding-top: 50px
+  clear: both
+  text-align: center
+  a:visited!
+  img
+    height: 200px
+    width: 200px
+
+.taglist, .tag
+  display: inline-block
+
+.addTag
+  float: right
+
+.clear
+  clear: both
+  display: hidden
+
+input[type=submit].tagButton
+  font-size: 0.6em
+  padding: 3px
