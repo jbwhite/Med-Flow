@@ -35,7 +35,7 @@
   background: #DFDFDD
   margin-top: 10px
   margin-bottom: 10px
-  border-radius: 0px
+  border-radius: 5px
   padding: 20px
   border: 1px solid white
   a
@@ -45,7 +45,13 @@
       color: #060E21
   p
     font-size: 0.75em
-
+  li
+    a
+      color: #043E83
+    &:nth-child(1)
+      font-size: 1.25em
+    &:nth-child(2)
+      font-size: 0.9em
 input
   &[type=submit]
     font-size: 1em
@@ -97,6 +103,7 @@ textarea
 
 .taglist, .tag
   display: inline-block
+  font-size: .75em
 
 .addTag
   float: right
