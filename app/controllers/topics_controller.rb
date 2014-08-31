@@ -1,17 +1,19 @@
 class TopicsController < ApplicationController
 
   def index
-    @topics = Topic.all
+    @topics = Topic.order(created_at: :desc)
     @topic = Topic.new
-    @user = User.find_by(session[:user_id])
+    @user = User.find(session[:user_id])
   end
 
   def show
     @topic = Topic.find(params[:id])
+    @user = User.find(session[:user_id])
   end
 
   def create
     @topic = Topic.new(topic_params)
+    @topic.user_id = User.find(session[:user_id]).id
 
     if @topic.save
       redirect_to @topic
