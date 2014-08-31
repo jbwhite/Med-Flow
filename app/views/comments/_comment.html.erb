@@ -1,16 +1,15 @@
 
 
 <p>
-  <strong>Comment:</strong>
-  <%= comment.body %>
+  <%= comment.body %><br>
+  posted by: <%= comment.user.username %>
 </p>
 
 <p>
-  <%= link_to 'Destroy Comment', [comment.topic, comment],
+  <%= link_to 'Delete', [comment.topic, comment],
                 method: :delete,
                 data: { confirm: 'Are you sure?' } %>
 </p>
-
 
 <div class="addTag">
   <%= render partial: "tags/comment_form", locals: { comment: comment } %>
@@ -18,4 +17,5 @@
 
 </div>
 <div class="clear"></div>
+
 

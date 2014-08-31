@@ -3,7 +3,6 @@ class TopicsController < ApplicationController
   def index
     @topics = Topic.order(created_at: :desc)
     @topic = Topic.new
-
     @user = User.find(session[:user_id]) if session[:user_id]
   end
 

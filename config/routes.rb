@@ -3,9 +3,6 @@ Rails.application.routes.draw do
 
   resources(:topics, {only: [:index, :create, :show, :edit, :update, :destroy]})  do
     resources :comments
-
-    resources :scores, {only: :create}
-
     resources :tags
     resources :tagations
     resources :scores, {only: :create}
@@ -18,7 +15,6 @@ Rails.application.routes.draw do
 
   resources :tags do
     resources :tagations, {only: :create}
-
   end
 
 
