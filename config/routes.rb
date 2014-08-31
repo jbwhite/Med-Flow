@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :scores, {only: :create}
 
     resources :tags
-    resources :tagations, {only: :create}
+    resources :tagations
     resources :scores, {only: :create}
   end
 

@@ -4,8 +4,7 @@ class TopicsController < ApplicationController
     @topics = Topic.order(created_at: :desc)
     @topic = Topic.new
 
-    @user = User.find_by(session[:user_id])
-
+    @user = User.find(session[:user_id]) if session[:user_id]
   end
 
   def show

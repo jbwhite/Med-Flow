@@ -10,3 +10,12 @@
                 method: :delete,
                 data: { confirm: 'Are you sure?' } %>
 </p>
+
+
+<div class="addTag">
+  <%= render partial: "tags/comment_form", locals: { comment: comment } %>
+  <%= render partial: "tagations/comment_form", locals: { comment: comment } %>
+
+</div>
+<div class="clear"></div>
+

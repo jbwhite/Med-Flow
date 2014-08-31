@@ -8,7 +8,10 @@
 
    				 <div class="topic"><li><%= link_to "#{topic.title}", topic %></li>
    				 	<li>posted by: <%= topic.user.username %></li>
-   				 	<%=link_to image_tag("http://icons.iconarchive.com/icons/rokey/the-blacy/128/black-heart-icon.png", width: 30), {controller: "scores", action: "create", topic_id: topic.id, score: {topic_id: topic.id, user_id: @user.id}}, method: 'post'%> </br>
+   				 	<% if @user %>
+   				 	<%=link_to image_tag("http://icons.iconarchive.com/icons/rokey/the-blacy/128/black-heart-icon.png", width: 30), {controller: "scores", action: "create", topic_id: topic.id, score: {topic_id: topic.id, user_id: @user.id}}, method: 'post'%> 
+   				 	<% end %>
+   				  </br>
    				 	 <%=topic.scores.count%> &#x2764;'s
  
  			<div class="tags">

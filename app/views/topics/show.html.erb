@@ -7,6 +7,14 @@
                                           data: { confirm: 'Are you sure?' }%><br>
 <%= link_to "Back", topics_path %>
 
+
+<div class="addTag">
+  <p><%= render "tags/form" %></p>
+  <p><%= render "tagations/form" %></p>
+</div>
+<div class="clear"></div>
+
+
 <h2>Comments</h2>
 <%= render @topic.comments %>
 <h2>Add a comment:</h2>
