@@ -9,4 +9,16 @@ class Comment < ActiveRecord::Base
   belongs_to :user
   has_many :comments, :as => :commentable
   belongs_to :commentable, :polymorphic => true
+
+  def topic
+    # Topic.find(1)
+    if self.commentable_type == "Topic"
+      return self.commentable
+    else
+      self.commentable.topic
+    end
+  end
+
 end
+
+
