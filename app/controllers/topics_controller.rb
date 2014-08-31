@@ -3,11 +3,9 @@ class TopicsController < ApplicationController
   def index
     @topics = Topic.order(created_at: :desc)
     @topic = Topic.new
-<<<<<<< HEAD:app/controllers/topics_controller.rb
+
     @user = User.find_by(session[:user_id])
-=======
-    @user = User.find(session[:user_id])
->>>>>>> ba8b2138530700b9326016b4f4b468e8ebd53c44:app/controllers/topics_controller.rb
+
   end
 
   def show
