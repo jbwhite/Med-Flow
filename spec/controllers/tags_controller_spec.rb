@@ -17,12 +17,12 @@ describe TagsController do
     end
   end
 
-  describe "post#create" do
-    context "when valid params are passed" do
-      it "creates a new tag" do
-        post :create, tag: FactoryGirl.attributes_for(:tag)
-      end
-    end
-  end
+  # describe "post#create" do
+  #   context "when valid params are passed" do
+  #     it "creates a new tag" do
+  #       post :create, tag: FactoryGirl.attributes_for(:tag)
+  #     end
+  #   end
+  # end
 
 end

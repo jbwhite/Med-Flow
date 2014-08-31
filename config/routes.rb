@@ -3,10 +3,24 @@ Rails.application.routes.draw do
 
   resources(:topics, {only: [:index, :create, :show, :edit, :update, :destroy]})  do
     resources :comments
+<<<<<<< HEAD:config/routes.rb
+    resources :scores, {only: :create}
+=======
+    resources :tags
+    resources :tagations, {only: :create}
     resources :scores, {only: :create}
   end
 
-  resources :tags
+  resources :comments do
+    resources :tags, {only: [:new, :create]}
+    resources :tagations, {only: [:new, :create]}
+  end
+
+  resources :tags do
+    resources :tagations, {only: :create}
+>>>>>>> ba8b2138530700b9326016b4f4b468e8ebd53c44:config/routes.rb
+  end
+
 
   resources :users, only: [:show, :edit, :update, :destroy]
 
