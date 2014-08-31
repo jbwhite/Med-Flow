@@ -7,5 +7,6 @@ class Comment < ActiveRecord::Base
   has_many :tags, :through => :tagations
   has_many :comment_scores
   belongs_to :user
-  belongs_to :topic
+  # belongs_to :topic
+  belongs_to :commentable, :polymorphic => true
 end
