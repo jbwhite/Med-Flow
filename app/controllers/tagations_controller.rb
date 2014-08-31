@@ -1,7 +1,14 @@
 class TagationsController < ApplicationController
 
   def create
-    Tagation.create(tagation_params)
+    p params
+    p "**************************************"
+    tagation = Tagation.new(tagation_params)
+    tagation.user_id = User.find(session[:user_id]).id
+    tagation.save
+    @topic = Topic.find(tagation.tagable_id) if tagation.tagable_type == "Topic"
+    @topic = Comment.find(tagation.tagable_id).topic if tagation.tagable_type == "Comment"
+
     redirect_to @topic
   end
 
