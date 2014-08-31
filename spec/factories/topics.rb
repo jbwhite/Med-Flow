@@ -4,5 +4,6 @@ FactoryGirl.define do
   factory :topic do
     title "MyTitle"
     body "MyText"
+    user_id "2"
   end
 end
