@@ -17,7 +17,7 @@ end
 end
 
 10.times do
-  Comment.create(body: Faker::Lorem.paragraph, user_id: rand(1..10), topic_id: rand(1..10))
+  Comment.create(body: Faker::Lorem.paragraph, user_id: rand(1..10), commentable_id: rand(1..10), commentable_type: ["Topic", "Comment"].sample)
 end
 
 5.times do
