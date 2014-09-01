@@ -1,8 +1,6 @@
 <div class="commentShow">
-  <p>
-    <%= comment.body %><br>
+  <p class="commentBody"><%= comment.body %></p>
     <span class="posted">posted by: <%= comment.user.username %></span></br>
-  </p>
 <div class="action_bar">
   <ul class="action_bar">
     <li class="action"><%= render "tagations/form" %></li>
