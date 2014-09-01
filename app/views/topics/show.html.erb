@@ -3,11 +3,16 @@
 <br>
 <p><%= @topic.body %></p>
 <br>
-<%= link_to 'Edit', edit_topic_path(@topic) %> 
-<%= link_to "Delete", topic_path(@topic), method: :delete,
-                                          data: { confirm: 'Are you sure?' }%> 
-<%= link_to "Back", topics_path %>
+<ul>
+  <% if current_user == @topic.user %>
+    <li><%= link_to 'Edit', edit_topic_path(@topic) %></li> 
+    <li><%= link_to "Delete", topic_path(@topic), method: :delete,
+                                            data: { confirm: 'Are you sure?' }%></li> 
+  <% else %> 
 
+    <%= link_to "Back", topics_path %>
+  <% end %>
+</ul>
 <div class="addTag">
   <p><%= render "tags/form" %></p>
   <p><%= render "tagations/form" %></p>

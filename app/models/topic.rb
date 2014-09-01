@@ -1,5 +1,7 @@
 class Topic < ActiveRecord::Base
 
+  default_scope{where(created_at: "DESC")}
+
 	validates_presence_of :title
 	validates_presence_of :body
 	
