@@ -12,9 +12,9 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @topic = @comment.topic
     redirect_to @topic
-  end    
+  end
 
-  
+
 
   def destroy
     @topic = Topic.find(params[:topic_id])
