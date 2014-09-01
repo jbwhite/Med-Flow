@@ -2,6 +2,7 @@
 require File.expand_path('../application', __FILE__)
 
 require 'bcrypt'
+require 'will_paginate'
 
 # Initialize the Rails application.
 Rails.application.initialize!
