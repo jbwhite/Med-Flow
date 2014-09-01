@@ -1,1 +1,31 @@
 
+<h1 id="profhead">Profile</h1>
+<br><br>
+
+<div class="profile-left">
+  <h2> Topics you created </h2><br>
+
+  <% @user.topics.each do |topic| %>
+
+    <ol class="profile">
+      <li><%= link_to "#{topic.title}", topic %></li>
+    </ol>
+
+  <% end %>
+</div><br><br>
+
+<div class="profile-right">
+  <h2> Comments you Made </h2><br>
+
+  <% @user.comments.each do |comment| %>
+
+    <ol class="profile">
+      <li> <%= link_to "#{comment.body}", comment %> </li>
+    </ol>
+
+  <% end %> <br><br>
+</div>
+
+
+
+
