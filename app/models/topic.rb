@@ -2,8 +2,8 @@ class Topic < ActiveRecord::Base
 
   default_scope {{:order => 'created_at DESC'}}
 
-	validates_presence_of :title, :message => "Please enter title"
-	validates_presence_of :body, :message => "Please enter body"
+	validates_presence_of :title
+	validates_presence_of :body
 	
 
   has_many :tagations, :as => :tagable
