@@ -3,21 +3,23 @@
 <br>
 <p><%= @topic.body %></p>
 <br>
-<% if @user %>
-  <%=link_to image_tag("http://icons.iconarchive.com/icons/rokey/the-blacy/128/black-heart-icon.png", width: 30), {controller: "scores", action: "create", topic_id: @topic.id, score: {topic_id: @topic.id, user_id: @user.id}}, method: 'post'%>
-<% end %>
-</br>
-<%=@topic.scores.count%> &#x2764;'s
-<%= link_to 'Edit', edit_topic_path(@topic) %> 
-<%= link_to "Delete", topic_path(@topic), method: :delete,
-                                          data: { confirm: 'Are you sure?' }%> 
-<%= link_to "Back", topics_path %>
-</ul>
-<div class="addTag">
-  <p><%= render "tags/form" %></p>
-  <p><%= render "tagations/form" %></p>
+<div class="action_bar">
+  <ul class="actions">
+    <li class="action">
+      <% if @user %>
+        <%=link_to image_tag("http://icons.iconarchive.com/icons/rokey/the-blacy/128/black-heart-icon.png", width: 30), {controller: "scores", action: "create", topic_id: @topic.id, score: {topic_id: @topic.id, user_id: @user.id}}, method: 'post'%>
+      <% end %>
+    </li>
+    <li class="action"><%=@topic.scores.count%> &#x2764;'s</li>
+    <% if @user == @topic.user %>
+    <li class="action"><%= link_to 'Edit', edit_topic_path(@topic) %></li>
+    <li class="action"><%= link_to "Delete", topic_path(@topic), method: :delete,
+                                          data: { confirm: 'Are you sure?' }%> </li>
+    <% end %>
+    <li class="action"><%= render "tags/form" %></li>
+    <li class="action"><%= render "tagations/form" %></li>
+  </ul>
 </div>
-<div class="clear"></div>
 
 <h2>Comments</h2>
 <br>
