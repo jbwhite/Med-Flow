@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$topic-background: #DFDFDD
 
 .container
   width: 1000px
@@ -32,7 +33,7 @@
     height: 30px
 
 .topic
-  background: #DFDFDD
+  background: $topic-background
   margin-top: 10px
   margin-bottom: 10px
   border-radius: 5px
@@ -163,3 +164,16 @@ input[type=submit].smallButton
 
 .topicBody
   margin: 5px 0px 0px 0px
+
+.pagination
+
+  font-family: 'Inconsolata', sans-serif
+  em.current
+    outline: 2px solid $topic-background
+    border-radius: 3px
+  a
+    color: black
+    background: $topic-background
+    padding: 3px
+    border-radius: 3px
+
