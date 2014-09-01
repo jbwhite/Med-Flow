@@ -1,7 +1,7 @@
 <%= form_for([@topic, @topic.tags.build]) do |f| %>
 
-  <div class="actions">
-    <%= f.text_field :subject, size: "12" %>
-    <%= f.submit 'tag this', class: "tagButton" %>
+  <div class="action">
+    <%= f.text_field :subject, size: "20" %>
+    <%= f.submit 'tag this', class: "smallButton" %>
   </div>
   <% end %>

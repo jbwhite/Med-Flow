@@ -14,7 +14,7 @@
     <h1>Med-Flow</h1>
     <ul>
       <li><i class="fa fa-user-md"></i><%= link_to 'Home', topics_path %></li>
-      <li><i class="fa fa-wheelchair"></i><%= link_to 'Profile', profile_path %></li>
+      <% if session[:user_id] %><li><i class="fa fa-wheelchair"></i><%= link_to 'Profile', profile_path %></li><% end %>
       <li><i class="fa fa-plus-square"></i><%= link_to 'Tags', tags_path %></li>
       <% if session[:user_id] %>
       <li> <i class="fa fa-ambulance"></i><%= link_to 'Logout', logout_path, method: :delete %></li>
@@ -24,11 +24,11 @@
       <% end %>
       <li> <%= render 'topics/search' %> </li>
     </ul>
-  </nav>
   <% if session[:user_id] %>
   <% @user = User.find(session[:user_id]) %>
-    <h3>Hello <%= @user.username %>!</h3>
+    <div class="hello"><h3>Hello <%= @user.username %>!</h3></div>
    <% end %>
+  </nav>
 
 
 <p><%= flash[:notice] %></p>

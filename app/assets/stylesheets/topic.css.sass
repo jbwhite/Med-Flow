@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$topic-background: #DFDFDD
 
 .container
   width: 1000px
@@ -32,7 +33,7 @@
     height: 30px
 
 .topic
-  background: #DFDFDD
+  background: $topic-background
   margin-top: 10px
   margin-bottom: 10px
   border-radius: 5px
@@ -103,7 +104,6 @@ textarea
 
 .taglist, .tag
   display: inline-block
-  font-size: .75em
 
 .addTag
   float: right
@@ -112,9 +112,72 @@ textarea
   clear: both
   display: hidden
 
-input[type=submit].tagButton
-  font-size: 0.6em
-  padding: 3px
+input[type=submit].smallButton
+  font-size: 0.9em
+  padding: 2px
 
 .subcomment
   margin: 0px 0px 0px 30px
+
+.action_bar
+  margin: 0px 0px 0px 15px
+
+.actionlist
+  margin: 0px
+
+.action
+  display: inline-block
+  margin: 0px 10px
+  font-size: .9em
+
+.topicShow
+  background: #DFDFDD
+  margin-top: 10px
+  margin-bottom: 10px
+  border-radius: 5px
+  padding: 20px
+  border: 1px solid white
+  a
+    text-decoration: none
+    color: #00009C
+    &:hover
+      color: #060E21
+
+.commentShow
+  background: #DFDFDD
+  margin-top: 10px
+  margin-bottom: 10px
+  margin-left: 10px
+  margin-right: 10px
+  border-radius: 5px
+  padding: 20px
+  border: 1px solid white
+  a
+    text-decoration: none
+    color: #00009C
+    &:hover
+      color: #060E21
+
+.topicBody
+  margin: 5px 0px 0px 0px
+  font-size: 1.2em
+
+.commentBody
+  font-size: 1.1em
+
+.posted
+  font-size: .8em
+  margin: 0px 0px 0px 25px
+
+.pagination
+
+  font-family: 'Inconsolata', sans-serif
+  em.current
+    outline: 2px solid $topic-background
+    border-radius: 3px
+  a
+    color: black
+    background: $topic-background
+    padding: 3px
+    border-radius: 3px
+
