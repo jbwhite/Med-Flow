@@ -10,6 +10,8 @@
   <%=comment.comment_scores.count%> &#x2764;'s
 </p>
 
+  <%= render partial: "comments/commentable", locals: { comment: comment } %>
+
 <p>
   <%= link_to 'Delete', [comment.topic, comment],
                 method: :delete,
