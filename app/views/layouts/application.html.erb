@@ -24,11 +24,11 @@
       <% end %>
       <li> <%= render 'topics/search' %> </li>
     </ul>
-  </nav>
   <% if session[:user_id] %>
   <% @user = User.find(session[:user_id]) %>
     <div class="hello"><h3>Hello <%= @user.username %>!</h3></div>
    <% end %>
+  </nav>
 
 
 <p><%= flash[:notice] %></p>

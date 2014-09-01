@@ -5,6 +5,6 @@
     <%= collection_select :tagation, :tag_id, Tag.all, :id, :subject %>
     <%= f.hidden_field(:tagable_id, value: @topic.tagations.build.tagable_id) %>
     <%= f.hidden_field(:tagable_type, value: @topic.tagations.build.tagable_type) %>
-    <%= f.submit 'pick tag', class: "tagButton" %>
+    <%= f.submit 'pick tag', class: "smallButton" %>
   </div>
   <% end %>

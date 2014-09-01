@@ -12,6 +12,7 @@ class TopicsController < ApplicationController
     if session[:user_id]
       @topic = Topic.find(params[:id])
       @user = User.find(session[:user_id])
+      @taglist = get_tags(@topic)
     else
       @topics = Topic.order(created_at: :desc)
       @topic = Topic.new
@@ -61,4 +62,15 @@ class TopicsController < ApplicationController
     def topic_params
       params.require(:topic).permit(:title, :body)
     end
+
+    def get_tags(tagable)
+      tags = tagable.tags.dup
+      tagable.comments.each do |comment|
+        tags += comment.tags
+        tags += get_tags(comment)
+      end
+      tags.uniq
+    end
+  
 end
+
