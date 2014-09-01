@@ -23,8 +23,9 @@ ActiveRecord::Schema.define(version: 20140831175709) do
 
   create_table "comments", force: true do |t|
     t.text     "body"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
     t.integer  "user_id"
-    t.integer  "topic_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
