@@ -1,22 +1,16 @@
 <div class="topicShow">
 <h1><%= @topic.title %></h1>
-<h3>posted by: <%= @topic.user.username %></h3>
+<span class="posted">posted by: <%= @topic.user.username %></span>
 <br>
-<p><%= @topic.body %></p>
+<p class="topicBody"><%= @topic.body %></p>
 <br>
   <div class="action_bar">
     <ul class="actionlist">
-      <li class="action"><%= render "comments/form" %></li>
       <li class="action"><%= render "tagations/form" %></li>
       <li class="action"><%= render "tags/form" %></li>
-    </ul>
-  </div>
-<hr>
-  <div class="action_bar">
-    <ul class="actionlist">
       <% if @user %>
       <li class="action">
-        <%=link_to image_tag("http://icons.iconarchive.com/icons/rokey/the-blacy/128/black-heart-icon.png", width: 20), {controller: "scores", action: "create", topic_id: @topic.id, score: {topic_id: @topic.id, user_id: @user.id}}, method: 'post'%>
+        <%=link_to image_tag("http://icons.iconarchive.com/icons/rokey/the-blacy/128/black-heart-icon.png", width: 30), {controller: "scores", action: "create", topic_id: @topic.id, score: {topic_id: @topic.id, user_id: @user.id}}, method: 'post'%>
       </li>
       <% end %>
       <li class="action"><%=@topic.scores.count%> &#x2764;'s</li>
@@ -25,6 +19,12 @@
       <li class="action"><%= link_to "Delete", topic_path(@topic), method: :delete,
                                             data: { confirm: 'Are you sure?' }%> </li>
       <% end %>
+    </ul>
+  </div>
+
+  <div class="action_bar">
+    <ul class="actionlist">
+      <li class="action"><%= render "comments/form" %></li>
     </ul>
   </div>
 
