@@ -4,13 +4,13 @@
   <%= comment.body %><br>
   posted by: <%= comment.user.username %>
 </p>
-
+<% if current_user == comment.user %>
 <p>
   <%= link_to 'Delete', [comment.topic, comment],
                 method: :delete,
                 data: { confirm: 'Are you sure?' } %>
 </p>
-
+<% end %>
 <div class="addTag">
   <%= render partial: "tags/comment_form", locals: { comment: comment } %>
   <%= render partial: "tagations/comment_form", locals: { comment: comment } %>

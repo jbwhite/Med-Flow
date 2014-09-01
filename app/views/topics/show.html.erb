@@ -12,7 +12,9 @@
 <%= link_to "Delete", topic_path(@topic), method: :delete,
                                           data: { confirm: 'Are you sure?' }%> 
 <%= link_to "Back", topics_path %>
-
+  <% end %>
+  <%= link_to "Back", topics_path %>
+</ul>
 <div class="addTag">
   <p><%= render "tags/form" %></p>
   <p><%= render "tagations/form" %></p>

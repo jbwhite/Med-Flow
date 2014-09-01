@@ -1,4 +1,5 @@
 class TopicsController < ApplicationController
+  
 
   def index
     @topics = Topic.order(created_at: :desc)
@@ -14,10 +15,7 @@ class TopicsController < ApplicationController
     else
       @topics = Topic.order(created_at: :desc)
       @topic = Topic.new
-      output = "You need to be logged in!"
-      output.strip!
-      output[-1]="."
-      flash[:notice] = output
+      flash.now[:notice] = "You need to be logged in!"
       render 'index'
     end
   end
@@ -29,15 +27,13 @@ class TopicsController < ApplicationController
       if @topic.save
           redirect_to @topic
         else
-          render 'index'
+          flash.now[:notice] = "You need to be logged in!"
+          redirect_to root_path
       end
     else
-      @topics = Topic.order(created_at: :desc)
+      @topics = Topic.all
       @topic = Topic.new
-      output = "You need to be logged in!"
-      output.strip!
-      output[-1]="."
-      flash[:notice] = output
+      flash.now[:notice] = "You need to be logged in!"
       render 'index'
     end
   end
