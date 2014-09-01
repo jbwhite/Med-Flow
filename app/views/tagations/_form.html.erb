@@ -1,6 +1,6 @@
 <%= form_for([@topic, @topic.tagations.build]) do |f| %>
 
-  <div class="actions">
+  <div class="action">
     <%=  %>
     <%= collection_select :tagation, :tag_id, Tag.all, :id, :subject %>
     <%= f.hidden_field(:tagable_id, value: @topic.tagations.build.tagable_id) %>
