@@ -11,7 +11,6 @@ class Comment < ActiveRecord::Base
   belongs_to :commentable, :polymorphic => true
 
   def topic
-    # Topic.find(1)
     if self.commentable_type == "Topic"
       return self.commentable
     else

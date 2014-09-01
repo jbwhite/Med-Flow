@@ -8,9 +8,9 @@ class CommentScoresController < ApplicationController
     @user = User.find(session[:user_id])
     @comment_score = @user.comment_scores.create(comment_score_params)
     if @comment_score.save
-      redirect_to root_path
+      redirect_to :back
     else
-      redirect_to root_path
+      redirect_to :back
     end
   end
 

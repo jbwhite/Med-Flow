@@ -5,12 +5,14 @@ class ScoresController < ApplicationController
   end
 
   def create
+    p params
+    p "**************************"
     @user = User.find(session[:user_id])
     @score = @user.scores.create(score_params)
     if @score.save
-      redirect_to root_path
+      redirect_to :back
     else
-      redirect_to root_path
+      redirect_to :back
     end
   end
 
