@@ -11,12 +11,12 @@ class ScoresController < ApplicationController
     unless votes.include?(topic.to_i)
       @score = @user.scores.create(score_params)
       if @score.save
-        redirect_to root_path
+        redirect_to :back
       else
-        redirect_to root_path
+        redirect_to :back
       end
     else
-      redirect_to root_path
+      redirect_to :back
     end
   end
 

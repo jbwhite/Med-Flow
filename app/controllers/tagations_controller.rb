@@ -1,8 +1,6 @@
 class TagationsController < ApplicationController
 
   def create
-    p params
-    p "**************************************"
     tagation = Tagation.new(tagation_params)
     tagation.user_id = User.find(session[:user_id]).id
     tagation.save

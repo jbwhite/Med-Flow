@@ -1,8 +1,14 @@
 class CommentsController < ApplicationController
 
   def create
-    @topic = Topic.find(params[:topic_id])
-    @comment = @topic.comments.create(comment_params)
+    if params[:topic_id]
+      commentable = Topic.find(params[:topic_id])
+      @topic = commentable
+    else
+      commentable = Comment.find(params[:comment_id])
+      @topic = commentable.topic
+    end
+    @comment = commentable.comments.create(comment_params)
     @comment.user_id = User.find(session[:user_id]).id
     @comment.save
     redirect_to topic_path(@topic)
