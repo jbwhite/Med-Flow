@@ -125,7 +125,7 @@ input[type=submit] {
 	background: rgb(151,187,211);
 background: -moz-linear-gradient(top,  rgba(151,187,211,1) 0%, rgba(105,135,205,1) 50%, rgba(85,116,203,1) 51%, rgba(78,116,204,1) 100%);
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(151,187,211,1)), color-stop(50%,rgba(105,135,205,1)), color-stop(51%,rgba(85,116,203,1)), color-stop(100%,rgba(78,116,204,1)));
-/*background: -webkit-linear-gradient(top,  rgba(151,187,211,1) 0%,rgba(105,135,205,1) 50%,rgba(85,116,203,1) 51%,rgba(78,116,204,1) 100%);
+background: -webkit-linear-gradient(top,  rgba(151,187,211,1) 0%,rgba(105,135,205,1) 50%,rgba(85,116,203,1) 51%,rgba(78,116,204,1) 100%);
 background: -o-linear-gradient(top,  rgba(151,187,211,1) 0%,rgba(105,135,205,1) 50%,rgba(85,116,203,1) 51%,rgba(78,116,204,1) 100%);
 background: -ms-linear-gradient(top,  rgba(151,187,211,1) 0%,rgba(105,135,205,1) 50%,rgba(85,116,203,1) 51%,rgba(78,116,204,1) 100%);
 background: linear-gradient(to bottom,  rgba(151,187,211,1) 0%,rgba(105,135,205,1) 50%,rgba(85,116,203,1) 51%,rgba(78,116,204,1) 100%);
@@ -134,7 +134,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#97bbd3', end
 
 
 
-/*input[type=submit]:focus, input[type=text], textarea {outline:0;}
+input[type=submit]:focus, input[type=text], textarea {outline:0;}
 
 .heart {
 	font-size: 1.5em;
@@ -192,3 +192,4 @@ input[type=submit].tagButton {
 
 
 }
+*/
