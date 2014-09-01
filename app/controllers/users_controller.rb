@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  include UsersHelper
+  include UserHelper
 
   def new
     @user = User.new

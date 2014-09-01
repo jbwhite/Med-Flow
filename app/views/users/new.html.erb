@@ -5,10 +5,11 @@
 <br>
 <%= form_for :user, url: signup_path do |f| %>
   <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <% @user.errors.full_messages.each do |error| %>
-        <li><%= error %></li>
-      <% end %>
+    <div class="error_explanation">
+      <ul>
+        <% @user.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
