@@ -3,7 +3,7 @@ class TopicsController < ApplicationController
 
   def index
     # @topics = Topic.order(created_at: :desc)
-    @topics = Topic.search(params[:search]).paginate(page: params[:page], per_page: 5)
+    @topics = Topic.search(params[:search])
     @topic = Topic.new
     @user = User.find(session[:user_id]) if session[:user_id]
   end
