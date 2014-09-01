@@ -31,13 +31,12 @@
 <% taglist = @topic.tags.dup %>
 <% @topic.comments.each do |comment| %>
   <% taglist += comment.tags %>
+
 <% end %>
   <ul class="taglist">
     <li class="tag">Tags: </li>
-<% taglist.uniq.each do |tag| %>
-  <% unless tag.id == nil %>
+<% @taglist.each do |tag| %>
     <li class ="tag"> <%= link_to tag.subject, tag %> </li>
-  <% end %>
 <% end %>
   </ul>
 
