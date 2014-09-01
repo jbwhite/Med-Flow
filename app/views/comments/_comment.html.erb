@@ -1,5 +1,4 @@
 
-<div class="comment">
   <p>
     <%= comment.body %><br>
     posted by: <%= comment.user.username %></br>
@@ -17,21 +16,24 @@
                   method: :delete,
                   data: { confirm: 'Are you sure?' } %>
   </p>
-</div>
 
-<div class="addTag">
+  <div class="addTag">
   <%= render partial: "tags/comment_form", locals: { comment: comment } %>
   <%= render partial: "tagations/comment_form", locals: { comment: comment } %>
 
 </div>
 <div class="clear"></div>
 
+
 <% unless comment.comments.empty? %>
  <% comment.comments.each do |comment| %>
    <% if comment.id %>
+   <div class="subcomment">
      <%= render partial: "comments/comment", locals: { comment: comment } %>
+   </div>
   <% end %>
  <% end %>
 <% end %>
+
 
 
