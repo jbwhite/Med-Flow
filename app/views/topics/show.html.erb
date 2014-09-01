@@ -3,13 +3,16 @@
 <br>
 <p><%= @topic.body %></p>
 <br>
+<%= render "comments/form" %>
+
+
 <div class="action_bar">
-  <ul class="actions">
+  <ul class="actionlist">
+    <% if @user %>
     <li class="action">
-      <% if @user %>
-        <%=link_to image_tag("http://icons.iconarchive.com/icons/rokey/the-blacy/128/black-heart-icon.png", width: 30), {controller: "scores", action: "create", topic_id: @topic.id, score: {topic_id: @topic.id, user_id: @user.id}}, method: 'post'%>
-      <% end %>
+      <%=link_to image_tag("http://icons.iconarchive.com/icons/rokey/the-blacy/128/black-heart-icon.png", width: 30), {controller: "scores", action: "create", topic_id: @topic.id, score: {topic_id: @topic.id, user_id: @user.id}}, method: 'post'%>
     </li>
+    <% end %>
     <li class="action"><%=@topic.scores.count%> &#x2764;'s</li>
     <% if @user == @topic.user %>
     <li class="action"><%= link_to 'Edit', edit_topic_path(@topic) %></li>
@@ -21,24 +24,17 @@
   </ul>
 </div>
 
-<h2>Comments</h2>
-<br>
 <% @topic.comments.each do |comment| %>
-  <%= render partial: "comments/comment", locals: { comment: comment } %>
+  <% if comment.id %>
+    <%= render partial: "comments/comment", locals: { comment: comment } %>
+  <% end %>
 <% end %>
-
-<%= render "comments/form" %>
 
 <br><hr><br>
-<% taglist = @topic.tags.dup %>
-<% @topic.comments.each do |comment| %>
-  <% taglist += comment.tags %>
-
-<% end %>
   <ul class="taglist">
     <li class="tag">Tags: </li>
-<% @taglist.each do |tag| %>
-    <li class ="tag"> <%= link_to tag.subject, tag %> </li>
-<% end %>
+    <% @taglist.each do |tag| %>
+      <li class ="tag"> <%= link_to tag.subject, tag %> </li>
+    <% end %>
   </ul>
 
