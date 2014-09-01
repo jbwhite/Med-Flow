@@ -6,9 +6,15 @@ class ScoresController < ApplicationController
 
   def create
     @user = User.find(session[:user_id])
-    @score = @user.scores.create(score_params)
-    if @score.save
-      redirect_to root_path
+    votes = @user.scores.map {|score| score.topic.id }
+    topic = score_params[:topic_id]
+    unless votes.include?(topic.to_i)
+      @score = @user.scores.create(score_params)
+      if @score.save
+        redirect_to root_path
+      else
+        redirect_to root_path
+      end
     else
       redirect_to root_path
     end
