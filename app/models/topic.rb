@@ -10,12 +10,8 @@ class Topic < ActiveRecord::Base
   has_many :tagations, :as => :tagable
   has_many :tags, :through => :tagations
   belongs_to :user
-  # has_many :comments
   has_many :scores
 
-  # def comments
-  #   Comments.where("commentable_type = ? AND commentable_id = ?", "Topic", self.id)
-  # end
 
   def self.search(search)
   	if search
