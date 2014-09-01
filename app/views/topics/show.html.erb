@@ -3,12 +3,15 @@
 <br>
 <p><%= @topic.body %></p>
 <br>
-<ul>
-  <% if current_user == @topic.user %>
-    <li><%= link_to 'Edit', edit_topic_path(@topic) %></li> 
-    <li><%= link_to "Delete", topic_path(@topic), method: :delete,
-                                            data: { confirm: 'Are you sure?' }%></li> 
-
+<% if @user %>
+  <%=link_to image_tag("http://icons.iconarchive.com/icons/rokey/the-blacy/128/black-heart-icon.png", width: 30), {controller: "scores", action: "create", topic_id: @topic.id, score: {topic_id: @topic.id, user_id: @user.id}}, method: 'post'%>
+<% end %>
+</br>
+<%=@topic.scores.count%> &#x2764;'s
+<%= link_to 'Edit', edit_topic_path(@topic) %> 
+<%= link_to "Delete", topic_path(@topic), method: :delete,
+                                          data: { confirm: 'Are you sure?' }%> 
+<%= link_to "Back", topics_path %>
   <% end %>
   <%= link_to "Back", topics_path %>
 </ul>
