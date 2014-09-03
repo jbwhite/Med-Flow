@@ -20,5 +20,4 @@ class Topic < ActiveRecord::Base
     	all
   	end
 	end
-
 end
